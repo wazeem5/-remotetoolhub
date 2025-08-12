@@ -1,66 +1,581 @@
-function copyCode() {
-const el = document.getElementById('exampleCode');
-if (!el) return;
-const text = el.innerText || el.textContent || '';
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoteToolHub - Free Online Developer Tools | Password Generator, JSON Formatter & More</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Free online developer tools including password generator, JSON formatter, Base64 encoder, QR code generator, color palette tools, and more. Essential utilities for developers and designers.">
+    <meta name="keywords" content="developer tools, password generator, JSON formatter, Base64 encoder, QR code generator, color palette, online tools, web development, coding tools, free developer utilities">
+    <meta name="author" content="RemoteToolHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://remotetoolhub.com">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="RemoteToolHub - Free Online Developer Tools">
+    <meta property="og:description" content="Essential online tools for developers including password generator, JSON formatter, Base64 encoder, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://remotetoolhub.com">
+    <meta property="og:image" content="https://remotetoolhub.com/assets/og-image.jpg">
+    <meta property="og:site_name" content="RemoteToolHub">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RemoteToolHub - Free Online Developer Tools">
+    <meta name="twitter:description" content="Essential online tools for developers including password generator, JSON formatter, Base64 encoder, and more.">
+    <meta name="twitter:image" content="https://remotetoolhub.com/assets/twitter-card.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "RemoteToolHub",
+        "description": "Free online developer tools including password generator, JSON formatter, Base64 encoder, and more.",
+        "url": "https://remotetoolhub.com",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "RemoteToolHub"
+        }
+    }
+    </script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Header with Dark Mode Toggle -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-tools text-white"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">RemoteToolHub</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="#tools" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Tools</a>
+                        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                        <a href="blog/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Blog</a>
+                        <a href="#premium" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Premium</a>
+                    </nav>
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-(async () => {
-try {
-if (navigator.clipboard && navigator.clipboard.writeText) {
-await navigator.clipboard.writeText(text);
-showToast('تم النسخ!');
-return;
-}
-throw new Error('no-clipboard');
-} catch {
-// fallback
-const ta = document.createElement('textarea');
-ta.value = text;
-ta.setAttribute('readonly', '');
-ta.style.position = 'absolute';
-ta.style.left = '-9999px';
-document.body.appendChild(ta);
-ta.select();
-ta.setSelectionRange(0, ta.value.length);
-try {
-document.execCommand('copy');
-showToast('تم النسخ!');
-} catch {
-showToast('النسخ فشل — انسخ يدوياً', true);
-}
-document.body.removeChild(ta);
-}
-})();
-}
+    <!-- Enhanced Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-800 dark:to-purple-800 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
+                Essential Developer Tools
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+                Free online tools for developers, designers, and digital professionals. 
+                No signup required, privacy-first approach.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm mb-8">
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">🔐 Password Generator</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">📝 JSON Formatter</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">🎨 Color Tools</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">📱 QR Generator</span>
+            </div>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition transform hover:scale-105">
+                    Get Started Free
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+                    View All Tools
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tools Grid -->
+    <section id="tools" class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Developer Tools</h3>
+            
+            <!-- Password Generator -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-key text-blue-600 mr-2"></i>
+                    Password Generator
+                </h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium mb-2">Password Length</label>
+                            <input type="range" id="passwordLength" min="8" max="128" value="16" 
+                                   class="w-full" oninput="document.getElementById('lengthValue').textContent = this.value">
+                            <span id="lengthValue" class="text-sm text-gray-600">16</span>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="includeUppercase" checked class="mr-2">
+                                Uppercase Letters (A-Z)
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="includeLowercase" checked class="mr-2">
+                                Lowercase Letters (a-z)
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="includeNumbers" checked class="mr-2">
+                                Numbers (0-9)
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="includeSymbols" checked class="mr-2">
+                                Symbols (!@#$%^&*)
+                            </label>
+                        </div>
+                        <div class="flex gap-2 mt-4">
+                            <button onclick="generatePassword()" class="flex-1 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+                                Generate Password
+                            </button>
+                            <button onclick="copyPassword()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea id="passwordResult" placeholder="Generated password will appear here..." 
+                                  class="w-full h-20 p-3 border rounded resize-none" readonly></textarea>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Password Strength</span>
+                                <span id="strengthText">-</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div id="passwordStrength" class="h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-function showToast(msg, isError) {
-let t = document.getElementById('copyToast');
-if (!t) {
-t = document.createElement('div');
-t.id = 'copyToast';
-Object.assign(t.style, {
-position: 'fixed',
-bottom: '20px',
-left: '50%',
-transform: 'translateX(-50%) translateY(6px)',
-background: 'rgba(11,18,32,0.95)',
-color: '#fff',
-padding: '8px 12px',
-borderRadius: '6px',
-fontSize: '13px',
-zIndex: 9999,
-opacity: 0,
-transition: 'opacity .18s, transform .18s',
-pointerEvents: 'none'
-});
-document.body.appendChild(t);
-}
-t.textContent = msg;
-t.style.background = isError ? 'crimson' : 'rgba(11,18,32,0.95)';
-t.style.opacity = '1';
-t.style.transform = 'translateX(-50%) translateY(0)';
-clearTimeout(t._timeout);
-t._timeout = setTimeout(() => {
-t.style.opacity = '0';
-t.style.transform = 'translateX(-50%) translateY(6px)';
-}, 1400);
-}
+            <!-- JSON Formatter -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-code text-green-600 mr-2"></i>
+                    JSON Formatter & Validator
+                </h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Input JSON</label>
+                        <textarea id="jsonInput" placeholder="Paste your JSON here..." 
+                                  class="w-full h-40 p-3 border rounded resize-none font-mono text-sm"></textarea>
+                        <div class="flex gap-2 mt-4">
+                            <button onclick="formatJSON()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+                                Format
+                            </button>
+                            <button onclick="minifyJSON()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                                Minify
+                            </button>
+                            <button onclick="validateJSON()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+                                Validate
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Output</label>
+                        <textarea id="jsonOutput" placeholder="Formatted JSON will appear here..." 
+                                  class="w-full h-40 p-3 border rounded resize-none font-mono text-sm" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Base64 Encoder/Decoder -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-exchange-alt text-purple-600 mr-2"></i>
+                    Base64 Encoder/Decoder
+                </h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Input Text</label>
+                        <textarea id="base64Input" placeholder="Enter text to encode/decode..." 
+                                  class="w-full h-32 p-3 border rounded resize-none"></textarea>
+                        <div class="flex gap-2 mt-4">
+                            <button onclick="encodeBase64()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+                                Encode
+                            </button>
+                            <button onclick="decodeBase64()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+                                Decode
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Output</label>
+                        <textarea id="base64Output" placeholder="Result will appear here..." 
+                                  class="w-full h-32 p-3 border rounded resize-none" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Palette Generator -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-palette text-pink-600 mr-2"></i>
+                    Color Palette Generator
+                </h4>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Base Color</label>
+                    <div class="flex items-center gap-4">
+                        <input type="color" id="baseColor" value="#3498db" class="w-16 h-10 border rounded">
+                        <button onclick="generateColorPalette()" class="bg-pink-600 text-white px-6 py-2 rounded hover:bg-pink-700 transition">
+                            Generate Palette
+                        </button>
+                    </div>
+                </div>
+                <div id="colorPalette" class="min-h-[120px] flex flex-wrap items-center justify-center border-2 border-dashed border-gray-300 rounded-lg">
+                    <p class="text-gray-500">Click "Generate Palette" to create harmonious colors</p>
+                </div>
+            </div>
+
+            <!-- QR Code Generator -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-qrcode text-orange-600 mr-2"></i>
+                    QR Code Generator
+                </h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Text or URL</label>
+                        <textarea id="qrText" placeholder="Enter text, URL, or any data..." 
+                                  class="w-full h-24 p-3 border rounded resize-none"></textarea>
+                        <button onclick="generateQRCode()" class="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 transition mt-4">
+                            Generate QR Code
+                        </button>
+                    </div>
+                    <div id="qrResult" class="flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg min-h-[200px]">
+                        <p class="text-gray-500">QR Code will appear here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Zone Converter -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-clock text-teal-600 mr-2"></i>
+                    Time Zone Converter
+                </h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Time</label>
+                        <input type="time" id="timeInput" class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">From</label>
+                        <select id="fromTimeZone" class="w-full p-2 border rounded">
+                            <option value="UTC">UTC</option>
+                            <option value="America/New_York">New York</option>
+                            <option value="America/Los_Angeles">Los Angeles</option>
+                            <option value="Europe/London">London</option>
+                            <option value="Europe/Paris">Paris</option>
+                            <option value="Asia/Tokyo">Tokyo</option>
+                            <option value="Asia/Dubai">Dubai</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">To</label>
+                        <select id="toTimeZone" class="w-full p-2 border rounded">
+                            <option value="America/New_York">New York</option>
+                            <option value="America/Los_Angeles">Los Angeles</option>
+                            <option value="Europe/London">London</option>
+                            <option value="Europe/Paris">Paris</option>
+                            <option value="Asia/Tokyo">Tokyo</option>
+                            <option value="Asia/Dubai">Dubai</option>
+                            <option value="UTC">UTC</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="convertTimeZone()" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700 transition mt-4">
+                    Convert Time
+                </button>
+                <div id="timeResult" class="mt-4 p-3 bg-gray-50 rounded hidden">
+                    <p class="text-sm text-gray-600">Converted time will appear here</p>
+                </div>
+            </div>
+
+            <!-- Text Counter -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-calculator text-red-600 mr-2"></i>
+                    Text Counter & Analyzer
+                </h4>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Enter your text</label>
+                    <textarea id="textInput" placeholder="Type or paste your text here..." 
+                              class="w-full h-32 p-3 border rounded resize-none"></textarea>
+                    <div id="textStats" class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="bg-gray-50 p-3 rounded">
+                            <div class="text-2xl font-bold text-blue-600" id="charCount">0</div>
+                            <div class="text-sm text-gray-600">Characters</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <div class="text-2xl font-bold text-green-600" id="wordCount">0</div>
+                            <div class="text-sm text-gray-600">Words</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <div class="text-2xl font-bold text-purple-600" id="lineCount">0</div>
+                            <div class="text-sm text-gray-600">Lines</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <div class="text-2xl font-bold text-orange-600" id="paragraphCount">0</div>
+                            <div class="text-sm text-gray-600">Paragraphs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hash Generator -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-shield-alt text-gray-600 mr-2"></i>
+                    Hash Generator
+                </h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Input Text</label>
+                        <textarea id="hashInput" placeholder="Enter text to hash..." 
+                                  class="w-full h-24 p-3 border rounded resize-none"></textarea>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium mb-2">Algorithm</label>
+                            <select id="hashAlgorithm" class="w-full p-2 border rounded">
+                                <option value="SHA-256">SHA-256</option>
+                                <option value="SHA-1">SHA-1</option>
+                                <option value="MD5">MD5 (Not Secure)</option>
+                            </select>
+                        </div>
+                        <button onclick="generateHash()" class="w-full bg-gray-600 text-white py-2 rounded hover:bg-gray-700 transition mt-4">
+                            Generate Hash
+                        </button>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Hash Output</label>
+                        <textarea id="hashResult" placeholder="Hash will appear here..." 
+                                  class="w-full h-24 p-3 border rounded resize-none font-mono text-sm" readonly></textarea>
+                        <button onclick="copyToClipboard(document.getElementById('hashResult').value)" 
+                                class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition mt-2">
+                            <i class="fas fa-copy mr-2"></i>Copy Hash
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- URL Shortener -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fas fa-link text-cyan-600 mr-2"></i>
+                    URL Shortener
+                </h4>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Long URL</label>
+                    <input type="url" id="urlInput" placeholder="https://example.com/very/long/url" 
+                           class="w-full p-3 border rounded">
+                    <button onclick="shortenURL()" class="w-full bg-cyan-600 text-white py-2 rounded hover:bg-cyan-700 transition mt-4">
+                        Shorten URL
+                    </button>
+                    <div id="urlResult" class="mt-4 p-3 bg-gray-50 rounded hidden">
+                        <div class="flex items-center justify-between">
+                            <span id="shortUrl" class="font-mono text-sm">Short URL will appear here</span>
+                            <button onclick="copyShortURL()" class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google AdSense Placeholder -->
+    <section class="py-8 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <div class="bg-white rounded-lg p-8 shadow-sm">
+                <p class="text-gray-500 mb-4">Advertisement</p>
+                <!-- Replace with actual AdSense code -->
+                <div class="h-24 bg-gray-200 rounded flex items-center justify-center">
+                    <span class="text-gray-400">Google AdSense Ad Space</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="font-semibold mb-4">RemoteToolHub</h5>
+                    <p class="text-gray-400 text-sm">Essential online tools for developers, designers, and digital professionals.</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Tools</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Password Generator</a></li>
+                        <li><a href="#" class="hover:text-white transition">JSON Formatter</a></li>
+                        <li><a href="#" class="hover:text-white transition">Base64 Encoder</a></li>
+                        <li><a href="#" class="hover:text-white transition">Color Palette</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Resources</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">API</a></li>
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Connect</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 RemoteToolHub. All rights reserved. | Made with ❤️ for developers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript -->
+    <script src="tools.js"></script>
+    <script>
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up text counter
+            const textInput = document.getElementById('textInput');
+            if (textInput) {
+                textInput.addEventListener('input', countText);
+            }
+            
+            // Set current time in time input
+            const timeInput = document.getElementById('timeInput');
+            if (timeInput) {
+                const now = new Date();
+                timeInput.value = now.toTimeString().slice(0, 5);
+            }
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // AdSense initialization
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
+
+<head>
+    <!-- Dark mode initialization script (MUST be before body) -->
+    <script>
+        // Check for saved theme preference or default to 'light' mode
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    
+    <!-- Tailwind CSS with dark mode support -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Dark Mode Script -->
+    <script src="dark-mode.js"></script>
+    
+    <!-- Or inline the dark mode script -->
+    <script>
+        // Dark Mode Toggle Functionality
+        function initDarkMode() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.theme = 'light';
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.theme = 'dark';
+                    }
+                });
+            }
+        }
+        
+        // Initialize dark mode when page loads
+        document.addEventListener('DOMContentLoaded', initDarkMode);
+    </script>
+</body>
+</html>
