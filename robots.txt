@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://remotetoolhub.com/sitemap.xml
