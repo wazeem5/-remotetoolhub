@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RemoteToolHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5CF6',
+                        secondary: '#06B6D4'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-tools text-white text-lg"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">RemoteToolHub</h1>
+                </div>
+                
+                <!-- Back to Blog Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Home</span>
+                    </a>
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white dark:bg-gray-800 min-h-screen">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-bold mb-8 text-gray-800 dark:text-white">
+                        ℹ️ About RemoteToolHub
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                        The leading digital tools platform for developers and designers worldwide
+                    </p>
+                </div>
+
+                <!-- Company Story -->
+                <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🚀 Our Story</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Founded in 2024, RemoteToolHub aims to provide free and secure digital tools for developers and designers worldwide. We believe powerful tools should be accessible to everyone without restrictions.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🎯 Our Vision</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                            To become the world's leading platform for free digital tools, focusing on privacy, security, and speed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="text-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-2xl">
+                        <div class="text-5xl mb-4">🚀</div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 dark:text-white">Fast & Reliable</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Lightning-fast tools that work instantly without waiting</p>
+                    </div>
+                    <div class="text-center bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-2xl">
+                        <div class="text-5xl mb-4">🔒</div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 dark:text-white">Privacy First</h3>
+                        <p class="text-gray-600 dark:text-gray-300">We don't collect your data, everything works locally</p>
+                    </div>
+                    <div class="text-center bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-2xl">
+                        <div class="text-5xl mb-4">💯</div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800 dark:text-white">100% Free</h3>
+                        <p class="text-gray-600 dark:text-gray-300">No registration required, completely free</p>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-12 rounded-3xl text-center">
+                    <h3 class="text-4xl font-bold mb-8">📧 Contact Us</h3>
+                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div>
+                            <h4 class="text-2xl font-bold mb-4">📬 Email</h4>
+                            <a href="mailto:torvip55@gmail.com" class="text-2xl font-mono bg-white/20 backdrop-blur-sm px-6 py-3 rounded-xl hover:bg-white/30 transition inline-block">
+                                torvip55@gmail.com
+                            </a>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-4">🌐 Website</h4>
+                            <p class="text-xl bg-white/20 backdrop-blur-sm px-6 py-3 rounded-xl">
+                                remotetoolhub.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-lg opacity-90">
+                            We're here to help! Don't hesitate to contact us for any questions or suggestions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="grid md:grid-cols-4 gap-6 mt-16 text-center">
+                    <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-xl">
+                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">15+</div>
+                        <p class="text-gray-600 dark:text-gray-300">Available Tools</p>
+                    </div>
+                    <div class="bg-green-50 dark:bg-gray-700 p-6 rounded-xl">
+                        <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">10K+</div>
+                        <p class="text-gray-600 dark:text-gray-300">Monthly Users</p>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-gray-700 p-6 rounded-xl">
+                        <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">99.9%</div>
+                        <p class="text-gray-600 dark:text-gray-300">Uptime</p>
+                    </div>
+                    <div class="bg-pink-50 dark:bg-gray-700 p-6 rounded-xl">
+                        <div class="text-3xl font-bold text-pink-600 dark:text-pink-400 mb-2">24/7</div>
+                        <p class="text-gray-600 dark:text-gray-300">Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 RemoteToolHub. All rights reserved. | Made with ❤️ for developers</p>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // 🌟 Apply saved theme instantly for perfect user experience
+    </script>
+</body>
+</html>

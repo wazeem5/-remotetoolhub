@@ -54,9 +54,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <a href="../../index.html" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-tools text-white"></i>
-                        </div>
+                        <img src="../assets/images/remotetoolhub-logo.svg" alt="RemoteToolHub Logo" class="w-10 h-10">
                         <h1 class="text-2xl font-bold text-gray-800">RemoteToolHub</h1>
                     </a>
                 </div>
@@ -301,6 +299,88 @@
         <p>&copy; 2025 RemoteToolHub. All rights reserved.</p>
     </div>
 </footer>
+<script src="https://utteranc.es/client.js"
+        repo="wazeem5/remotetoolhub"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+            
+            <!-- Temporary Comment Form -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mb-6">
+                <div class="text-center mb-6">
+                    <i class="fas fa-comments text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Share Your Thoughts!</h3>
+                    <p class="text-gray-600">What debugging techniques do you use? Share your experience!</p>
+                </div>
+                
+                <form class="space-y-4" onsubmit="handleComment(event)">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <textarea placeholder="Your comment or debugging tip..." rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 font-semibold">
+                        <i class="fas fa-paper-plane mr-2"></i>Post Comment
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Sample Comments -->
+            <div class="space-y-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Ahmed Developer</h4>
+                            <p class="text-sm text-gray-500">2 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">Great article! I especially love the console.table() tip. I've been using console.log() for everything. This will save me so much time! 🚀</p>
+                    <div class="mt-3 flex items-center space-x-4 text-sm text-gray-500">
+                        <button class="hover:text-blue-500 transition"><i class="fas fa-thumbs-up mr-1"></i>12</button>
+                        <button class="hover:text-blue-500 transition"><i class="fas fa-reply mr-1"></i>Reply</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Frontend</h4>
+                            <p class="text-sm text-gray-500">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">The debugger statement section is gold! I never knew about conditional breakpoints. This article just leveled up my debugging game! 💪</p>
+                    <div class="mt-3 flex items-center space-x-4 text-sm text-gray-500">
+                        <button class="hover:text-blue-500 transition"><i class="fas fa-thumbs-up mr-1"></i>8</button>
+                        <button class="hover:text-blue-500 transition"><i class="fas fa-reply mr-1"></i>Reply</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="mt-8 text-center">
+                <p class="text-gray-600 mb-4">Want to see more debugging tips?</p>
+                <a href="../index.html" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 font-semibold">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Blog
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function handleComment(event) {
+    event.preventDefault();
+    alert('🎉 Thank you for your comment! We\'re working on implementing a full comment system. Your feedback is valuable!');
+}
+</script>
 </body>
 </html>
 <script type="application/ld+json">
