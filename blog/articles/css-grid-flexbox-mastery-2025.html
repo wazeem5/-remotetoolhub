@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Guide to CSS Grid and Flexbox Mastery 2025 | RemoteToolHub</title>
+    <meta name="description" content="Master CSS Grid and Flexbox in 2025 with this comprehensive guide. Learn advanced layout techniques, responsive design patterns, and modern CSS best practices.">
+    <meta name="keywords" content="CSS Grid, Flexbox, CSS Layout, Responsive Design, Web Development, CSS 2025, Frontend Development">
+    <meta name="author" content="RemoteToolHub">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Complete Guide to CSS Grid and Flexbox Mastery 2025">
+    <meta property="og:description" content="Master CSS Grid and Flexbox in 2025 with this comprehensive guide. Learn advanced layout techniques and responsive design patterns.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://remotetoolhub.github.io/blog/articles/css-grid-flexbox-mastery-2025.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complete Guide to CSS Grid and Flexbox Mastery 2025">
+    <meta name="twitter:description" content="Master CSS Grid and Flexbox in 2025 with this comprehensive guide.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://remotetoolhub.github.io/blog/articles/css-grid-flexbox-mastery-2025.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Complete Guide to CSS Grid and Flexbox Mastery 2025",
+        "description": "Master CSS Grid and Flexbox in 2025 with this comprehensive guide. Learn advanced layout techniques and responsive design patterns.",
+        "author": {
+            "@type": "Organization",
+            "name": "RemoteToolHub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RemoteToolHub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://remotetoolhub.github.io/logo.png"
+            }
+        },
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-01-01",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://remotetoolhub.github.io/blog/articles/css-grid-flexbox-mastery-2025.html"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin: -20px -20px 40px -20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .content h2 {
+            color: #2c3e50;
+            margin: 40px 0 20px 0;
+            font-size: 2rem;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .content h3 {
+            color: #34495e;
+            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+        }
+        
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .code-block::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+            transition: background 0.3s ease;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .pros, .cons {
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .pros {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+        }
+        
+        .cons {
+            background: linear-gradient(135deg, #f8d7da 0%, #f1b0b7 100%);
+            border-left: 5px solid #dc3545;
+        }
+        
+        .pros h4, .cons h4 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .pros h4 {
+            color: #155724;
+        }
+        
+        .cons h4 {
+            color: #721c24;
+        }
+        
+        .checklist {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .checklist h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .checklist li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .back-to-blog a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                margin: -15px -15px 30px -15px;
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .meta-info {
+                gap: 15px;
+            }
+            
+            .hero-image {
+                height: 250px;
+            }
+            
+            .content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1rem;
+            }
+            
+            .content {
+                font-size: 1rem;
+            }
+            
+            .content h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1>Complete Guide to CSS Grid and Flexbox Mastery 2025</h1>
+            <p class="subtitle">Master Modern CSS Layout Techniques for Responsive Web Design</p>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <span>📅</span>
+                    <span>January 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <span>15 min read</span>
+                </div>
+                <div class="meta-item">
+                    <span>🏷️</span>
+                    <span>CSS Layout</span>
+                </div>
+                <div class="meta-item">
+                    <span>👨‍💻</span>
+                    <span>Advanced</span>
+                </div>
+            </div>
+        </header>
+        
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=400&fit=crop&crop=center" alt="CSS Grid and Flexbox Layout Design" class="hero-image">
+        
+        <article class="content">
+            <div class="highlight-box">
+                <h3>🎯 What You'll Learn</h3>
+                <p>This comprehensive guide covers everything you need to master CSS Grid and Flexbox in 2025. From basic concepts to advanced layout patterns, you'll learn how to create responsive, modern web layouts that work across all devices and browsers.</p>
+            </div>
+            
+            <h2>1. CSS Grid vs Flexbox: Understanding the Fundamentals</h2>
+            
+            <p>CSS Grid and Flexbox are two powerful layout systems that have revolutionized web design. While they can work together, understanding when to use each is crucial for creating efficient, maintainable layouts.</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>CSS Grid</th>
+                        <th>Flexbox</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Layout Type</strong></td>
+                        <td>Two-dimensional (rows and columns)</td>
+                        <td>One-dimensional (row or column)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best Use Case</strong></td>
+                        <td>Complex layouts, page structure</td>
+                        <td>Component layouts, alignment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Browser Support</strong></td>
+                        <td>Modern browsers (IE 10+ with prefixes)</td>
+                        <td>Excellent (IE 10+)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning Curve</strong></td>
+                        <td>Steeper, more properties</td>
+                        <td>Gentler, fewer properties</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content Control</strong></td>
+                        <td>Layout-first approach</td>
+                        <td>Content-first approach</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>2. CSS Grid Mastery: Advanced Techniques</h2>
+            
+            <h3>Grid Container Properties</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+.grid-container {
+  display: grid;
+  
+  /* Define grid structure */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto 1fr auto;
+  
+  /* Grid gaps */
+  gap: 20px;
+  
+  /* Grid areas for semantic layouts */
+  grid-template-areas: 
+    "header header header"
+    "sidebar main aside"
+    "footer footer footer";
+  
+  /* Alignment */
+  justify-content: center;
+  align-content: start;
+  
+  /* Grid sizing */
+  grid-auto-rows: minmax(100px, auto);
+  grid-auto-flow: row dense;
+}
+                </pre>
+            </div>
+            
+            <h3>Advanced Grid Item Positioning</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+.grid-item {
+  /* Positioning by line numbers */
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+  
+  /* Positioning by area names */
+  grid-area: main;
+  
+  /* Spanning multiple tracks */
+  grid-column: span 2;
+  grid-row: span 3;
+  
+  /* Self alignment */
+  justify-self: center;
+  align-self: end;
+}
+
+/* Responsive grid with CSS custom properties */
+.responsive-grid {
+  --min-column-width: 250px;
+  --grid-gap: 1rem;
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-column-width), 1fr));
+  gap: var(--grid-gap);
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    --min-column-width: 200px;
+    --grid-gap: 0.5rem;
+  }
+}
+                </pre>
+            </div>
+            
+            <h3>Modern Grid Patterns</h3>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🏗️ Holy Grail Layout</h4>
+                    <p>Create the classic three-column layout with header and footer using CSS Grid's template areas for semantic, maintainable code.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📱 Card Grid Layout</h4>
+                    <p>Build responsive card grids that automatically adjust to screen size using auto-fit and minmax functions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🎨 Masonry Layout</h4>
+                    <p>Implement Pinterest-style masonry layouts using CSS Grid's dense packing algorithm and subgrid (where supported).</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📊 Dashboard Layout</h4>
+                    <p>Create complex dashboard interfaces with varying widget sizes using explicit grid positioning and spanning.</p>
+                </div>
+            </div>
+            
+            <h2>3. Flexbox Mastery: Advanced Techniques</h2>
+            
+            <h3>Flex Container Properties</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+.flex-container {
+  display: flex;
+  
+  /* Direction and wrapping */
+  flex-direction: row; /* row | row-reverse | column | column-reverse */
+  flex-wrap: wrap; /* nowrap | wrap | wrap-reverse */
+  
+  /* Shorthand for direction and wrap */
+  flex-flow: row wrap;
+  
+  /* Alignment along main axis */
+  justify-content: space-between; /* flex-start | flex-end | center | space-between | space-around | space-evenly */
+  
+  /* Alignment along cross axis */
+  align-items: center; /* stretch | flex-start | flex-end | center | baseline */
+  
+  /* Multi-line alignment */
+  align-content: flex-start; /* stretch | flex-start | flex-end | center | space-between | space-around */
+  
+  /* Gap between items (modern browsers) */
+  gap: 1rem;
+}
+                </pre>
+            </div>
+            
+            <h3>Advanced Flex Item Control</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+.flex-item {
+  /* Growth, shrink, and basis */
+  flex-grow: 1; /* How much to grow */
+  flex-shrink: 0; /* How much to shrink */
+  flex-basis: 200px; /* Initial size */
+  
+  /* Shorthand */
+  flex: 1 0 200px; /* grow shrink basis */
+  
+  /* Common patterns */
+  flex: 1; /* Equal distribution */
+  flex: none; /* No flexibility */
+  flex: auto; /* Size based on content */
+  
+  /* Individual alignment */
+  align-self: flex-end;
+  
+  /* Order (without changing HTML) */
+  order: 2;
+}
+
+/* Responsive flex patterns */
+.responsive-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.responsive-flex > * {
+  flex: 1 1 300px; /* Grow, shrink, min-width */
+}
+
+@media (max-width: 768px) {
+  .responsive-flex {
+    flex-direction: column;
+  }
+  
+  .responsive-flex > * {
+    flex: 1 1 auto;
+  }
+}
+                </pre>
+            </div>
+            
+            <h3>Modern Flexbox Patterns</h3>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🎯 Perfect Centering</h4>
+                    <p>Achieve perfect horizontal and vertical centering with just three lines of CSS using Flexbox properties.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📐 Equal Height Columns</h4>
+                    <p>Create equal-height columns that automatically adjust to the tallest content without JavaScript.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔄 Flexible Navigation</h4>
+                    <p>Build responsive navigation bars that adapt to different screen sizes with automatic spacing and alignment.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📋 Form Layouts</h4>
+                    <p>Design flexible form layouts with proper label alignment and responsive input sizing using Flexbox.</p>
+                </div>
+            </div>
+            
+            <h2>4. Combining Grid and Flexbox</h2>
+            
+            <p>The real power comes from combining CSS Grid and Flexbox. Use Grid for the overall page layout and Flexbox for component-level layouts.</p>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+/* Grid for page layout */
+.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.header {
+  grid-area: header;
+  
+  /* Flexbox for header content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  
+  /* Flexbox for navigation */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.main {
+  grid-area: main;
+  
+  /* Grid for content sections */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  /* Flexbox for card content */
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-content {
+  flex: 1; /* Grow to fill available space */
+}
+
+.card-actions {
+  margin-top: auto; /* Push to bottom */
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+                </pre>
+            </div>
+            
+            <h2>5. Advanced Responsive Patterns</h2>
+            
+            <h3>Container Queries (2025 Update)</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+/* Container queries for component-based responsive design */
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* Responsive based on container size, not viewport */
+@container card (min-width: 400px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .card-image {
+    flex: 0 0 150px;
+  }
+  
+  .card-content {
+    flex: 1;
+  }
+}
+
+@container card (min-width: 600px) {
+  .card {
+    padding: 2rem;
+  }
+  
+  .card-image {
+    flex: 0 0 200px;
+  }
+}
+                </pre>
+            </div>
+            
+            <h3>CSS Subgrid (Modern Browsers)</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+/* Parent grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Child inherits parent's grid lines */
+.product-card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4; /* Span 4 rows of parent */
+  
+  /* All cards will have aligned content */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-image {
+  grid-row: 1;
+}
+
+.product-title {
+  grid-row: 2;
+  padding: 1rem;
+}
+
+.product-description {
+  grid-row: 3;
+  padding: 0 1rem;
+}
+
+.product-price {
+  grid-row: 4;
+  padding: 1rem;
+  margin-top: auto;
+}
+                </pre>
+            </div>
+            
+            <h2>6. Performance and Best Practices</h2>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Best Practices</h4>
+                    <ul>
+                        <li>Use CSS Grid for two-dimensional layouts</li>
+                        <li>Use Flexbox for one-dimensional layouts</li>
+                        <li>Combine both for maximum flexibility</li>
+                        <li>Use logical properties for internationalization</li>
+                        <li>Leverage CSS custom properties for maintainability</li>
+                        <li>Test across different browsers and devices</li>
+                        <li>Use container queries for component responsiveness</li>
+                        <li>Implement progressive enhancement</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h4>⚠️ Common Pitfalls</h4>
+                    <ul>
+                        <li>Overusing Grid for simple layouts</li>
+                        <li>Not considering browser support</li>
+                        <li>Ignoring accessibility implications</li>
+                        <li>Creating overly complex grid structures</li>
+                        <li>Not testing with dynamic content</li>
+                        <li>Forgetting about print styles</li>
+                        <li>Not optimizing for touch interfaces</li>
+                        <li>Neglecting fallbacks for older browsers</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>7. Real-World Layout Examples</h2>
+            
+            <h3>E-commerce Product Grid</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  color: #666;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+.add-to-cart {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: #2980b9;
+}
+                </pre>
+            </div>
+            
+            <h3>Dashboard Layout</h3>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "sidebar header header"
+    "sidebar main aside"
+    "sidebar footer footer";
+  grid-template-columns: 250px 1fr 300px;
+  grid-template-rows: 60px 1fr 60px;
+  height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #2c3e50;
+  border-radius: 8px;
+  padding: 1rem;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.main-content {
+  grid-area: main;
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.widget {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.widget-content {
+  flex: 1;
+}
+
+/* Responsive dashboard */
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: 1fr 250px;
+  }
+  
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+  
+  .aside {
+    display: none;
+  }
+}
+                </pre>
+            </div>
+            
+            <h2>8. Browser Support and Fallbacks</h2>
+            
+            <div class="highlight-box">
+                <h3>🌐 Browser Support Strategy</h3>
+                <p>While CSS Grid and Flexbox have excellent modern browser support, it's important to provide fallbacks for older browsers and consider progressive enhancement strategies.</p>
+            </div>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+/* Progressive enhancement approach */
+.layout {
+  /* Fallback for older browsers */
+  display: block;
+}
+
+.layout > * {
+  /* Float fallback */
+  float: left;
+  width: 33.333%;
+  padding: 1rem;
+}
+
+/* Flexbox enhancement */
+@supports (display: flex) {
+  .layout {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .layout > * {
+    float: none;
+    width: auto;
+    flex: 1;
+    padding: 0;
+  }
+}
+
+/* Grid enhancement */
+@supports (display: grid) {
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .layout > * {
+    flex: none;
+  }
+}
+
+/* Feature detection with CSS */
+@supports not (display: grid) {
+  .grid-fallback {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+  }
+  
+  .grid-fallback > * {
+    flex: 1 1 300px;
+    margin: 1rem;
+  }
+}
+                </pre>
+            </div>
+            
+            <h2>9. Accessibility Considerations</h2>
+            
+            <div class="checklist">
+                <h4>♿ Accessibility Checklist</h4>
+                <ul>
+                    <li>Maintain logical tab order despite visual reordering</li>
+                    <li>Use semantic HTML elements alongside CSS layout</li>
+                    <li>Ensure sufficient color contrast in grid/flex items</li>
+                    <li>Test with screen readers and keyboard navigation</li>
+                    <li>Provide focus indicators for interactive elements</li>
+                    <li>Use ARIA labels when visual layout differs from DOM order</li>
+                    <li>Ensure content reflows properly at 200% zoom</li>
+                    <li>Test with reduced motion preferences</li>
+                    <li>Maintain readability across different viewport sizes</li>
+                    <li>Use logical properties for RTL language support</li>
+                </ul>
+            </div>
+            
+            <div class="code-block" data-lang="CSS">
+                <pre>
+/* Accessible grid with proper focus management */
+.accessible-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.grid-item {
+  /* Ensure focus is visible */
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color 0.2s ease;
+}
+
+.grid-item:focus-within {
+  outline-color: #0066cc;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .grid-item {
+    transition: none;
+  }
+}
+
+/* Support for RTL languages */
+.rtl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  
+  /* Use logical properties */
+  padding-inline: 1rem;
+  margin-block: 2rem;
+}
+
+.rtl-grid-item {
+  padding-inline: 1rem;
+  border-inline-start: 3px solid #0066cc;
+}
+                </pre>
+            </div>
+            
+            <h2>10. Future of CSS Layout (2025 and Beyond)</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔮 Container Queries</h4>
+                    <p>Component-based responsive design that responds to container size rather than viewport size, enabling truly modular layouts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🎯 CSS Subgrid</h4>
+                    <p>Better grid alignment across nested components, allowing child grids to participate in parent grid sizing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🌈 CSS Cascade Layers</h4>
+                    <p>Better control over CSS specificity and cascade, making it easier to manage complex layout systems.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>⚡ CSS Anchor Positioning</h4>
+                    <p>Native CSS solution for positioning elements relative to other elements, reducing JavaScript dependencies.</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🚀 Key Takeaways</h3>
+                <ul>
+                    <li><strong>Master Both:</strong> CSS Grid and Flexbox are complementary - use Grid for 2D layouts and Flexbox for 1D layouts</li>
+                    <li><strong>Think Responsive:</strong> Design with mobile-first approach and use modern responsive techniques</li>
+                    <li><strong>Combine Wisely:</strong> Use Grid for page structure and Flexbox for component layouts</li>
+                    <li><strong>Stay Accessible:</strong> Always consider accessibility and provide proper fallbacks</li>
+                    <li><strong>Keep Learning:</strong> CSS layout continues to evolve with new features like container queries and subgrid</li>
+                </ul>
+            </div>
+        </article>
+        
+        <div class="back-to-blog">
+            <a href="../index.html">← Back to Blog</a>
+        </div>
+    </div>
+    
+    <script>
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.content');
+            const scrollTop = window.pageYOffset;
+            const docHeight = article.offsetHeight;
+            const winHeight = window.innerHeight;
+            const scrollPercent = scrollTop / (docHeight - winHeight);
+            const scrollPercentRounded = Math.round(scrollPercent * 100);
+            
+            document.getElementById('progressBar').style.width = Math.min(scrollPercentRounded, 100) + '%';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add copy functionality to code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            const button = document.createElement('button');
+            button.textContent = 'Copy';
+            button.style.cssText = `
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                background: #667eea;
+                color: white;
+                border: none;
+                padding: 4px 12px;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            block.style.position = 'relative';
+            block.appendChild(button);
+            
+            block.addEventListener('mouseenter', () => {
+                button.style.opacity = '1';
+            });
+            
+            block.addEventListener('mouseleave', () => {
+                button.style.opacity = '0';
+            });
+            
+            button.addEventListener('click', () => {
+                const code = block.querySelector('pre').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

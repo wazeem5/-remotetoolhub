@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Guide to Node.js and Backend Development 2025 - Part 1 | RemoteToolHub</title>
+    <meta name="description" content="Master Node.js and backend development in 2025. Part 1 covers fundamentals, setup, and core concepts for modern server-side development.">
+    <meta name="keywords" content="Node.js, Backend Development, JavaScript, Server-side, API Development, Express.js, 2025">
+    <meta name="author" content="RemoteToolHub">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Complete Guide to Node.js and Backend Development 2025 - Part 1">
+    <meta property="og:description" content="Master Node.js and backend development in 2025. Learn fundamentals, setup, and core concepts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://remotetoolhub.github.io/blog/articles/nodejs-backend-development-2025-part1.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complete Guide to Node.js and Backend Development 2025 - Part 1">
+    <meta name="twitter:description" content="Master Node.js and backend development in 2025. Learn fundamentals and setup.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://remotetoolhub.github.io/blog/articles/nodejs-backend-development-2025-part1.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Complete Guide to Node.js and Backend Development 2025 - Part 1",
+        "description": "Master Node.js and backend development in 2025. Learn fundamentals, setup, and core concepts for modern server-side development.",
+        "author": {
+            "@type": "Organization",
+            "name": "RemoteToolHub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RemoteToolHub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://remotetoolhub.github.io/logo.png"
+            }
+        },
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-01-01",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://remotetoolhub.github.io/blog/articles/nodejs-backend-development-2025-part1.html"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #43cea2, #185a9d);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            border-radius: 15px;
+            margin: -20px -20px 40px -20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .part-indicator {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .content h2 {
+            color: #2c3e50;
+            margin: 40px 0 20px 0;
+            font-size: 2rem;
+            border-left: 5px solid #43cea2;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .content h3 {
+            color: #34495e;
+            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+        }
+        
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #43cea2;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .code-block::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #43cea2;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+            transition: background 0.3s ease;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card h4 {
+            color: #43cea2;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .navigation-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            border: 2px solid #43cea2;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(67, 206, 162, 0.3);
+        }
+        
+        .nav-link.disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .back-to-blog a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(67, 206, 162, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                margin: -15px -15px 30px -15px;
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .meta-info {
+                gap: 15px;
+            }
+            
+            .hero-image {
+                height: 250px;
+            }
+            
+            .content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-links {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="part-indicator">Part 1 of 3</div>
+            <h1>Complete Guide to Node.js and Backend Development 2025</h1>
+            <p class="subtitle">Fundamentals, Setup, and Core Concepts</p>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <span>📅</span>
+                    <span>January 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <span>8 min read</span>
+                </div>
+                <div class="meta-item">
+                    <span>🏷️</span>
+                    <span>Backend Development</span>
+                </div>
+                <div class="meta-item">
+                    <span>👨‍💻</span>
+                    <span>Beginner to Advanced</span>
+                </div>
+            </div>
+        </header>
+        
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=400&fit=crop&crop=center" alt="Node.js Backend Development" class="hero-image">
+        
+        <article class="content">
+            <div class="highlight-box">
+                <h3>🎯 What You'll Learn in Part 1</h3>
+                <p>This first part covers Node.js fundamentals, environment setup, core concepts, and basic server creation. You'll understand the event loop, modules system, and build your first HTTP server.</p>
+            </div>
+            
+            <h2>1. Introduction to Node.js</h2>
+            
+            <p>Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine that allows you to run JavaScript on the server side. It's designed to build scalable network applications and has become the backbone of modern web development.</p>
+            
+            <h3>Why Node.js in 2025?</h3>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🚀 Performance</h4>
+                    <p>Non-blocking I/O operations and event-driven architecture make Node.js extremely fast for I/O intensive applications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🌐 JavaScript Everywhere</h4>
+                    <p>Use the same language for both frontend and backend development, reducing context switching and team complexity.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📦 Rich Ecosystem</h4>
+                    <p>NPM (Node Package Manager) provides access to over 1.5 million packages, the largest software registry in the world.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🏢 Enterprise Ready</h4>
+                    <p>Used by Netflix, Uber, LinkedIn, and many Fortune 500 companies for production applications.</p>
+                </div>
+            </div>
+            
+            <h2>2. Node.js vs Other Backend Technologies</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Node.js</th>
+                        <th>Python (Django/Flask)</th>
+                        <th>Java (Spring)</th>
+                        <th>PHP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Language</strong></td>
+                        <td>JavaScript</td>
+                        <td>Python</td>
+                        <td>Java</td>
+                        <td>PHP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance</strong></td>
+                        <td>High (V8 engine)</td>
+                        <td>Medium</td>
+                        <td>High (JVM)</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning Curve</strong></td>
+                        <td>Easy (if you know JS)</td>
+                        <td>Easy</td>
+                        <td>Steep</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Concurrency</strong></td>
+                        <td>Event-driven, non-blocking</td>
+                        <td>Threading/async</td>
+                        <td>Multi-threading</td>
+                        <td>Traditional threading</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Package Manager</strong></td>
+                        <td>NPM (1.5M+ packages)</td>
+                        <td>pip (400K+ packages)</td>
+                        <td>Maven/Gradle</td>
+                        <td>Composer</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>3. Setting Up Node.js Development Environment</h2>
+            
+            <h3>Installing Node.js</h3>
+            
+            <div class="code-block" data-lang="Bash">
+                <pre>
+# Method 1: Download from official website
+# Visit https://nodejs.org and download LTS version
+
+# Method 2: Using Node Version Manager (NVM) - Recommended
+# Install NVM first
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# Restart terminal or run:
+source ~/.bashrc
+
+# Install latest LTS Node.js
+nvm install --lts
+nvm use --lts
+
+# Verify installation
+node --version
+npm --version
+                </pre>
+            </div>
+            
+            <h3>Essential Development Tools</h3>
+            
+            <div class="code-block" data-lang="Bash">
+                <pre>
+# Install essential global packages
+npm install -g nodemon          # Auto-restart server on changes
+npm install -g pm2              # Production process manager
+npm install -g typescript       # TypeScript compiler
+npm install -g @nestjs/cli      # NestJS CLI (if using NestJS)
+npm install -g express-generator # Express app generator
+
+# Verify installations
+nodemon --version
+pm2 --version
+tsc --version
+                </pre>
+            </div>
+            
+            <h3>Project Structure Setup</h3>
+            
+            <div class="code-block" data-lang="Bash">
+                <pre>
+# Create new Node.js project
+mkdir my-node-app
+cd my-node-app
+
+# Initialize package.json
+npm init -y
+
+# Create basic folder structure
+mkdir src
+mkdir src/controllers
+mkdir src/models
+mkdir src/routes
+mkdir src/middleware
+mkdir src/utils
+mkdir tests
+mkdir config
+
+# Create main files
+touch src/app.js
+touch src/server.js
+touch .env
+touch .gitignore
+touch README.md
+                </pre>
+            </div>
+            
+            <h2>4. Understanding the Event Loop</h2>
+            
+            <p>The event loop is the heart of Node.js. It's what makes Node.js non-blocking and efficient. Understanding how it works is crucial for writing performant Node.js applications.</p>
+            
+            <div class="code-block" data-lang="JavaScript">
+                <pre>
+// Event Loop Demonstration
+console.log('Start');
+
+// Immediate execution
+setImmediate(() => {
+    console.log('setImmediate');
+});
+
+// Next tick (highest priority)
+process.nextTick(() => {
+    console.log('nextTick');
+});
+
+// Timer (after 0ms)
+setTimeout(() => {
+    console.log('setTimeout');
+}, 0);
+
+// Promise (microtask)
+Promise.resolve().then(() => {
+    console.log('Promise');
+});
+
+console.log('End');
+
+// Output order:
+// Start
+// End
+// nextTick
+// Promise
+// setTimeout
+// setImmediate
+                </pre>
+            </div>
+            
+            <h3>Event Loop Phases</h3>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>⏰ Timer Phase</h4>
+                    <p>Executes callbacks scheduled by setTimeout() and setInterval().</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📋 Pending Callbacks</h4>
+                    <p>Executes I/O callbacks deferred to the next loop iteration.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔄 Poll Phase</h4>
+                    <p>Fetches new I/O events and executes I/O related callbacks.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>✅ Check Phase</h4>
+                    <p>Executes setImmediate() callbacks.</p>
+                </div>
+            </div>
+            
+            <h2>5. Core Modules and CommonJS</h2>
+            
+            <h3>Built-in Modules</h3>
+            
+            <div class="code-block" data-lang="JavaScript">
+                <pre>
+// File System module
+const fs = require('fs');
+const path = require('path');
+
+// HTTP module
+const http = require('http');
+const https = require('https');
+
+// URL and Query String modules
+const url = require('url');
+const querystring = require('querystring');
+
+// Crypto module for security
+const crypto = require('crypto');
+
+// OS module for system information
+const os = require('os');
+
+// Events module
+const EventEmitter = require('events');
+
+// Stream module
+const { Readable, Writable, Transform } = require('stream');
+
+// Util module for utilities
+const util = require('util');
+                </pre>
+            </div>
+            
+            <h3>Module System Examples</h3>
+            
+            <div class="code-block" data-lang="JavaScript">
+                <pre>
+// math.js - Creating a module
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => b !== 0 ? a / b : null;
+
+// Export methods
+module.exports = {
+    add,
+    subtract,
+    multiply,
+    divide
+};
+
+// Alternative export syntax
+exports.PI = 3.14159;
+exports.calculateArea = (radius) => exports.PI * radius * radius;
+                </pre>
+            </div>
+            
+            <div class="code-block" data-lang="JavaScript">
+                <pre>
+// app.js - Using the module
+const math = require('./math');
+const { add, multiply } = require('./math'); // Destructuring
+
+// Using the imported functions
+console.log(math.add(5, 3)); // 8
+console.log(multiply(4, 7)); // 28
+console.log(math.calculateArea(5)); // 78.53975
+
+// Using built-in modules
+const fs = require('fs');
+const path = require('path');
+
+// Read file asynchronously
+fs.readFile(path.join(__dirname, 'data.txt'), 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err);
+        return;
+    }
+    console.log('File content:', data);
+});
+
+// Read file synchronously (blocking)
+try {
+    const data = fs.readFileSync(path.join(__dirname, 'data.txt'), 'utf8');
+    console.log('Sync file content:', data);
+} catch (err) {
+    console.error('Error reading file:', err);
+}
+                </pre>
+            </div>
+            
+            <h2>6. Creating Your First HTTP Server</h2>
+            
+            <h3>Basic HTTP Server</h3>
+            
+            <div class="code-block" data-lang="JavaScript">
+                <pre>
+// server.js - Basic HTTP server
+const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
+
+// Create server
+const server = http.createServer((req, res) => {
+    // Parse URL
+    const parsedUrl = url.parse(req.url, true);
+    const pathname = parsedUrl.pathname;
+    const query = parsedUrl.query;
+    const method = req.method;
+    
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    
+    // Handle different routes
+    if (pathname === '/' && method === 'GET') {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(`
+            <h1>Welcome to Node.js Server!</h1>
+            <p>Server is running on port 3000</p>
+            <a href="/api/users">View Users API</a>
+        `);
+    } else if (pathname === '/api/users' && method === 'GET') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        const users = [
+            { id: 1, name: 'John Doe', email: 'john@example.com' },
+            { id: 2, name: 'Jane Smith', email: 'jane@example.com' }
+        ];
+        res.end(JSON.stringify(users));
+    } else if (pathname === '/api/users' && method === 'POST') {
+        let body = '';
+        
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        
+        req.on('end', () => {
+            try {
+                const userData = JSON.parse(body);
+                res.writeHead(201, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({
+                    message: 'User created successfully',
+                    user: userData
+                }));
+            } catch (error) {
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: 'Invalid JSON' }));
+            }
+        });
+    } else {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Route not found' }));
+    }
+});
+
+// Start server
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+
+// Handle server errors
+server.on('error', (err) => {
+    console.error('Server error:', err);
+});
+                </pre>
+            </div>
+            
+            <h3>Enhanced Server with File Serving</h3>
+            
+            <div class="code-block" data-lang="JavaScript">
+                <pre>
+// enhanced-server.js
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const url = require('url');
+
+// MIME types for different file extensions
+const mimeTypes = {
+    '.html': 'text/html',
+    '.css': 'text/css',
+    '.js': 'text/javascript',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.gif': 'image/gif',
+    '.svg': 'image/svg+xml',
+    '.ico': 'image/x-icon'
+};
+
+const server = http.createServer((req, res) => {
+    const parsedUrl = url.parse(req.url);
+    let pathname = parsedUrl.pathname;
+    
+    // Default to index.html for root path
+    if (pathname === '/') {
+        pathname = '/index.html';
+    }
+    
+    // Construct file path
+    const filePath = path.join(__dirname, 'public', pathname);
+    const ext = path.extname(filePath);
+    const contentType = mimeTypes[ext] || 'text/plain';
+    
+    // Check if file exists
+    fs.access(filePath, fs.constants.F_OK, (err) => {
+        if (err) {
+            // File not found
+            res.writeHead(404, { 'Content-Type': 'text/html' });
+            res.end(`
+                <h1>404 - Page Not Found</h1>
+                <p>The requested resource was not found on this server.</p>
+            `);
+            return;
+        }
+        
+        // Serve the file
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/html' });
+                res.end(`
+                    <h1>500 - Internal Server Error</h1>
+                    <p>Error reading file: ${err.message}</p>
+                `);
+                return;
+            }
+            
+            res.writeHead(200, { 'Content-Type': contentType });
+            res.end(data);
+        });
+    });
+});
+
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Enhanced server running on http://localhost:${PORT}`);
+    console.log('Serving files from ./public directory');
+});
+                </pre>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🎯 Key Takeaways from Part 1</h3>
+                <ul>
+                    <li><strong>Node.js Fundamentals:</strong> Understanding the runtime, event loop, and non-blocking I/O</li>
+                    <li><strong>Development Setup:</strong> Proper environment configuration with NVM and essential tools</li>
+                    <li><strong>Module System:</strong> CommonJS modules and built-in Node.js modules</li>
+                    <li><strong>HTTP Server:</strong> Creating basic and enhanced servers from scratch</li>
+                    <li><strong>File Operations:</strong> Reading, writing, and serving files efficiently</li>
+                </ul>
+            </div>
+        </article>
+        
+        <div class="navigation-links">
+            <a href="#" class="nav-link disabled">← Previous Part</a>
+            <span>Part 1 of 3</span>
+            <a href="nodejs-backend-development-2025-part2.html" class="nav-link">Next Part →</a>
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="../index.html">← Back to Blog</a>
+        </div>
+    </div>
+    
+    <script>
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.content');
+            const scrollTop = window.pageYOffset;
+            const docHeight = article.offsetHeight;
+            const winHeight = window.innerHeight;
+            const scrollPercent = scrollTop / (docHeight - winHeight);
+            const scrollPercentRounded = Math.round(scrollPercent * 100);
+            
+            document.getElementById('progressBar').style.width = Math.min(scrollPercentRounded, 100) + '%';
+        });
+        
+        // Add copy functionality to code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            const button = document.createElement('button');
+            button.textContent = 'Copy';
+            button.style.cssText = `
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                background: #43cea2;
+                color: white;
+                border: none;
+                padding: 4px 12px;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            block.style.position = 'relative';
+            block.appendChild(button);
+            
+            block.addEventListener('mouseenter', () => {
+                button.style.opacity = '1';
+            });
+            
+            block.addEventListener('mouseleave', () => {
+                button.style.opacity = '0';
+            });
+            
+            button.addEventListener('click', () => {
+                const code = block.querySelector('pre').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

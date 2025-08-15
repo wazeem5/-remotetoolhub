@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Guide to Node.js and Backend Development 2025 - Part 3A: Database Integration</title>
+    <meta name="description" content="Master database integration in Node.js with MongoDB, PostgreSQL, and modern ORMs. Learn advanced database patterns and optimization techniques for 2025.">
+    <meta name="keywords" content="Node.js, Backend Development, Database, MongoDB, PostgreSQL, Mongoose, Prisma, ORM, 2025">
+    <meta name="author" content="RemoteToolHub">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Complete Guide to Node.js Database Integration 2025">
+    <meta property="og:description" content="Master database integration in Node.js with MongoDB, PostgreSQL, and modern ORMs">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://remotetoolhub.com/blog/articles/nodejs-backend-development-2025-part3a.html">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complete Guide to Node.js Database Integration 2025">
+    <meta name="twitter:description" content="Master database integration in Node.js with MongoDB, PostgreSQL, and modern ORMs">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #28a745);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 15px;
+        }
+        
+        .article-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navigation-links {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 12px 16px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #495057;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.current {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+        
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .table-of-contents {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .table-of-contents h3 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        
+        .toc-list a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px 0;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .toc-list a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.6rem;
+            margin: 30px 0 15px 0;
+        }
+        
+        h4 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin: 25px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .code-block {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .code-header {
+            background: #2d3748;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px 8px 0 0;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copy-btn {
+            background: #4a5568;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: #2d3748;
+        }
+        
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+            overflow-x: auto;
+            margin: 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            line-height: 1.5;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #17a2b8;
+            margin: 20px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 5px solid #f39c12;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-left: 5px solid #17a2b8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .next-article {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .next-article h3 {
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .next-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            padding: 20px;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .back-to-blog a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .article-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <header class="article-header">
+            <h1>Complete Guide to Node.js and Backend Development 2025</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 0;">Part 3A: Database Integration and Modern ORMs</p>
+            <div class="article-meta">
+                <div class="meta-item">
+                    <span>📅</span>
+                    <span>January 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <span>25 min read</span>
+                </div>
+                <div class="meta-item">
+                    <span>🏷️</span>
+                    <span>Backend Development</span>
+                </div>
+                <div class="meta-item">
+                    <span>📊</span>
+                    <span>Advanced Level</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="navigation-links">
+            <h3 style="margin-bottom: 15px; text-align: center;">📚 Series Navigation</h3>
+            <div class="nav-grid">
+                <a href="nodejs-backend-development-2025-part1.html" class="nav-link">Part 1: Node.js Fundamentals</a>
+                <a href="nodejs-backend-development-2025-part2.html" class="nav-link">Part 2: Express.js & APIs</a>
+                <a href="#" class="nav-link current">Part 3A: Database Integration</a>
+                <a href="nodejs-backend-development-2025-part3b.html" class="nav-link">Part 3B: Security & Deployment</a>
+            </div>
+        </div>
+        
+        <main class="content">
+            <div class="table-of-contents">
+                <h3>📋 Table of Contents</h3>
+                <ul class="toc-list">
+                    <li><a href="#introduction">Introduction to Database Integration</a></li>
+                    <li><a href="#mongodb-integration">MongoDB Integration with Mongoose</a></li>
+                    <li><a href="#postgresql-integration">PostgreSQL Integration with Prisma</a></li>
+                    <li><a href="#database-patterns">Advanced Database Patterns</a></li>
+                    <li><a href="#performance-optimization">Performance Optimization</a></li>
+                    <li><a href="#data-validation">Data Validation and Schemas</a></li>
+                    <li><a href="#transactions">Database Transactions</a></li>
+                    <li><a href="#best-practices">Best Practices for 2025</a></li>
+                </ul>
+            </div>
+            
+            <section id="introduction">
+                <h2>🗄️ Introduction to Database Integration</h2>
+                <p>Database integration is a crucial aspect of backend development. In 2025, the landscape of database technologies and ORMs has evolved significantly, offering developers more powerful and efficient ways to interact with data.</p>
+                
+                <div class="highlight">
+                    <h4>🎯 What You'll Learn in This Part</h4>
+                    <ul>
+                        <li>Modern database integration patterns with Node.js</li>
+                        <li>MongoDB with Mongoose for document-based storage</li>
+                        <li>PostgreSQL with Prisma for relational data</li>
+                        <li>Advanced querying and optimization techniques</li>
+                        <li>Data validation and schema design</li>
+                        <li>Transaction management and ACID properties</li>
+                    </ul>
+                </div>
+                
+                <h3>Database Technology Comparison 2025</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Database Type</th>
+                            <th>Best Use Cases</th>
+                            <th>Popular Options</th>
+                            <th>Node.js Integration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Document (NoSQL)</strong></td>
+                            <td>Flexible schemas, rapid prototyping, content management</td>
+                            <td>MongoDB, CouchDB</td>
+                            <td>Mongoose, Native Driver</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Relational (SQL)</strong></td>
+                            <td>Complex relationships, ACID compliance, financial data</td>
+                            <td>PostgreSQL, MySQL</td>
+                            <td>Prisma, Sequelize, TypeORM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key-Value</strong></td>
+                            <td>Caching, session storage, real-time applications</td>
+                            <td>Redis, DynamoDB</td>
+                            <td>ioredis, aws-sdk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Graph</strong></td>
+                            <td>Social networks, recommendation engines</td>
+                            <td>Neo4j, Amazon Neptune</td>
+                            <td>neo4j-driver, gremlin</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="mongodb-integration">
+                <h2>🍃 MongoDB Integration with Mongoose</h2>
+                <p>MongoDB remains one of the most popular NoSQL databases for Node.js applications. Mongoose provides an elegant object modeling solution with built-in type casting, validation, and query building.</p>
+                
+                <h3>Setting Up MongoDB and Mongoose</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>📦 Installation and Setup</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code># Install MongoDB and Mongoose
+npm install mongoose
+npm install --save-dev @types/mongoose  # For TypeScript
+
+# Install MongoDB locally (Windows)
+winget install MongoDB.Server
+
+# Or use MongoDB Atlas (Cloud)
+# Connection string: mongodb+srv://username:password@cluster.mongodb.net/database</code></pre>
+                </div>
+                
+                <h3>Database Connection with Modern Patterns</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>🔗 database/connection.js</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>const mongoose = require('mongoose');
+const { EventEmitter } = require('events');
+
+class DatabaseConnection extends EventEmitter {
+    constructor() {
+        super();
+        this.isConnected = false;
+        this.connectionRetries = 0;
+        this.maxRetries = 5;
+    }
+    
+    async connect(uri, options = {}) {
+        const defaultOptions = {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            maxPoolSize: 10,
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+            bufferCommands: false,
+            bufferMaxEntries: 0
+        };
+        
+        const connectionOptions = { ...defaultOptions, ...options };
+        
+        try {
+            await mongoose.connect(uri, connectionOptions);
+            this.isConnected = true;
+            this.connectionRetries = 0;
+            
+            console.log('✅ MongoDB connected successfully');
+            this.emit('connected');
+            
+            // Handle connection events
+            mongoose.connection.on('error', this.handleError.bind(this));
+            mongoose.connection.on('disconnected', this.handleDisconnection.bind(this));
+            
+        } catch (error) {
+            await this.handleConnectionError(error, uri, connectionOptions);
+        }
+    }
+    
+    async handleConnectionError(error, uri, options) {
+        console.error(`❌ MongoDB connection error: ${error.message}`);
+        
+        if (this.connectionRetries < this.maxRetries) {
+            this.connectionRetries++;
+            console.log(`🔄 Retrying connection (${this.connectionRetries}/${this.maxRetries})...`);
+            
+            await new Promise(resolve => setTimeout(resolve, 5000 * this.connectionRetries));
+            return this.connect(uri, options);
+        }
+        
+        console.error('💥 Max connection retries reached. Exiting...');
+        process.exit(1);
+    }
+    
+    handleError(error) {
+        console.error('🚨 MongoDB error:', error);
+        this.emit('error', error);
+    }
+    
+    handleDisconnection() {
+        console.warn('⚠️ MongoDB disconnected');
+        this.isConnected = false;
+        this.emit('disconnected');
+    }
+    
+    async disconnect() {
+        if (this.isConnected) {
+            await mongoose.connection.close();
+            console.log('👋 MongoDB connection closed');
+        }
+    }
+    
+    getConnectionStatus() {
+        return {
+            isConnected: this.isConnected,
+            readyState: mongoose.connection.readyState,
+            host: mongoose.connection.host,
+            port: mongoose.connection.port,
+            name: mongoose.connection.name
+        };
+    }
+}
+
+module.exports = new DatabaseConnection();</code></pre>
+                </div>
+                
+                <h3>Advanced Mongoose Schemas and Models</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>📋 models/User.js - Advanced User Model</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+// Define subdocuments
+const addressSchema = new mongoose.Schema({
+    street: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zipCode: { type: String, required: true },
+    country: { type: String, default: 'USA' }
+}, { _id: false });
+
+const socialLinksSchema = new mongoose.Schema({
+    platform: { 
+        type: String, 
+        enum: ['twitter', 'linkedin', 'github', 'website'],
+        required: true 
+    },
+    url: { 
+        type: String, 
+        required: true,
+        validate: {
+            validator: function(v) {
+                return /^https?:\/\/.+/.test(v);
+            },
+            message: 'URL must be a valid HTTP/HTTPS URL'
+        }
+    }
+}, { _id: false });
+
+// Main user schema
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: [true, 'Username is required'],
+        unique: true,
+        trim: true,
+        minlength: [3, 'Username must be at least 3 characters'],
+        maxlength: [30, 'Username cannot exceed 30 characters'],
+        match: [/^[a-zA-Z0-9_]+$/, 'Username can only contain letters, numbers, and underscores']
+    },
+    email: {
+        type: String,
+        required: [true, 'Email is required'],
+        unique: true,
+        lowercase: true,
+        trim: true,
+        validate: {
+            validator: function(v) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+            },
+            message: 'Please enter a valid email address'
+        }
+    },
+    password: {
+        type: String,
+        required: [true, 'Password is required'],
+        minlength: [8, 'Password must be at least 8 characters'],
+        validate: {
+            validator: function(v) {
+                // At least one uppercase, one lowercase, one number, one special char
+                return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/.test(v);
+            },
+            message: 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'
+        }
+    },
+    profile: {
+        firstName: { type: String, required: true, trim: true },
+        lastName: { type: String, required: true, trim: true },
+        avatar: { 
+            type: String, 
+            default: function() {
+                return `https://ui-avatars.com/api/?name=${this.profile.firstName}+${this.profile.lastName}&background=random`;
+            }
+        },
+        bio: { type: String, maxlength: 500 },
+        dateOfBirth: { 
+            type: Date,
+            validate: {
+                validator: function(v) {
+                    return v < new Date();
+                },
+                message: 'Date of birth must be in the past'
+            }
+        },
+        phoneNumber: {
+            type: String,
+            validate: {
+                validator: function(v) {
+                    return !v || /^\+?[1-9]\d{1,14}$/.test(v);
+                },
+                message: 'Please enter a valid phone number'
+            }
+        },
+        address: addressSchema,
+        socialLinks: [socialLinksSchema]
+    },
+    role: {
+        type: String,
+        enum: ['user', 'admin', 'moderator'],
+        default: 'user'
+    },
+    status: {
+        type: String,
+        enum: ['active', 'inactive', 'suspended', 'pending'],
+        default: 'pending'
+    },
+    preferences: {
+        theme: { type: String, enum: ['light', 'dark'], default: 'light' },
+        language: { type: String, default: 'en' },
+        notifications: {
+            email: { type: Boolean, default: true },
+            push: { type: Boolean, default: true },
+            sms: { type: Boolean, default: false }
+        }
+    },
+    metadata: {
+        lastLogin: Date,
+        loginCount: { type: Number, default: 0 },
+        ipAddress: String,
+        userAgent: String,
+        emailVerified: { type: Boolean, default: false },
+        emailVerificationToken: String,
+        passwordResetToken: String,
+        passwordResetExpires: Date
+    }
+}, {
+    timestamps: true,
+    toJSON: { 
+        virtuals: true,
+        transform: function(doc, ret) {
+            delete ret.password;
+            delete ret.metadata.emailVerificationToken;
+            delete ret.metadata.passwordResetToken;
+            return ret;
+        }
+    },
+    toObject: { virtuals: true }
+});
+
+// Indexes for performance
+userSchema.index({ email: 1 });
+userSchema.index({ username: 1 });
+userSchema.index({ 'metadata.lastLogin': -1 });
+userSchema.index({ status: 1, role: 1 });
+
+// Virtual properties
+userSchema.virtual('profile.fullName').get(function() {
+    return `${this.profile.firstName} ${this.profile.lastName}`;
+});
+
+userSchema.virtual('profile.age').get(function() {
+    if (!this.profile.dateOfBirth) return null;
+    const today = new Date();
+    const birthDate = new Date(this.profile.dateOfBirth);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+});
+
+// Pre-save middleware
+userSchema.pre('save', async function(next) {
+    // Hash password if modified
+    if (this.isModified('password')) {
+        try {
+            const salt = await bcrypt.genSalt(12);
+            this.password = await bcrypt.hash(this.password, salt);
+        } catch (error) {
+            return next(error);
+        }
+    }
+    
+    // Update avatar if name changed
+    if (this.isModified('profile.firstName') || this.isModified('profile.lastName')) {
+        this.profile.avatar = `https://ui-avatars.com/api/?name=${this.profile.firstName}+${this.profile.lastName}&background=random`;
+    }
+    
+    next();
+});
+
+// Instance methods
+userSchema.methods.comparePassword = async function(candidatePassword) {
+    return bcrypt.compare(candidatePassword, this.password);
+};
+
+userSchema.methods.generateAuthToken = function() {
+    const payload = {
+        id: this._id,
+        username: this.username,
+        email: this.email,
+        role: this.role
+    };
+    
+    return jwt.sign(payload, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRES_IN || '7d'
+    });
+};
+
+userSchema.methods.generatePasswordResetToken = function() {
+    const resetToken = require('crypto').randomBytes(32).toString('hex');
+    this.metadata.passwordResetToken = require('crypto')
+        .createHash('sha256')
+        .update(resetToken)
+        .digest('hex');
+    this.metadata.passwordResetExpires = Date.now() + 10 * 60 * 1000; // 10 minutes
+    return resetToken;
+};
+
+userSchema.methods.updateLoginInfo = function(ipAddress, userAgent) {
+    this.metadata.lastLogin = new Date();
+    this.metadata.loginCount += 1;
+    this.metadata.ipAddress = ipAddress;
+    this.metadata.userAgent = userAgent;
+};
+
+// Static methods
+userSchema.statics.findByEmail = function(email) {
+    return this.findOne({ email: email.toLowerCase() });
+};
+
+userSchema.statics.findActiveUsers = function() {
+    return this.find({ status: 'active' });
+};
+
+userSchema.statics.getUserStats = async function() {
+    const stats = await this.aggregate([
+        {
+            $group: {
+                _id: '$status',
+                count: { $sum: 1 }
+            }
+        },
+        {
+            $group: {
+                _id: null,
+                total: { $sum: '$count' },
+                statusBreakdown: {
+                    $push: {
+                        status: '$_id',
+                        count: '$count'
+                    }
+                }
+            }
+        }
+    ]);
+    
+    return stats[0] || { total: 0, statusBreakdown: [] };
+};
+
+module.exports = mongoose.model('User', userSchema);</code></pre>
+                </div>
+                
+                <h3>Advanced Querying with Mongoose</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>🔍 services/UserService.js - Advanced Query Patterns</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>const User = require('../models/User');
+const mongoose = require('mongoose');
+
+class UserService {
+    // Advanced pagination with search and filtering
+    static async getUsers(options = {}) {
+        const {
+            page = 1,
+            limit = 10,
+            search = '',
+            status = '',
+            role = '',
+            sortBy = 'createdAt',
+            sortOrder = 'desc',
+            includeInactive = false
+        } = options;
+        
+        // Build query
+        const query = {};
+        
+        // Search across multiple fields
+        if (search) {
+            query.$or = [
+                { username: { $regex: search, $options: 'i' } },
+                { email: { $regex: search, $options: 'i' } },
+                { 'profile.firstName': { $regex: search, $options: 'i' } },
+                { 'profile.lastName': { $regex: search, $options: 'i' } }
+            ];
+        }
+        
+        // Filter by status
+        if (status) {
+            query.status = status;
+        } else if (!includeInactive) {
+            query.status = { $ne: 'inactive' };
+        }
+        
+        // Filter by role
+        if (role) {
+            query.role = role;
+        }
+        
+        // Calculate pagination
+        const skip = (page - 1) * limit;
+        
+        // Build sort object
+        const sort = {};
+        sort[sortBy] = sortOrder === 'desc' ? -1 : 1;
+        
+        // Execute query with aggregation for better performance
+        const pipeline = [
+            { $match: query },
+            {
+                $facet: {
+                    data: [
+                        { $sort: sort },
+                        { $skip: skip },
+                        { $limit: parseInt(limit) },
+                        {
+                            $project: {
+                                password: 0,
+                                'metadata.emailVerificationToken': 0,
+                                'metadata.passwordResetToken': 0
+                            }
+                        }
+                    ],
+                    totalCount: [
+                        { $count: 'count' }
+                    ]
+                }
+            }
+        ];
+        
+        const [result] = await User.aggregate(pipeline);
+        const users = result.data;
+        const totalUsers = result.totalCount[0]?.count || 0;
+        const totalPages = Math.ceil(totalUsers / limit);
+        
+        return {
+            users,
+            pagination: {
+                currentPage: parseInt(page),
+                totalPages,
+                totalUsers,
+                hasNextPage: page < totalPages,
+                hasPrevPage: page > 1,
+                limit: parseInt(limit)
+            }
+        };
+    }
+    
+    // Complex aggregation for user analytics
+    static async getUserAnalytics(timeframe = '30d') {
+        const days = parseInt(timeframe.replace('d', ''));
+        const startDate = new Date();
+        startDate.setDate(startDate.getDate() - days);
+        
+        const pipeline = [
+            {
+                $facet: {
+                    // User registration trends
+                    registrationTrends: [
+                        {
+                            $match: {
+                                createdAt: { $gte: startDate }
+                            }
+                        },
+                        {
+                            $group: {
+                                _id: {
+                                    year: { $year: '$createdAt' },
+                                    month: { $month: '$createdAt' },
+                                    day: { $dayOfMonth: '$createdAt' }
+                                },
+                                count: { $sum: 1 }
+                            }
+                        },
+                        {
+                            $sort: { '_id.year': 1, '_id.month': 1, '_id.day': 1 }
+                        }
+                    ],
+                    
+                    // Status distribution
+                    statusDistribution: [
+                        {
+                            $group: {
+                                _id: '$status',
+                                count: { $sum: 1 },
+                                percentage: { $sum: 1 }
+                            }
+                        }
+                    ],
+                    
+                    // Role distribution
+                    roleDistribution: [
+                        {
+                            $group: {
+                                _id: '$role',
+                                count: { $sum: 1 }
+                            }
+                        }
+                    ],
+                    
+                    // Active users (logged in within timeframe)
+                    activeUsers: [
+                        {
+                            $match: {
+                                'metadata.lastLogin': { $gte: startDate }
+                            }
+                        },
+                        {
+                            $count: 'activeCount'
+                        }
+                    ],
+                    
+                    // Top users by login count
+                    topUsers: [
+                        {
+                            $sort: { 'metadata.loginCount': -1 }
+                        },
+                        {
+                            $limit: 10
+                        },
+                        {
+                            $project: {
+                                username: 1,
+                                'profile.fullName': 1,
+                                'metadata.loginCount': 1,
+                                'metadata.lastLogin': 1
+                            }
+                        }
+                    ]
+                }
+            }
+        ];
+        
+        const [analytics] = await User.aggregate(pipeline);
+        
+        // Calculate percentages for status distribution
+        const totalUsers = analytics.statusDistribution.reduce((sum, item) => sum + item.count, 0);
+        analytics.statusDistribution = analytics.statusDistribution.map(item => ({
+            ...item,
+            percentage: Math.round((item.count / totalUsers) * 100)
+        }));
+        
+        return {
+            ...analytics,
+            totalUsers,
+            activeUsersCount: analytics.activeUsers[0]?.activeCount || 0,
+            timeframe: `${days} days`
+        };
+    }
+    
+    // Bulk operations with transaction
+    static async bulkUpdateUsers(updates) {
+        const session = await mongoose.startSession();
+        
+        try {
+            await session.withTransaction(async () => {
+                const bulkOps = updates.map(update => ({
+                    updateOne: {
+                        filter: { _id: update.id },
+                        update: { $set: update.data },
+                        upsert: false
+                    }
+                }));
+                
+                const result = await User.bulkWrite(bulkOps, { session });
+                return result;
+            });
+        } finally {
+            await session.endSession();
+        }
+    }
+    
+    // Advanced search with full-text search
+    static async searchUsers(searchTerm, options = {}) {
+        const {
+            limit = 10,
+            includeScore = false
+        } = options;
+        
+        // Create text index if not exists (run once)
+        // await User.createIndexes();
+        
+        const pipeline = [
+            {
+                $match: {
+                    $text: { $search: searchTerm }
+                }
+            },
+            {
+                $addFields: {
+                    score: { $meta: 'textScore' }
+                }
+            },
+            {
+                $sort: { score: { $meta: 'textScore' } }
+            },
+            {
+                $limit: limit
+            },
+            {
+                $project: {
+                    password: 0,
+                    'metadata.emailVerificationToken': 0,
+                    'metadata.passwordResetToken': 0,
+                    ...(includeScore ? {} : { score: 0 })
+                }
+            }
+        ];
+        
+        return User.aggregate(pipeline);
+    }
+}
+
+module.exports = UserService;</code></pre>
+                </div>
+            </section>
+            
+            <section id="postgresql-integration">
+                <h2>🐘 PostgreSQL Integration with Prisma</h2>
+                <p>Prisma is a next-generation ORM that provides type-safe database access, automatic migrations, and powerful query capabilities. It's become the go-to choice for PostgreSQL integration in modern Node.js applications.</p>
+                
+                <h3>Setting Up PostgreSQL and Prisma</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>📦 Installation and Setup</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code># Install Prisma and PostgreSQL client
+npm install prisma @prisma/client
+npm install --save-dev prisma
+
+# Initialize Prisma
+npx prisma init
+
+# Install PostgreSQL (Windows)
+winget install PostgreSQL.PostgreSQL
+
+# Or use cloud services like:
+# - Supabase (https://supabase.com)
+# - Railway (https://railway.app)
+# - Neon (https://neon.tech)</code></pre>
+                </div>
+                
+                <h3>Advanced Prisma Schema</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>📋 prisma/schema.prisma</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  username  String   @unique
+  password  String
+  role      Role     @default(USER)
+  status    Status   @default(PENDING)
+  
+  // Profile information
+  profile   Profile?
+  
+  // Relationships
+  posts     Post[]
+  comments  Comment[]
+  likes     Like[]
+  followers Follow[] @relation("UserFollowers")
+  following Follow[] @relation("UserFollowing")
+  
+  // Audit fields
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lastLogin DateTime?
+  
+  @@map("users")
+  @@index([email])
+  @@index([username])
+  @@index([status, role])
+}
+
+model Profile {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  firstName   String
+  lastName    String
+  bio         String?
+  avatar      String?
+  dateOfBirth DateTime?
+  phoneNumber String?
+  
+  // Address information
+  address     Address?
+  
+  // Social links
+  socialLinks SocialLink[]
+  
+  // Preferences
+  preferences Json      @default("{}")
+  
+  // Relationships
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  @@map("profiles")
+  @@index([userId])
+}
+
+model Address {
+  id        String  @id @default(cuid())
+  profileId String  @unique
+  street    String
+  city      String
+  state     String
+  zipCode   String
+  country   String  @default("USA")
+  
+  // Relationships
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  
+  @@map("addresses")
+}
+
+model SocialLink {
+  id        String      @id @default(cuid())
+  profileId String
+  platform  SocialPlatform
+  url       String
+  
+  // Relationships
+  profile   Profile     @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  
+  @@map("social_links")
+  @@unique([profileId, platform])
+}
+
+model Post {
+  id          String    @id @default(cuid())
+  title       String
+  content     String
+  excerpt     String?
+  slug        String    @unique
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  
+  // SEO and metadata
+  metaTitle       String?
+  metaDescription String?
+  featuredImage   String?
+  
+  // Content organization
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id])
+  tags       PostTag[]
+  
+  // Author relationship
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id])
+  
+  // Engagement
+  comments Comment[]
+  likes    Like[]
+  views    Int      @default(0)
+  
+  // Audit fields
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("posts")
+  @@index([slug])
+  @@index([published, publishedAt])
+  @@index([authorId])
+  @@index([categoryId])
+}
+
+model Category {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  description String?
+  color       String @default("#3B82F6")
+  
+  // Hierarchy support
+  parentId String?
+  parent   Category? @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  children Category[] @relation("CategoryHierarchy")
+  
+  // Relationships
+  posts Post[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("categories")
+  @@index([slug])
+  @@index([parentId])
+}
+
+model Tag {
+  id    String @id @default(cuid())
+  name  String @unique
+  slug  String @unique
+  color String @default("#6B7280")
+  
+  // Relationships
+  posts PostTag[]
+  
+  createdAt DateTime @default(now())
+  
+  @@map("tags")
+  @@index([slug])
+}
+
+model PostTag {
+  postId String
+  tagId  String
+  
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  
+  @@id([postId, tagId])
+  @@map("post_tags")
+}
+
+model Comment {
+  id      String @id @default(cuid())
+  content String
+  
+  // Hierarchy support for replies
+  parentId String?
+  parent   Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies  Comment[] @relation("CommentReplies")
+  
+  // Relationships
+  postId String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id])
+  
+  // Engagement
+  likes Like[]
+  
+  // Moderation
+  approved Boolean @default(false)
+  flagged  Boolean @default(false)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("comments")
+  @@index([postId])
+  @@index([authorId])
+  @@index([parentId])
+}
+
+model Like {
+  id String @id @default(cuid())
+  
+  // Polymorphic relationship
+  postId    String?
+  commentId String?
+  
+  post    Post?    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  comment Comment? @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  
+  // User relationship
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+  
+  createdAt DateTime @default(now())
+  
+  @@map("likes")
+  @@unique([userId, postId])
+  @@unique([userId, commentId])
+  @@index([postId])
+  @@index([commentId])
+  @@index([userId])
+}
+
+model Follow {
+  id String @id @default(cuid())
+  
+  followerId String
+  followingId String
+  
+  follower  User @relation("UserFollowers", fields: [followerId], references: [id])
+  following User @relation("UserFollowing", fields: [followingId], references: [id])
+  
+  createdAt DateTime @default(now())
+  
+  @@map("follows")
+  @@unique([followerId, followingId])
+  @@index([followerId])
+  @@index([followingId])
+}
+
+// Enums
+enum Role {
+  USER
+  ADMIN
+  MODERATOR
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  PENDING
+}
+
+enum SocialPlatform {
+  TWITTER
+  LINKEDIN
+  GITHUB
+  WEBSITE
+  INSTAGRAM
+  FACEBOOK
+}</code></pre>
+                </div>
+                
+                <h3>Advanced Prisma Service Layer</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>🔧 services/PrismaService.js</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>const { PrismaClient } = require('@prisma/client');
+const bcrypt = require('bcryptjs');
+
+class PrismaService {
+    constructor() {
+        this.prisma = new PrismaClient({
+            log: [
+                { level: 'query', emit: 'event' },
+                { level: 'error', emit: 'stdout' },
+                { level: 'info', emit: 'stdout' },
+                { level: 'warn', emit: 'stdout' },
+            ],
+            errorFormat: 'colorless'
+        });
+        
+        // Log slow queries in development
+        if (process.env.NODE_ENV === 'development') {
+            this.prisma.$on('query', (e) => {
+                if (e.duration > 1000) {
+                    console.log(`🐌 Slow Query (${e.duration}ms): ${e.query}`);
+                }
+            });
+        }
+    }
+    
+    async connect() {
+        try {
+            await this.prisma.$connect();
+            console.log('✅ Prisma connected to PostgreSQL');
+        } catch (error) {
+            console.error('❌ Prisma connection error:', error);
+            throw error;
+        }
+    }
+    
+    async disconnect() {
+        await this.prisma.$disconnect();
+        console.log('👋 Prisma disconnected');
+    }
+    
+    // Advanced user operations
+    async createUser(userData) {
+        const { password, profile, ...userFields } = userData;
+        
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 12);
+        
+        return this.prisma.user.create({
+            data: {
+                ...userFields,
+                password: hashedPassword,
+                profile: profile ? {
+                    create: {
+                        ...profile,
+                        address: profile.address ? {
+                            create: profile.address
+                        } : undefined,
+                        socialLinks: profile.socialLinks ? {
+                            create: profile.socialLinks
+                        } : undefined
+                    }
+                } : undefined
+            },
+            include: {
+                profile: {
+                    include: {
+                        address: true,
+                        socialLinks: true
+                    }
+                }
+            }
+        });
+    }
+    
+    async getUserWithStats(userId) {
+        return this.prisma.user.findUnique({
+            where: { id: userId },
+            include: {
+                profile: {
+                    include: {
+                        address: true,
+                        socialLinks: true
+                    }
+                },
+                _count: {
+                    select: {
+                        posts: true,
+                        comments: true,
+                        likes: true,
+                        followers: true,
+                        following: true
+                    }
+                }
+            }
+        });
+    }
+    
+    // Advanced post operations with full-text search
+    async searchPosts(searchTerm, options = {}) {
+        const {
+            page = 1,
+            limit = 10,
+            categoryId,
+            tagIds = [],
+            authorId,
+            publishedOnly = true
+        } = options;
+        
+        const skip = (page - 1) * limit;
+        
+        const where = {
+            AND: [
+                publishedOnly ? { published: true } : {},
+                searchTerm ? {
+                    OR: [
+                        { title: { contains: searchTerm, mode: 'insensitive' } },
+                        { content: { contains: searchTerm, mode: 'insensitive' } },
+                        { excerpt: { contains: searchTerm, mode: 'insensitive' } }
+                    ]
+                } : {},
+                categoryId ? { categoryId } : {},
+                tagIds.length > 0 ? {
+                    tags: {
+                        some: {
+                            tagId: { in: tagIds }
+                        }
+                    }
+                } : {},
+                authorId ? { authorId } : {}
+            ].filter(condition => Object.keys(condition).length > 0)
+        };
+        
+        const [posts, totalCount] = await Promise.all([
+            this.prisma.post.findMany({
+                where,
+                skip,
+                take: limit,
+                orderBy: { publishedAt: 'desc' },
+                include: {
+                    author: {
+                        select: {
+                            id: true,
+                            username: true,
+                            profile: {
+                                select: {
+                                    firstName: true,
+                                    lastName: true,
+                                    avatar: true
+                                }
+                            }
+                        }
+                    },
+                    category: {
+                        select: {
+                            id: true,
+                            name: true,
+                            slug: true,
+                            color: true
+                        }
+                    },
+                    tags: {
+                        include: {
+                            tag: {
+                                select: {
+                                    id: true,
+                                    name: true,
+                                    slug: true,
+                                    color: true
+                                }
+                            }
+                        }
+                    },
+                    _count: {
+                        select: {
+                            comments: true,
+                            likes: true
+                        }
+                    }
+                }
+            }),
+            this.prisma.post.count({ where })
+        ]);
+        
+        return {
+            posts,
+            pagination: {
+                currentPage: page,
+                totalPages: Math.ceil(totalCount / limit),
+                totalPosts: totalCount,
+                hasNextPage: page < Math.ceil(totalCount / limit),
+                hasPrevPage: page > 1,
+                limit
+            }
+        };
+    }
+    
+    // Complex aggregation queries
+    async getContentAnalytics(timeframe = '30d') {
+        const days = parseInt(timeframe.replace('d', ''));
+        const startDate = new Date();
+        startDate.setDate(startDate.getDate() - days);
+        
+        // Use raw SQL for complex analytics
+        const analytics = await this.prisma.$queryRaw`
+            SELECT 
+                COUNT(DISTINCT p.id) as total_posts,
+                COUNT(DISTINCT c.id) as total_comments,
+                COUNT(DISTINCT l.id) as total_likes,
+                COUNT(DISTINCT u.id) as active_authors,
+                AVG(post_stats.comment_count) as avg_comments_per_post,
+                AVG(post_stats.like_count) as avg_likes_per_post
+            FROM posts p
+            LEFT JOIN comments c ON p.id = c."postId" AND c."createdAt" >= ${startDate}
+            LEFT JOIN likes l ON p.id = l."postId" AND l."createdAt" >= ${startDate}
+            LEFT JOIN users u ON p."authorId" = u.id AND p."createdAt" >= ${startDate}
+            LEFT JOIN (
+                SELECT 
+                    p.id,
+                    COUNT(c.id) as comment_count,
+                    COUNT(l.id) as like_count
+                FROM posts p
+                LEFT JOIN comments c ON p.id = c."postId"
+                LEFT JOIN likes l ON p.id = l."postId"
+                WHERE p."createdAt" >= ${startDate}
+                GROUP BY p.id
+            ) post_stats ON p.id = post_stats.id
+            WHERE p."createdAt" >= ${startDate}
+        `;
+
+        
+        
+        return analytics[0];
+    }
+    
+    // Close database connection
+    async close() {
+        await this.disconnect();
+    }
+}
+
+module.exports = new PrismaService();
+        </main>
+        
+        <div class="back-to-blog">
+            <a href="../index.html">← Back to Blog</a>
+        </div>
+    </div>
+    
+    <script>
+    // Reading progress bar
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+    </script>
+</body>
+</html>

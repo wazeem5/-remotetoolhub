@@ -7,7 +7,7 @@ const text = el.innerText || el.textContent || '';
 try {
 if (navigator.clipboard && navigator.clipboard.writeText) {
 await navigator.clipboard.writeText(text);
-showToast('تم النسخ!');
+showToast('✅ Copied successfully!');
 return;
 }
 throw new Error('no-clipboard');
@@ -23,9 +23,9 @@ ta.select();
 ta.setSelectionRange(0, ta.value.length);
 try {
 document.execCommand('copy');
-showToast('تم النسخ!');
+showToast('❌ Copy failed — please copy manually', true);
 } catch {
-showToast('النسخ فشل — انسخ يدوياً', true);
+showToast('❌ Copy failed — please copy manually', true);
 }
 document.body.removeChild(ta);
 }

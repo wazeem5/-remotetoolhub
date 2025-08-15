@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Guide to JavaScript Performance Optimization 2025 | RemoteToolHub</title>
+    <meta name="description" content="Master JavaScript performance optimization with advanced techniques, tools, and best practices for 2025. Boost your app speed and user experience.">
+    <meta name="keywords" content="JavaScript, performance optimization, web performance, speed optimization, 2025, best practices">
+    <meta name="author" content="RemoteToolHub">
+    <meta property="og:title" content="Ultimate Guide to JavaScript Performance Optimization 2025">
+    <meta property="og:description" content="Complete guide to JavaScript performance optimization techniques and tools for 2025">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://remotetoolhub.com/blog/articles/javascript-performance-optimization-2025.html">
+    <meta property="og:image" content="https://remotetoolhub.com/blog/assets/images/js-performance-2025.jpg">
+    <link rel="canonical" href="https://remotetoolhub.com/blog/articles/javascript-performance-optimization-2025.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 15px;
+            margin: -20px -20px 40px -20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .meta {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .performance-tip {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .performance-tip::before {
+            content: '⚡';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+        
+        .performance-tip h3 {
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .code-example::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: #4a5568;
+            color: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+        }
+        
+        .benchmark-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid #28a745;
+            transition: transform 0.3s ease;
+        }
+        
+        .benchmark-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .benchmark-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .benchmark-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .benchmark-item.winner {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        
+        .performance-score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5em;
+            color: white;
+        }
+        
+        .checklist {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+        }
+        
+        .checklist li {
+            margin: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .speed-indicator {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .speed-fast {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .speed-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .speed-slow {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 20px 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #218838;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benchmark-results {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Ultimate Guide to JavaScript Performance Optimization 2025</h1>
+            <div class="meta">
+                <span>📅 Published: January 2025</span> | 
+                <span>⏱️ Read Time: 15 minutes</span> | 
+                <span>👨‍💻 By RemoteToolHub Team</span>
+            </div>
+        </header>
+
+        <article>
+            <section>
+                <h2>🚀 Introduction</h2>
+                <p>JavaScript performance optimization has become more critical than ever in 2025. With users expecting lightning-fast web experiences and search engines prioritizing Core Web Vitals, optimizing your JavaScript code is no longer optional—it's essential. This comprehensive guide covers the latest techniques, tools, and best practices for maximizing JavaScript performance.</p>
+            </section>
+
+            <div class="performance-tip">
+                <h3>💡 Performance Impact</h3>
+                <p>Studies show that a 1-second delay in page load time can result in a 7% reduction in conversions. Every millisecond counts in today's competitive web landscape.</p>
+            </div>
+
+            <section>
+                <h2>📊 Performance Optimization Techniques</h2>
+                
+                <div class="benchmark-card">
+                    <h3>1. Code Splitting and Lazy Loading</h3>
+                    <p>Break your JavaScript into smaller chunks and load them only when needed. This dramatically reduces initial bundle size and improves Time to Interactive (TTI).</p>
+                    
+                    <div class="code-example" data-lang="JavaScript">
+                        <h4>Dynamic Import Example:</h4>
+                        <pre><code>// Before: Loading everything upfront
+import { heavyLibrary } from './heavy-library';
+import { utils } from './utils';
+
+// After: Dynamic imports
+const loadHeavyFeature = async () => {
+  const { heavyLibrary } = await import('./heavy-library');
+  return heavyLibrary;
+};
+
+// React lazy loading
+const HeavyComponent = React.lazy(() => import('./HeavyComponent'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HeavyComponent />
+    </Suspense>
+  );
+}</code></pre>
+                    </div>
+                    
+                    <div class="benchmark-results">
+                        <div class="benchmark-item">
+                            <div>Before Optimization</div>
+                            <div class="performance-score">3.2s</div>
+                            <div>Initial Load Time</div>
+                        </div>
+                        <div class="benchmark-item winner">
+                            <div>After Code Splitting</div>
+                            <div class="performance-score">1.1s</div>
+                            <div>Initial Load Time</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benchmark-card">
+                    <h3>2. Memory Management and Garbage Collection</h3>
+                    <p>Proper memory management prevents memory leaks and reduces garbage collection overhead, leading to smoother user experiences.</p>
+                    
+                    <div class="code-example" data-lang="JavaScript">
+                        <h4>Memory Optimization Examples:</h4>
+                        <pre><code>// ❌ Memory Leak: Event listeners not removed
+class BadComponent {
+  constructor() {
+    window.addEventListener('resize', this.handleResize);
+  }
+  
+  handleResize() {
+    // Handle resize
+  }
+}
+
+// ✅ Proper cleanup
+class GoodComponent {
+  constructor() {
+    this.handleResize = this.handleResize.bind(this);
+    window.addEventListener('resize', this.handleResize);
+  }
+  
+  destroy() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+  
+  handleResize() {
+    // Handle resize
+  }
+}
+
+// ✅ Using WeakMap for private data
+const privateData = new WeakMap();
+
+class OptimizedClass {
+  constructor(data) {
+    privateData.set(this, data);
+  }
+  
+  getData() {
+    return privateData.get(this);
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="benchmark-card">
+                    <h3>3. DOM Manipulation Optimization</h3>
+                    <p>Minimize DOM operations and use efficient techniques like document fragments and virtual scrolling for better performance.</p>
+                    
+                    <div class="code-example" data-lang="JavaScript">
+                        <h4>Efficient DOM Operations:</h4>
+                        <pre><code>// ❌ Inefficient: Multiple DOM operations
+function inefficientUpdate(items) {
+  const container = document.getElementById('container');
+  container.innerHTML = ''; // Triggers reflow
+  
+  items.forEach(item => {
+    const div = document.createElement('div');
+    div.textContent = item.name;
+    container.appendChild(div); // Multiple reflows
+  });
+}
+
+// ✅ Efficient: Batch DOM operations
+function efficientUpdate(items) {
+  const container = document.getElementById('container');
+  const fragment = document.createDocumentFragment();
+  
+  items.forEach(item => {
+    const div = document.createElement('div');
+    div.textContent = item.name;
+    fragment.appendChild(div);
+  });
+  
+  container.innerHTML = '';
+  container.appendChild(fragment); // Single reflow
+}
+
+// ✅ Virtual Scrolling for large lists
+class VirtualList {
+  constructor(container, items, itemHeight) {
+    this.container = container;
+    this.items = items;
+    this.itemHeight = itemHeight;
+    this.visibleStart = 0;
+    this.visibleEnd = 0;
+    this.init();
+  }
+  
+  init() {
+    this.container.style.height = `${this.items.length * this.itemHeight}px`;
+    this.container.addEventListener('scroll', this.onScroll.bind(this));
+    this.render();
+  }
+  
+  onScroll() {
+    const scrollTop = this.container.scrollTop;
+    this.visibleStart = Math.floor(scrollTop / this.itemHeight);
+    this.visibleEnd = this.visibleStart + Math.ceil(this.container.clientHeight / this.itemHeight);
+    this.render();
+  }
+  
+  render() {
+    const visibleItems = this.items.slice(this.visibleStart, this.visibleEnd);
+    // Render only visible items
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="benchmark-card">
+                    <h3>4. Async/Await and Promise Optimization</h3>
+                    <p>Optimize asynchronous operations to prevent blocking the main thread and improve perceived performance.</p>
+                    
+                    <div class="code-example" data-lang="JavaScript">
+                        <h4>Async Optimization Patterns:</h4>
+                        <pre><code>// ❌ Sequential async operations
+async function inefficientAsync() {
+  const user = await fetchUser();
+  const posts = await fetchPosts();
+  const comments = await fetchComments();
+  return { user, posts, comments };
+}
+
+// ✅ Parallel async operations
+async function efficientAsync() {
+  const [user, posts, comments] = await Promise.all([
+    fetchUser(),
+    fetchPosts(),
+    fetchComments()
+  ]);
+  return { user, posts, comments };
+}
+
+// ✅ Async iteration with concurrency control
+async function processItemsConcurrently(items, concurrency = 3) {
+  const results = [];
+  
+  for (let i = 0; i < items.length; i += concurrency) {
+    const batch = items.slice(i, i + concurrency);
+    const batchResults = await Promise.all(
+      batch.map(item => processItem(item))
+    );
+    results.push(...batchResults);
+  }
+  
+  return results;
+}
+
+// ✅ Request deduplication
+class RequestCache {
+  constructor() {
+    this.cache = new Map();
+  }
+  
+  async get(key, fetcher) {
+    if (this.cache.has(key)) {
+      return this.cache.get(key);
+    }
+    
+    const promise = fetcher();
+    this.cache.set(key, promise);
+    
+    try {
+      const result = await promise;
+      this.cache.set(key, Promise.resolve(result));
+      return result;
+    } catch (error) {
+      this.cache.delete(key);
+      throw error;
+    }
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>🛠️ Performance Monitoring Tools</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">🔍</div>
+                            <div>
+                                <h3>Chrome DevTools</h3>
+                                <p>Built-in browser profiling</p>
+                            </div>
+                        </div>
+                        <p>Use Performance tab, Memory tab, and Lighthouse for comprehensive analysis of your JavaScript performance.</p>
+                        <div class="checklist">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>CPU profiling and flame graphs</li>
+                                <li>Memory heap snapshots</li>
+                                <li>Network waterfall analysis</li>
+                                <li>Core Web Vitals measurement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">📊</div>
+                            <div>
+                                <h3>Web Vitals</h3>
+                                <p>Google's performance metrics</p>
+                            </div>
+                        </div>
+                        <p>Monitor Core Web Vitals (LCP, FID, CLS) to ensure your site meets Google's performance standards.</p>
+                        <div class="code-example" data-lang="JavaScript">
+                            <pre><code>import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
+
+getCLS(console.log);
+getFID(console.log);
+getFCP(console.log);
+getLCP(console.log);
+getTTFB(console.log);</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">⚡</div>
+                            <div>
+                                <h3>Bundle Analyzers</h3>
+                                <p>Webpack Bundle Analyzer</p>
+                            </div>
+                        </div>
+                        <p>Visualize your bundle size and identify optimization opportunities.</p>
+                        <div class="code-example" data-lang="bash">
+                            <pre><code>npm install --save-dev webpack-bundle-analyzer
+npx webpack-bundle-analyzer dist/static/js/*.js</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">🎯</div>
+                            <div>
+                                <h3>Performance Observer API</h3>
+                                <p>Real-time performance monitoring</p>
+                            </div>
+                        </div>
+                        <div class="code-example" data-lang="JavaScript">
+                            <pre><code>const observer = new PerformanceObserver((list) => {
+  for (const entry of list.getEntries()) {
+    if (entry.entryType === 'largest-contentful-paint') {
+      console.log('LCP:', entry.startTime);
+    }
+  }
+});
+
+observer.observe({ entryTypes: ['largest-contentful-paint'] });</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>📈 Performance Comparison Table</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Technique</th>
+                            <th>Implementation Difficulty</th>
+                            <th>Performance Impact</th>
+                            <th>Browser Support</th>
+                            <th>Best Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Code Splitting</strong></td>
+                            <td>Medium</td>
+                            <td><span class="speed-indicator speed-fast">High</span></td>
+                            <td>Excellent</td>
+                            <td>Large applications</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tree Shaking</strong></td>
+                            <td>Easy</td>
+                            <td><span class="speed-indicator speed-fast">High</span></td>
+                            <td>Excellent</td>
+                            <td>All projects</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Service Workers</strong></td>
+                            <td>Hard</td>
+                            <td><span class="speed-indicator speed-fast">Very High</span></td>
+                            <td>Good</td>
+                            <td>PWAs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Virtual Scrolling</strong></td>
+                            <td>Hard</td>
+                            <td><span class="speed-indicator speed-fast">High</span></td>
+                            <td>Excellent</td>
+                            <td>Large lists</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Debouncing/Throttling</strong></td>
+                            <td>Easy</td>
+                            <td><span class="speed-indicator speed-medium">Medium</span></td>
+                            <td>Excellent</td>
+                            <td>Event handlers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>✅ Performance Optimization Checklist</h2>
+                <div class="checklist">
+                    <h4>Essential Optimizations:</h4>
+                    <ul>
+                        <li>Minimize and compress JavaScript files</li>
+                        <li>Implement code splitting for large applications</li>
+                        <li>Use tree shaking to eliminate dead code</li>
+                        <li>Optimize images and use modern formats (WebP, AVIF)</li>
+                        <li>Implement lazy loading for non-critical resources</li>
+                        <li>Use a Content Delivery Network (CDN)</li>
+                        <li>Enable gzip/brotli compression</li>
+                        <li>Minimize DOM manipulations</li>
+                        <li>Implement proper caching strategies</li>
+                        <li>Monitor and fix memory leaks</li>
+                        <li>Use Web Workers for heavy computations</li>
+                        <li>Optimize third-party scripts</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="warning-box">
+                <h4>⚠️ Common Performance Pitfalls</h4>
+                <ul>
+                    <li><strong>Premature Optimization:</strong> Profile first, optimize second</li>
+                    <li><strong>Over-bundling:</strong> Don't include unused libraries</li>
+                    <li><strong>Synchronous Operations:</strong> Avoid blocking the main thread</li>
+                    <li><strong>Memory Leaks:</strong> Always clean up event listeners and timers</li>
+                    <li><strong>Inefficient Loops:</strong> Cache array lengths and use appropriate iteration methods</li>
+                </ul>
+            </div>
+
+            <div class="conclusion">
+                <h2>🏆 Key Takeaways</h2>
+                <p>JavaScript performance optimization in 2025 requires a holistic approach combining modern techniques, proper tooling, and continuous monitoring. Focus on Core Web Vitals, implement code splitting, and always measure the impact of your optimizations.</p>
+                
+                <p><strong>Remember:</strong> The best optimization is the code you don't ship. Always question if a feature or library is truly necessary before adding it to your bundle.</p>
+                
+                <div class="text-center space-x-4">
+                    <a href="/tools" class="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-block">
+                        <i class="fas fa-chart-line mr-2"></i>Start Optimizing Today
+                    </a>
+                    <a href="/blog" class="bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors inline-block">
+                        <i class="fas fa-book mr-2"></i>Read More Guides
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        // Performance monitoring example
+        (function() {
+            // Measure page load performance
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+                    
+                    // Measure LCP
+                    new PerformanceObserver((entryList) => {
+                        const entries = entryList.getEntries();
+                        const lastEntry = entries[entries.length - 1];
+                        console.log('LCP:', lastEntry.startTime, 'ms');
+                    }).observe({ entryTypes: ['largest-contentful-paint'] });
+                }, 0);
+            });
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Reading progress indicator
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: linear-gradient(90deg, #f093fb, #f5576c);
+                z-index: 1000;
+                transition: width 0.3s ease;
+            `;
+            document.body.appendChild(progressBar);
+
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        })();
+    </script>
+</body>
+</html>
