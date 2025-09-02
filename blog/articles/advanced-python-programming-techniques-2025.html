@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Python Programming Techniques 2025 - Complete Developer Guide</title>
+    <meta name="description" content="Master advanced Python programming techniques in 2025. Learn metaclasses, decorators, async programming, performance optimization, and professional development patterns with practical examples.">
+    <meta name="keywords" content="Python programming, advanced Python, metaclasses, decorators, async programming, Python performance, Python 2025, programming techniques">
+    <meta name="author" content="RemoteToolHub">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Advanced Python Programming Techniques 2025 - Complete Developer Guide">
+    <meta property="og:description" content="Master advanced Python programming techniques in 2025. Learn metaclasses, decorators, async programming, performance optimization, and professional development patterns.">
+    <meta property="og:image" content="https://remotetoolhub.com/blog/assets/images/advanced-python-2025.jpg">
+    <meta property="og:url" content="https://remotetoolhub.com/blog/articles/advanced-python-programming-techniques-2025.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced Python Programming Techniques 2025">
+    <meta name="twitter:description" content="Master advanced Python programming techniques with practical examples and professional patterns.">
+    <meta name="twitter:image" content="https://remotetoolhub.com/blog/assets/images/advanced-python-2025.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://remotetoolhub.com/blog/articles/advanced-python-programming-techniques-2025.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .article-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .article-meta {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .reading-time {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+        
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .content h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin: 40px 0 20px 0;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .content h3 {
+            color: #34495e;
+            font-size: 1.8rem;
+            margin: 30px 0 15px 0;
+        }
+        
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .code-block::before {
+            content: 'Python';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #3182ce;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .highlight-box {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 1px solid #dee2e6;
+        }
+        
+        .toc h3 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .toc ul {
+            list-style: none;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .back-to-blog a {
+            background: #007bff;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .back-to-blog a:hover {
+            background: #0056b3;
+        }
+        
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8060355534751536" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="article-header">
+        <div class="container">
+            <h1>🐍 Advanced Python Programming Techniques 2025</h1>
+            <div class="article-meta">
+                <p>Master Professional Python Development Patterns</p>
+                <div class="reading-time">📖 Reading Time: 18-20 minutes</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#introduction">1. Introduction to Advanced Python</a></li>
+                    <li><a href="#metaclasses">2. Metaclasses and Class Factories</a></li>
+                    <li><a href="#decorators">3. Advanced Decorators and Context Managers</a></li>
+                    <li><a href="#async">4. Asynchronous Programming Mastery</a></li>
+                    <li><a href="#performance">5. Memory Management and Performance</a></li>
+                    <li><a href="#testing">6. Advanced Testing Strategies</a></li>
+                    <li><a href="#patterns">7. Design Patterns in Python</a></li>
+                    <li><a href="#best-practices">8. Professional Best Practices</a></li>
+                    <li><a href="#conclusion">9. Conclusion and Next Steps</a></li>
+                </ul>
+            </div>
+            
+            <section id="introduction">
+                <h2>🚀 Introduction to Advanced Python Programming</h2>
+                <p>Python has evolved significantly in 2025, becoming the backbone of modern software development, data science, and artificial intelligence. This comprehensive guide explores advanced Python programming techniques that separate professional developers from beginners.</p>
+                
+                <p>Whether you're building scalable web applications, developing machine learning models, or creating enterprise software, mastering these advanced concepts will elevate your Python skills to the next level.</p>
+                
+                <div class="highlight-box">
+                    <strong>💡 What You'll Learn:</strong>
+                    <ul>
+                        <li>Advanced object-oriented programming concepts</li>
+                        <li>Metaclasses and dynamic class creation</li>
+                        <li>Professional decorator patterns</li>
+                        <li>Asynchronous programming mastery</li>
+                        <li>Memory optimization techniques</li>
+                        <li>Advanced testing methodologies</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="metaclasses">
+                <h2>🏗️ Metaclasses and Class Factories</h2>
+                
+                <h3>Understanding Metaclasses</h3>
+                <p>Metaclasses are classes whose instances are classes themselves. They provide a powerful way to customize class creation and behavior at runtime.</p>
+                
+                <div class="code-block">
+# Basic Metaclass Example
+class SingletonMeta(type):
+    _instances = {}
+    
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super().__call__(*args, **kwargs)
+        return cls._instances[cls]
+
+class DatabaseConnection(metaclass=SingletonMeta):
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+        self.connected = False
+    
+    def connect(self):
+        if not self.connected:
+            print(f"Connecting to {self.host}:{self.port}")
+            self.connected = True
+        return self
+
+# Usage
+db1 = DatabaseConnection("localhost", 5432)
+db2 = DatabaseConnection("localhost", 5432)
+print(db1 is db2)  # True - Same instance
+                </div>
+                
+                <h3>Advanced Metaclass Patterns</h3>
+                <p>Let's explore more sophisticated metaclass applications for automatic property generation and validation:</p>
+                
+                <div class="code-block">
+class ValidatedMeta(type):
+    def __new__(mcs, name, bases, namespace):
+        # Auto-generate validation methods
+        for key, value in list(namespace.items()):
+            if key.startswith('_validate_'):
+                field_name = key[10:]  # Remove '_validate_' prefix
+                namespace[f'set_{field_name}'] = mcs._create_setter(field_name, value)
+        
+        return super().__new__(mcs, name, bases, namespace)
+    
+    @staticmethod
+    def _create_setter(field_name, validator):
+        def setter(self, value):
+            if validator(value):
+                setattr(self, f'_{field_name}', value)
+            else:
+                raise ValueError(f"Invalid value for {field_name}: {value}")
+        return setter
+
+class User(metaclass=ValidatedMeta):
+    def __init__(self, email, age):
+        self.set_email(email)
+        self.set_age(age)
+    
+    def _validate_email(self, email):
+        return '@' in email and '.' in email
+    
+    def _validate_age(self, age):
+        return isinstance(age, int) and 0 <= age <= 150
+    
+    @property
+    def email(self):
+        return getattr(self, '_email', None)
+    
+    @property
+    def age(self):
+        return getattr(self, '_age', None)
+
+# Usage
+user = User("john@example.com", 25)
+print(f"User: {user.email}, Age: {user.age}")
+                </div>
+                
+                <div class="success-box">
+                    <strong>✅ Best Practice:</strong> Use metaclasses sparingly and only when you need to modify class creation behavior. In most cases, class decorators or inheritance provide simpler solutions.
+                </div>
+            </section>
+            
+            <section id="decorators">
+                <h2>🎨 Advanced Decorators and Context Managers</h2>
+                
+                <h3>Parameterized Decorators</h3>
+                <p>Create flexible decorators that accept parameters to customize their behavior:</p>
+                
+                <div class="code-block">
+import functools
+import time
+from typing import Callable, Any
+
+def retry(max_attempts: int = 3, delay: float = 1.0, exceptions: tuple = (Exception,)):
+    """Decorator that retries function execution on failure."""
+    def decorator(func: Callable) -> Callable:
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs) -> Any:
+            last_exception = None
+            
+            for attempt in range(max_attempts):
+                try:
+                    return func(*args, **kwargs)
+                except exceptions as e:
+                    last_exception = e
+                    if attempt < max_attempts - 1:
+                        print(f"Attempt {attempt + 1} failed: {e}. Retrying in {delay}s...")
+                        time.sleep(delay)
+                    else:
+                        print(f"All {max_attempts} attempts failed.")
+            
+            raise last_exception
+        return wrapper
+    return decorator
+
+# Usage Examples
+@retry(max_attempts=5, delay=2.0, exceptions=(ConnectionError, TimeoutError))
+def fetch_data_from_api(url: str) -> dict:
+    # Simulate API call that might fail
+    import random
+    if random.random() < 0.7:  # 70% chance of failure
+        raise ConnectionError("Network timeout")
+    return {"data": "success"}
+
+@retry(max_attempts=3)
+def divide_numbers(a: float, b: float) -> float:
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+                </div>
+                
+                <h3>Class-Based Decorators</h3>
+                <p>Implement decorators as classes for more complex state management:</p>
+                
+                <div class="code-block">
+class RateLimiter:
+    """Rate limiting decorator using token bucket algorithm."""
+    
+    def __init__(self, max_calls: int, time_window: float):
+        self.max_calls = max_calls
+        self.time_window = time_window
+        self.calls = []
+    
+    def __call__(self, func: Callable) -> Callable:
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            now = time.time()
+            
+            # Remove old calls outside the time window
+            self.calls = [call_time for call_time in self.calls 
+                         if now - call_time < self.time_window]
+            
+            if len(self.calls) >= self.max_calls:
+                raise Exception(f"Rate limit exceeded: {self.max_calls} calls per {self.time_window}s")
+            
+            self.calls.append(now)
+            return func(*args, **kwargs)
+        
+        return wrapper
+
+# Usage
+@RateLimiter(max_calls=5, time_window=60.0)  # 5 calls per minute
+def send_email(recipient: str, message: str):
+    print(f"Sending email to {recipient}: {message}")
+    # Email sending logic here
+                </div>
+                
+                <h3>Advanced Context Managers</h3>
+                <p>Create sophisticated context managers for resource management:</p>
+                
+                <div class="code-block">
+from contextlib import contextmanager
+import threading
+import logging
+
+class DatabaseTransaction:
+    """Advanced database transaction context manager."""
+    
+    def __init__(self, connection, isolation_level='READ_COMMITTED'):
+        self.connection = connection
+        self.isolation_level = isolation_level
+        self.transaction = None
+        self.savepoints = []
+    
+    def __enter__(self):
+        self.transaction = self.connection.begin()
+        self.connection.execute(f"SET TRANSACTION ISOLATION LEVEL {self.isolation_level}")
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type is None:
+            try:
+                self.transaction.commit()
+                logging.info("Transaction committed successfully")
+            except Exception as e:
+                self.transaction.rollback()
+                logging.error(f"Commit failed, rolled back: {e}")
+                raise
+        else:
+            self.transaction.rollback()
+            logging.warning(f"Transaction rolled back due to: {exc_val}")
+        return False
+    
+    def savepoint(self, name: str):
+        """Create a savepoint within the transaction."""
+        savepoint = self.connection.execute(f"SAVEPOINT {name}")
+        self.savepoints.append((name, savepoint))
+        return savepoint
+    
+    def rollback_to_savepoint(self, name: str):
+        """Rollback to a specific savepoint."""
+        self.connection.execute(f"ROLLBACK TO SAVEPOINT {name}")
+
+@contextmanager
+def thread_pool_executor(max_workers: int = 4):
+    """Context manager for thread pool with proper cleanup."""
+    from concurrent.futures import ThreadPoolExecutor
+    
+    executor = ThreadPoolExecutor(max_workers=max_workers)
+    try:
+        yield executor
+    finally:
+        executor.shutdown(wait=True)
+        logging.info(f"Thread pool with {max_workers} workers shut down")
+
+# Usage
+with thread_pool_executor(max_workers=8) as executor:
+    futures = [executor.submit(process_data, data) for data in dataset]
+    results = [future.result() for future in futures]
+                </div>
+            </section>
+            
+            <section id="async">
+                <h2>⚡ Asynchronous Programming Mastery</h2>
+                
+                <h3>Advanced Asyncio Patterns</h3>
+                <p>Master complex asynchronous programming patterns for high-performance applications:</p>
+                
+                <div class="code-block">
+import asyncio
+import aiohttp
+import time
+from typing import List, Dict, Any
+from dataclasses import dataclass
+
+@dataclass
+class APIResponse:
+    url: str
+    status: int
+    data: Dict[str, Any]
+    response_time: float
+
+class AsyncAPIClient:
+    """High-performance async API client with connection pooling."""
+    
+    def __init__(self, base_url: str, max_connections: int = 100):
+        self.base_url = base_url
+        self.connector = aiohttp.TCPConnector(
+            limit=max_connections,
+            limit_per_host=20,
+            keepalive_timeout=30
+        )
+        self.session = None
+    
+    async def __aenter__(self):
+        self.session = aiohttp.ClientSession(
+            connector=self.connector,
+            timeout=aiohttp.ClientTimeout(total=30)
+        )
+        return self
+    
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        if self.session:
+            await self.session.close()
+    
+    async def fetch(self, endpoint: str, **kwargs) -> APIResponse:
+        """Fetch data from a single endpoint."""
+        url = f"{self.base_url}/{endpoint.lstrip('/')}"
+        start_time = time.time()
+        
+        async with self.session.get(url, **kwargs) as response:
+            data = await response.json()
+            response_time = time.time() - start_time
+            
+            return APIResponse(
+                url=url,
+                status=response.status,
+                data=data,
+                response_time=response_time
+            )
+    
+    async def fetch_multiple(self, endpoints: List[str], 
+                           concurrency_limit: int = 10) -> List[APIResponse]:
+        """Fetch data from multiple endpoints concurrently."""
+        semaphore = asyncio.Semaphore(concurrency_limit)
+        
+        async def fetch_with_semaphore(endpoint: str) -> APIResponse:
+            async with semaphore:
+                return await self.fetch(endpoint)
+        
+        tasks = [fetch_with_semaphore(endpoint) for endpoint in endpoints]
+        return await asyncio.gather(*tasks, return_exceptions=True)
+
+# Advanced async generator for streaming data
+async def stream_large_dataset(data_source: str, batch_size: int = 1000):
+    """Async generator for processing large datasets in batches."""
+    async with AsyncAPIClient(data_source) as client:
+        offset = 0
+        
+        while True:
+            try:
+                response = await client.fetch(
+                    f"data?offset={offset}&limit={batch_size}"
+                )
+                
+                if not response.data.get('items'):
+                    break
+                
+                yield response.data['items']
+                offset += batch_size
+                
+                # Add small delay to prevent overwhelming the server
+                await asyncio.sleep(0.1)
+                
+            except Exception as e:
+                print(f"Error fetching batch at offset {offset}: {e}")
+                break
+
+# Usage example
+async def process_large_dataset():
+    total_processed = 0
+    
+    async for batch in stream_large_dataset("https://api.example.com"):
+        # Process batch asynchronously
+        tasks = [process_item(item) for item in batch]
+        await asyncio.gather(*tasks)
+        
+        total_processed += len(batch)
+        print(f"Processed {total_processed} items so far...")
+    
+    print(f"Finished processing {total_processed} items")
+                </div>
+                
+                <h3>Custom Event Loop and Async Context Managers</h3>
+                <div class="code-block">
+import asyncio
+from contextlib import asynccontextmanager
+
+class CustomEventLoop:
+    """Custom event loop with enhanced monitoring."""
+    
+    def __init__(self):
+        self.loop = asyncio.new_event_loop()
+        self.task_monitor = TaskMonitor()
+    
+    def run_with_monitoring(self, coro):
+        """Run coroutine with task monitoring."""
+        asyncio.set_event_loop(self.loop)
+        
+        # Add task monitoring
+        self.loop.set_task_factory(self.task_monitor.task_factory)
+        
+        try:
+            return self.loop.run_until_complete(coro)
+        finally:
+            self.loop.close()
+            self.task_monitor.print_statistics()
+
+class TaskMonitor:
+    """Monitor async task performance and lifecycle."""
+    
+    def __init__(self):
+        self.tasks = {}
+        self.completed_tasks = 0
+        self.failed_tasks = 0
+    
+    def task_factory(self, loop, coro):
+        """Custom task factory for monitoring."""
+        task = asyncio.Task(coro, loop=loop)
+        self.tasks[task] = {
+            'created_at': time.time(),
+            'name': getattr(coro, '__name__', 'unknown')
+        }
+        
+        task.add_done_callback(self._task_done_callback)
+        return task
+    
+    def _task_done_callback(self, task):
+        """Callback when task completes."""
+        task_info = self.tasks.pop(task, {})
+        
+        if task.exception():
+            self.failed_tasks += 1
+            print(f"Task {task_info.get('name')} failed: {task.exception()}")
+        else:
+            self.completed_tasks += 1
+        
+        duration = time.time() - task_info.get('created_at', 0)
+        print(f"Task {task_info.get('name')} completed in {duration:.2f}s")
+    
+    def print_statistics(self):
+        print(f"\nTask Statistics:")
+        print(f"Completed: {self.completed_tasks}")
+        print(f"Failed: {self.failed_tasks}")
+        print(f"Active: {len(self.tasks)}")
+
+@asynccontextmanager
+async def database_pool(connection_string: str, pool_size: int = 10):
+    """Async context manager for database connection pool."""
+    import asyncpg
+    
+    pool = await asyncpg.create_pool(
+        connection_string,
+        min_size=1,
+        max_size=pool_size,
+        command_timeout=60
+    )
+    
+    try:
+        yield pool
+    finally:
+        await pool.close()
+        print(f"Database pool closed")
+                </div>
+            </section>
+            
+            <section id="performance">
+                <h2>🚀 Memory Management and Performance Optimization</h2>
+                
+                <h3>Memory Profiling and Optimization</h3>
+                <p>Learn advanced techniques for monitoring and optimizing memory usage in Python applications:</p>
+                
+                <div class="code-block">
+import sys
+import gc
+import tracemalloc
+from functools import wraps
+from typing import Any, Callable
+
+class MemoryProfiler:
+    """Advanced memory profiler for Python applications."""
+    
+    def __init__(self):
+        self.snapshots = []
+        self.baseline = None
+    
+    def start_tracing(self):
+        """Start memory tracing."""
+        tracemalloc.start()
+        self.baseline = tracemalloc.take_snapshot()
+    
+    def take_snapshot(self, label: str = None):
+        """Take a memory snapshot."""
+        if not tracemalloc.is_tracing():
+            raise RuntimeError("Memory tracing not started")
+        
+        snapshot = tracemalloc.take_snapshot()
+        self.snapshots.append((label or f"snapshot_{len(self.snapshots)}", snapshot))
+        return snapshot
+    
+    def compare_snapshots(self, snapshot1_idx: int = 0, snapshot2_idx: int = -1):
+        """Compare two memory snapshots."""
+        if len(self.snapshots) < 2:
+            raise ValueError("Need at least 2 snapshots to compare")
+        
+        _, snap1 = self.snapshots[snapshot1_idx]
+        _, snap2 = self.snapshots[snapshot2_idx]
+        
+        top_stats = snap2.compare_to(snap1, 'lineno')
+        
+        print("Top 10 memory differences:")
+        for stat in top_stats[:10]:
+            print(stat)
+    
+    def get_current_memory_usage(self) -> dict:
+        """Get current memory usage statistics."""
+        return {
+            'rss': self._get_memory_usage(),
+            'objects': len(gc.get_objects()),
+            'garbage': len(gc.garbage)
+        }
+    
+    @staticmethod
+    def _get_memory_usage() -> float:
+        """Get RSS memory usage in MB."""
+        import psutil
+        process = psutil.Process()
+        return process.memory_info().rss / 1024 / 1024
+
+def memory_monitor(func: Callable) -> Callable:
+    """Decorator to monitor memory usage of functions."""
+    @wraps(func)
+    def wrapper(*args, **kwargs) -> Any:
+        profiler = MemoryProfiler()
+        
+        # Measure memory before
+        gc.collect()  # Force garbage collection
+        memory_before = profiler.get_current_memory_usage()
+        
+        try:
+            result = func(*args, **kwargs)
+        finally:
+            # Measure memory after
+            gc.collect()
+            memory_after = profiler.get_current_memory_usage()
+            
+            memory_diff = memory_after['rss'] - memory_before['rss']
+            print(f"Function '{func.__name__}' memory usage:")
+            print(f"  Before: {memory_before['rss']:.2f} MB")
+            print(f"  After: {memory_after['rss']:.2f} MB")
+            print(f"  Difference: {memory_diff:+.2f} MB")
+            print(f"  Objects: {memory_after['objects']}")
+        
+        return result
+    return wrapper
+
+# Memory-efficient data processing
+class MemoryEfficientProcessor:
+    """Process large datasets with minimal memory footprint."""
+    
+    def __init__(self, chunk_size: int = 10000):
+        self.chunk_size = chunk_size
+    
+    def process_large_file(self, filepath: str, processor_func: Callable):
+        """Process large files in chunks to minimize memory usage."""
+        with open(filepath, 'r') as file:
+            chunk = []
+            
+            for line in file:
+                chunk.append(line.strip())
+                
+                if len(chunk) >= self.chunk_size:
+                    yield from processor_func(chunk)
+                    chunk.clear()  # Clear chunk to free memory
+            
+            # Process remaining items
+            if chunk:
+                yield from processor_func(chunk)
+    
+    @staticmethod
+    def optimize_data_structures(data: list) -> list:
+        """Optimize data structures for memory efficiency."""
+        # Use __slots__ for classes to reduce memory overhead
+        # Convert lists to tuples when data is immutable
+        # Use generators instead of lists when possible
+        
+        if all(isinstance(item, (int, float, str)) for item in data):
+            # Use array for numeric data
+            import array
+            if all(isinstance(item, int) for item in data):
+                return array.array('i', data)  # Integer array
+            elif all(isinstance(item, float) for item in data):
+                return array.array('d', data)  # Double array
+        
+        return data
+
+# Usage examples
+@memory_monitor
+def memory_intensive_function():
+    # Simulate memory-intensive operation
+    large_list = [i ** 2 for i in range(1000000)]
+    return sum(large_list)
+
+# Efficient data processing
+processor = MemoryEfficientProcessor(chunk_size=5000)
+for processed_chunk in processor.process_large_file('large_data.txt', lambda x: [item.upper() for item in x]):
+    # Process each chunk
+    pass
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Performance Tip:</strong> Always profile your code before optimizing. Use tools like cProfile, memory_profiler, and py-spy to identify actual bottlenecks rather than guessing.
+                </div>
+            </section>
+            
+            <section id="testing">
+                <h2>🧪 Advanced Testing Strategies</h2>
+                
+                <h3>Property-Based Testing</h3>
+                <p>Implement comprehensive testing strategies using property-based testing and advanced mocking:</p>
+                
+                <div class="code-block">
+import pytest
+from hypothesis import given, strategies as st, assume
+from unittest.mock import Mock, patch, MagicMock
+from typing import List, Any
+
+class AdvancedTestSuite:
+    """Advanced testing patterns and strategies."""
+    
+    @given(st.lists(st.integers(), min_size=1))
+    def test_sorting_properties(self, numbers: List[int]):
+        """Property-based test for sorting function."""
+        sorted_numbers = sorted(numbers)
+        
+        # Property 1: Result should have same length
+        assert len(sorted_numbers) == len(numbers)
+        
+        # Property 2: Result should be sorted
+        for i in range(len(sorted_numbers) - 1):
+            assert sorted_numbers[i] <= sorted_numbers[i + 1]
+        
+        # Property 3: Result should contain same elements
+        assert sorted(numbers) == sorted_numbers
+    
+    @given(st.text(), st.text())
+    def test_string_concatenation_properties(self, s1: str, s2: str):
+        """Property-based test for string operations."""
+        result = s1 + s2
+        
+        # Properties of concatenation
+        assert len(result) == len(s1) + len(s2)
+        assert result.startswith(s1)
+        assert result.endswith(s2)
+    
+    @given(st.integers(min_value=1, max_value=1000))
+    def test_fibonacci_properties(self, n: int):
+        """Property-based test for Fibonacci sequence."""
+        def fibonacci(n):
+            if n <= 1:
+                return n
+            return fibonacci(n-1) + fibonacci(n-2)
+        
+        assume(n <= 30)  # Limit to prevent timeout
+        
+        result = fibonacci(n)
+        
+        # Properties of Fibonacci numbers
+        assert result >= 0
+        if n > 1:
+            assert result == fibonacci(n-1) + fibonacci(n-2)
+
+class MockingPatterns:
+    """Advanced mocking patterns for testing."""
+    
+    def test_api_client_with_complex_mocking(self):
+        """Test API client with sophisticated mocking."""
+        
+        # Create a mock response with realistic behavior
+        mock_response = Mock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {'data': 'test'}
+        mock_response.headers = {'Content-Type': 'application/json'}
+        
+        # Mock the requests library
+        with patch('requests.get') as mock_get:
+            mock_get.return_value = mock_response
+            
+            # Test the API client
+            client = APIClient('https://api.example.com')
+            result = client.fetch_data('/users')
+            
+            # Verify the mock was called correctly
+            mock_get.assert_called_once_with(
+                'https://api.example.com/users',
+                headers={'Accept': 'application/json'}
+            )
+            
+            assert result == {'data': 'test'}
+    
+    def test_database_operations_with_context_manager_mock(self):
+        """Test database operations using context manager mocks."""
+        
+        # Create a mock database connection
+        mock_connection = MagicMock()
+        mock_cursor = MagicMock()
+        
+        # Configure the mock to work as a context manager
+        mock_connection.__enter__.return_value = mock_connection
+        mock_connection.__exit__.return_value = None
+        mock_connection.cursor.return_value.__enter__.return_value = mock_cursor
+        mock_connection.cursor.return_value.__exit__.return_value = None
+        
+        # Mock query results
+        mock_cursor.fetchall.return_value = [
+            (1, 'John', 'john@example.com'),
+            (2, 'Jane', 'jane@example.com')
+        ]
+        
+        with patch('psycopg2.connect') as mock_connect:
+            mock_connect.return_value = mock_connection
+            
+            # Test the database service
+            service = UserService()
+            users = service.get_all_users()
+            
+            # Verify the interactions
+            mock_connect.assert_called_once()
+            mock_cursor.execute.assert_called_once_with('SELECT * FROM users')
+            assert len(users) == 2
+
+class AsyncTestPatterns:
+    """Advanced patterns for testing async code."""
+    
+    @pytest.mark.asyncio
+    async def test_async_function_with_timeout(self):
+        """Test async function with timeout handling."""
+        
+        async def slow_operation():
+            await asyncio.sleep(2)
+            return "completed"
+        
+        # Test that operation completes within timeout
+        result = await asyncio.wait_for(slow_operation(), timeout=3.0)
+        assert result == "completed"
+        
+        # Test that operation times out
+        with pytest.raises(asyncio.TimeoutError):
+            await asyncio.wait_for(slow_operation(), timeout=1.0)
+    
+    @pytest.mark.asyncio
+    async def test_async_context_manager(self):
+        """Test async context managers."""
+        
+        class AsyncResource:
+            def __init__(self):
+                self.is_open = False
+            
+            async def __aenter__(self):
+                self.is_open = True
+                return self
+            
+            async def __aexit__(self, exc_type, exc_val, exc_tb):
+                self.is_open = False
+        
+        async with AsyncResource() as resource:
+            assert resource.is_open is True
+        
+        assert resource.is_open is False
+
+# Fixture patterns for complex test setups
+@pytest.fixture
+def database_with_test_data():
+    """Fixture that provides a database with test data."""
+    # Setup
+    db = create_test_database()
+    populate_test_data(db)
+    
+    yield db
+    
+    # Teardown
+    cleanup_test_database(db)
+
+@pytest.fixture
+async def async_client():
+    """Fixture for async HTTP client."""
+    async with aiohttp.ClientSession() as session:
+        yield session
+                </div>
+            </section>
+            
+            <section id="patterns">
+                <h2>🏛️ Design Patterns in Python</h2>
+                
+                <h3>Advanced Creational Patterns</h3>
+                <div class="code-block">
+from abc import ABC, abstractmethod
+from typing import Dict, Any, Type
+import threading
+
+# Abstract Factory Pattern
+class DatabaseFactory(ABC):
+    """Abstract factory for database connections."""
+    
+    @abstractmethod
+    def create_connection(self) -> 'DatabaseConnection':
+        pass
+    
+    @abstractmethod
+    def create_query_builder(self) -> 'QueryBuilder':
+        pass
+
+class PostgreSQLFactory(DatabaseFactory):
+    def create_connection(self) -> 'PostgreSQLConnection':
+        return PostgreSQLConnection()
+    
+    def create_query_builder(self) -> 'PostgreSQLQueryBuilder':
+        return PostgreSQLQueryBuilder()
+
+class MySQLFactory(DatabaseFactory):
+    def create_connection(self) -> 'MySQLConnection':
+        return MySQLConnection()
+    
+    def create_query_builder(self) -> 'MySQLQueryBuilder':
+        return MySQLQueryBuilder()
+
+# Builder Pattern with Fluent Interface
+class QueryBuilder:
+    """Fluent query builder pattern."""
+    
+    def __init__(self):
+        self._select_fields = []
+        self._from_table = None
+        self._where_conditions = []
+        self._joins = []
+        self._order_by = []
+        self._limit_value = None
+    
+    def select(self, *fields: str) -> 'QueryBuilder':
+        self._select_fields.extend(fields)
+        return self
+    
+    def from_table(self, table: str) -> 'QueryBuilder':
+        self._from_table = table
+        return self
+    
+    def where(self, condition: str) -> 'QueryBuilder':
+        self._where_conditions.append(condition)
+        return self
+    
+    def join(self, table: str, on_condition: str) -> 'QueryBuilder':
+        self._joins.append(f"JOIN {table} ON {on_condition}")
+        return self
+    
+    def order_by(self, field: str, direction: str = 'ASC') -> 'QueryBuilder':
+        self._order_by.append(f"{field} {direction}")
+        return self
+    
+    def limit(self, count: int) -> 'QueryBuilder':
+        self._limit_value = count
+        return self
+    
+    def build(self) -> str:
+        """Build the final SQL query."""
+        query_parts = []
+        
+        # SELECT clause
+        fields = ', '.join(self._select_fields) if self._select_fields else '*'
+        query_parts.append(f"SELECT {fields}")
+        
+        # FROM clause
+        if self._from_table:
+            query_parts.append(f"FROM {self._from_table}")
+        
+        # JOIN clauses
+        query_parts.extend(self._joins)
+        
+        # WHERE clause
+        if self._where_conditions:
+            where_clause = ' AND '.join(self._where_conditions)
+            query_parts.append(f"WHERE {where_clause}")
+        
+        # ORDER BY clause
+        if self._order_by:
+            order_clause = ', '.join(self._order_by)
+            query_parts.append(f"ORDER BY {order_clause}")
+        
+        # LIMIT clause
+        if self._limit_value:
+            query_parts.append(f"LIMIT {self._limit_value}")
+        
+        return ' '.join(query_parts)
+
+# Usage
+query = (QueryBuilder()
+         .select('name', 'email', 'created_at')
+         .from_table('users')
+         .join('profiles', 'users.id = profiles.user_id')
+         .where('users.active = true')
+         .where('users.created_at > \'2024-01-01\'')
+         .order_by('created_at', 'DESC')
+         .limit(50)
+         .build())
+
+print(query)
+                </div>
+                
+                <h3>Advanced Behavioral Patterns</h3>
+                <div class="code-block">
+# Observer Pattern with Type Safety
+from typing import List, Protocol, runtime_checkable
+
+@runtime_checkable
+class Observer(Protocol):
+    def update(self, subject: 'Subject', event_data: Any) -> None:
+        ...
+
+class Subject:
+    """Subject in observer pattern with event types."""
+    
+    def __init__(self):
+        self._observers: Dict[str, List[Observer]] = {}
+    
+    def attach(self, observer: Observer, event_type: str = 'default') -> None:
+        if event_type not in self._observers:
+            self._observers[event_type] = []
+        self._observers[event_type].append(observer)
+    
+    def detach(self, observer: Observer, event_type: str = 'default') -> None:
+        if event_type in self._observers:
+            self._observers[event_type].remove(observer)
+    
+    def notify(self, event_type: str = 'default', event_data: Any = None) -> None:
+        if event_type in self._observers:
+            for observer in self._observers[event_type]:
+                observer.update(self, event_data)
+
+# Command Pattern with Undo/Redo
+class Command(ABC):
+    @abstractmethod
+    def execute(self) -> Any:
+        pass
+    
+    @abstractmethod
+    def undo(self) -> Any:
+        pass
+
+class CommandInvoker:
+    """Command invoker with undo/redo functionality."""
+    
+    def __init__(self):
+        self._history: List[Command] = []
+        self._current_position = -1
+    
+    def execute_command(self, command: Command) -> Any:
+        # Remove any commands after current position (for redo)
+        self._history = self._history[:self._current_position + 1]
+        
+        # Execute and add to history
+        result = command.execute()
+        self._history.append(command)
+        self._current_position += 1
+        
+        return result
+    
+    def undo(self) -> bool:
+        if self._current_position >= 0:
+            command = self._history[self._current_position]
+            command.undo()
+            self._current_position -= 1
+            return True
+        return False
+    
+    def redo(self) -> bool:
+        if self._current_position < len(self._history) - 1:
+            self._current_position += 1
+            command = self._history[self._current_position]
+            command.execute()
+            return True
+        return False
+
+# Strategy Pattern with Dynamic Loading
+class ProcessingStrategy(ABC):
+    @abstractmethod
+    def process(self, data: Any) -> Any:
+        pass
+
+class DataProcessor:
+    """Context class that uses different processing strategies."""
+    
+    def __init__(self):
+        self._strategies: Dict[str, Type[ProcessingStrategy]] = {}
+        self._current_strategy: ProcessingStrategy = None
+    
+    def register_strategy(self, name: str, strategy_class: Type[ProcessingStrategy]):
+        self._strategies[name] = strategy_class
+    
+    def set_strategy(self, strategy_name: str, **kwargs):
+        if strategy_name not in self._strategies:
+            raise ValueError(f"Unknown strategy: {strategy_name}")
+        
+        strategy_class = self._strategies[strategy_name]
+        self._current_strategy = strategy_class(**kwargs)
+    
+    def process_data(self, data: Any) -> Any:
+        if not self._current_strategy:
+            raise RuntimeError("No processing strategy set")
+        
+        return self._current_strategy.process(data)
+
+# Example strategies
+class JSONProcessingStrategy(ProcessingStrategy):
+    def process(self, data: Any) -> dict:
+        import json
+        if isinstance(data, str):
+            return json.loads(data)
+        return data
+
+class XMLProcessingStrategy(ProcessingStrategy):
+    def process(self, data: Any) -> dict:
+        import xml.etree.ElementTree as ET
+        # XML processing logic
+        return {"processed": "xml_data"}
+
+# Usage
+processor = DataProcessor()
+processor.register_strategy('json', JSONProcessingStrategy)
+processor.register_strategy('xml', XMLProcessingStrategy)
+
+processor.set_strategy('json')
+result = processor.process_data('{"key": "value"}')
+                </div>
+            </section>
+            
+            <section id="best-practices">
+                <h2>💎 Professional Best Practices</h2>
+                
+                <h3>Code Quality and Maintainability</h3>
+                <div class="highlight-box">
+                    <strong>🎯 Key Principles:</strong>
+                    <ul>
+                        <li><strong>SOLID Principles:</strong> Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion</li>
+                        <li><strong>DRY (Don't Repeat Yourself):</strong> Eliminate code duplication through abstraction</li>
+                        <li><strong>KISS (Keep It Simple, Stupid):</strong> Prefer simple, readable solutions</li>
+                        <li><strong>YAGNI (You Aren't Gonna Need It):</strong> Don't implement features until they're needed</li>
+                    </ul>
+                </div>
+                
+                <div class="code-block">
+# Type hints and documentation best practices
+from typing import Optional, Union, List, Dict, Callable, TypeVar, Generic
+from dataclasses import dataclass, field
+from enum import Enum, auto
+
+T = TypeVar('T')
+
+class Status(Enum):
+    """Enumeration for operation status."""
+    PENDING = auto()
+    PROCESSING = auto()
+    COMPLETED = auto()
+    FAILED = auto()
+
+@dataclass
+class Result(Generic[T]):
+    """Generic result container with error handling."""
+    success: bool
+    data: Optional[T] = None
+    error: Optional[str] = None
+    metadata: Dict[str, Any] = field(default_factory=dict)
+    
+    @classmethod
+    def success_result(cls, data: T, **metadata) -> 'Result[T]':
+        """Create a successful result."""
+        return cls(success=True, data=data, metadata=metadata)
+    
+    @classmethod
+    def error_result(cls, error: str, **metadata) -> 'Result[T]':
+        """Create an error result."""
+        return cls(success=False, error=error, metadata=metadata)
+
+class DataService:
+    """Example service class demonstrating best practices."""
+    
+    def __init__(self, 
+                 connection_string: str,
+                 timeout: float = 30.0,
+                 retry_attempts: int = 3) -> None:
+        """
+        Initialize the data service.
+        
+        Args:
+            connection_string: Database connection string
+            timeout: Connection timeout in seconds
+            retry_attempts: Number of retry attempts for failed operations
+        
+        Raises:
+            ValueError: If connection_string is empty
+            ConnectionError: If initial connection fails
+        """
+        if not connection_string:
+            raise ValueError("Connection string cannot be empty")
+        
+        self._connection_string = connection_string
+        self._timeout = timeout
+        self._retry_attempts = retry_attempts
+        self._connection = None
+    
+    async def fetch_user_data(self, 
+                             user_id: int,
+                             include_profile: bool = False) -> Result[Dict[str, Any]]:
+        """
+        Fetch user data from the database.
+        
+        Args:
+            user_id: Unique identifier for the user
+            include_profile: Whether to include profile information
+        
+        Returns:
+            Result containing user data or error information
+        
+        Example:
+            >>> service = DataService("postgresql://...")
+            >>> result = await service.fetch_user_data(123, include_profile=True)
+            >>> if result.success:
+            ...     print(f"User: {result.data['name']}")
+            ... else:
+            ...     print(f"Error: {result.error}")
+        """
+        try:
+            # Implementation with proper error handling
+            user_data = await self._execute_query(
+                "SELECT * FROM users WHERE id = $1", 
+                user_id
+            )
+            
+            if not user_data:
+                return Result.error_result(
+                    f"User with ID {user_id} not found",
+                    user_id=user_id
+                )
+            
+            if include_profile:
+                profile_data = await self._execute_query(
+                    "SELECT * FROM profiles WHERE user_id = $1",
+                    user_id
+                )
+                user_data['profile'] = profile_data
+            
+            return Result.success_result(
+                user_data,
+                query_time=self._last_query_time,
+                include_profile=include_profile
+            )
+            
+        except Exception as e:
+            return Result.error_result(
+                f"Database error: {str(e)}",
+                user_id=user_id,
+                exception_type=type(e).__name__
+            )
+    
+    async def _execute_query(self, query: str, *params) -> Optional[Dict[str, Any]]:
+        """Execute database query with retry logic."""
+        for attempt in range(self._retry_attempts):
+            try:
+                # Database execution logic
+                start_time = time.time()
+                result = await self._connection.fetchrow(query, *params)
+                self._last_query_time = time.time() - start_time
+                return dict(result) if result else None
+                
+            except Exception as e:
+                if attempt == self._retry_attempts - 1:
+                    raise
+                await asyncio.sleep(2 ** attempt)  # Exponential backoff
+
+# Configuration management best practices
+class Config:
+    """Application configuration with validation."""
+    
+    def __init__(self):
+        self.database_url = self._get_env_var('DATABASE_URL')
+        self.api_key = self._get_env_var('API_KEY')
+        self.debug = self._get_env_var('DEBUG', 'false').lower() == 'true'
+        self.max_connections = int(self._get_env_var('MAX_CONNECTIONS', '10'))
+        
+        self._validate_config()
+    
+    def _get_env_var(self, name: str, default: str = None) -> str:
+        """Get environment variable with optional default."""
+        import os
+        value = os.getenv(name, default)
+        if value is None:
+            raise ValueError(f"Required environment variable {name} not set")
+        return value
+    
+    def _validate_config(self) -> None:
+        """Validate configuration values."""
+        if not self.database_url.startswith(('postgresql://', 'mysql://')):
+            raise ValueError("Invalid database URL format")
+        
+        if self.max_connections < 1 or self.max_connections > 100:
+            raise ValueError("Max connections must be between 1 and 100")
+                </div>
+                
+                <h3>Error Handling and Logging</h3>
+                <div class="code-block">
+import logging
+from contextlib import contextmanager
+from typing import Optional, Type
+
+# Custom exception hierarchy
+class ApplicationError(Exception):
+    """Base exception for application errors."""
+    
+    def __init__(self, message: str, error_code: str = None, **context):
+        super().__init__(message)
+        self.message = message
+        self.error_code = error_code or self.__class__.__name__
+        self.context = context
+
+class ValidationError(ApplicationError):
+    """Raised when data validation fails."""
+    pass
+
+class BusinessLogicError(ApplicationError):
+    """Raised when business rules are violated."""
+    pass
+
+class ExternalServiceError(ApplicationError):
+    """Raised when external service calls fail."""
+    pass
+
+# Advanced logging setup
+class StructuredLogger:
+    """Structured logger with context management."""
+    
+    def __init__(self, name: str):
+        self.logger = logging.getLogger(name)
+        self._setup_logger()
+    
+    def _setup_logger(self):
+        """Setup logger with structured formatting."""
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        )
+        handler.setFormatter(formatter)
+        self.logger.addHandler(handler)
+        self.logger.setLevel(logging.INFO)
+    
+    @contextmanager
+    def context(self, **kwargs):
+        """Add context to all log messages within the block."""
+        old_factory = logging.getLogRecordFactory()
+        
+        def record_factory(*args, **factory_kwargs):
+            record = old_factory(*args, **factory_kwargs)
+            for key, value in kwargs.items():
+                setattr(record, key, value)
+            return record
+        
+        logging.setLogRecordFactory(record_factory)
+        try:
+            yield
+        finally:
+            logging.setLogRecordFactory(old_factory)
+    
+    def log_exception(self, exc: Exception, **context):
+        """Log exception with full context."""
+        self.logger.error(
+            f"Exception occurred: {exc}",
+            exc_info=True,
+            extra={
+                'exception_type': type(exc).__name__,
+                'exception_message': str(exc),
+                **context
+            }
+        )
+
+# Usage example
+logger = StructuredLogger(__name__)
+
+try:
+    with logger.context(user_id=123, operation='data_fetch'):
+        # Some operation that might fail
+        result = fetch_user_data(123)
+except ValidationError as e:
+    logger.log_exception(e, validation_field='email')
+except Exception as e:
+    logger.log_exception(e)
+                </div>
+            </section>
+            
+            <section id="conclusion">
+                <h2>🎯 Conclusion and Next Steps</h2>
+                
+                <p>Mastering advanced Python programming techniques is essential for building robust, scalable, and maintainable applications in 2025. The concepts covered in this guide provide a solid foundation for professional Python development.</p>
+                
+                <div class="success-box">
+                    <strong>🚀 Key Takeaways:</strong>
+                    <ul>
+                        <li><strong>Metaclasses:</strong> Use sparingly for framework development and dynamic class creation</li>
+                        <li><strong>Decorators:</strong> Implement cross-cutting concerns like logging, caching, and validation</li>
+                        <li><strong>Async Programming:</strong> Essential for I/O-bound applications and high-performance systems</li>
+                        <li><strong>Memory Management:</strong> Profile first, optimize based on actual bottlenecks</li>
+                        <li><strong>Testing:</strong> Combine unit tests, property-based tests, and integration tests</li>
+                        <li><strong>Design Patterns:</strong> Apply appropriate patterns to solve common architectural problems</li>
+                        <li><strong>Performance:</strong> Use profiling tools to identify and optimize bottlenecks</li>
+                        <li><strong>Code Quality:</strong> Maintain clean, readable, and well-documented code</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <strong>💡 Next Steps:</strong>
+                    <p>Continue your Python journey by exploring advanced frameworks like FastAPI, Django REST Framework, and data science libraries like NumPy, Pandas, and TensorFlow.</p>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>🚀 Ready to Level Up Your Python Skills?</h3>
+                    <p>Explore more advanced programming tutorials and tools on <a href="../../index.html">RemoteToolHub</a>. Join thousands of developers mastering modern programming techniques!</p>
+                    
+                    <div class="social-share">
+                        <h4>Share This Article:</h4>
+                        <a href="https://twitter.com/intent/tweet?text=Advanced%20Python%20Programming%20Techniques%202025&url=https://remotetoolhub.com/blog/articles/advanced-python-programming-techniques-2025.html" target="_blank" class="share-btn twitter">Twitter</a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://remotetoolhub.com/blog/articles/advanced-python-programming-techniques-2025.html" target="_blank" class="share-btn linkedin">LinkedIn</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://remotetoolhub.com/blog/articles/advanced-python-programming-techniques-2025.html" target="_blank" class="share-btn facebook">Facebook</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>RemoteToolHub</h3>
+                        <p>Your ultimate resource for developer tools, tutorials, and best practices.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="../index.html">Blog</a></li>
+                            <li><a href="../../about.html">About</a></li>
+                            <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="../index.html#python">Python</a></li>
+                            <li><a href="../index.html#javascript">JavaScript</a></li>
+                            <li><a href="../index.html#devops">DevOps</a></li>
+                            <li><a href="../index.html#tools">Developer Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 RemoteToolHub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            // Dark mode toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            
+            // Check for saved dark mode preference
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = '☀️';
+            }
+            
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                localStorage.setItem('darkMode', isDark);
+                darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Copy code functionality
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const codeBlock = btn.nextElementSibling.querySelector('code');
+                    try {
+                        await navigator.clipboard.writeText(codeBlock.textContent);
+                        btn.textContent = 'Copied!';
+                        setTimeout(() => {
+                            btn.textContent = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy code:', err);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

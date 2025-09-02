@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Guide to DevOps for Developers 2025 | RemoteToolHub</title>
+    <meta name="description" content="Master DevOps in 2025 with our comprehensive guide covering CI/CD, containerization, cloud platforms, monitoring, and automation tools for modern developers.">
+    <meta name="keywords" content="DevOps, CI/CD, Docker, Kubernetes, AWS, Azure, Jenkins, automation, monitoring, deployment, infrastructure">
+    <meta name="author" content="RemoteToolHub">
+    <meta property="og:title" content="Complete Guide to DevOps for Developers 2025">
+    <meta property="og:description" content="Master DevOps practices, tools, and methodologies with practical examples and real-world implementations.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://remotetoolhub.com/blog/articles/complete-guide-devops-developers-2025.html">
+    <meta property="og:image" content="https://remotetoolhub.com/blog/assets/images/devops-guide-2025.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complete Guide to DevOps for Developers 2025">
+    <meta name="twitter:description" content="Master DevOps practices, tools, and methodologies with practical examples and real-world implementations.">
+    <meta name="twitter:image" content="https://remotetoolhub.com/blog/assets/images/devops-guide-2025.jpg">
+    <link rel="canonical" href="https://remotetoolhub.com/blog/articles/complete-guide-devops-developers-2025.html">
+    <link rel="stylesheet" href="../../dark-mode.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            background: #fff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #6c757d;
+            text-decoration: none;
+            margin-right: 0.5rem;
+        }
+
+        .breadcrumb a:hover {
+            color: #007bff;
+        }
+
+        .article-meta {
+            background: white;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .meta-item i {
+            margin-right: 0.5rem;
+            color: #6c757d;
+        }
+
+        .content {
+            background: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .table-of-contents {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .table-of-contents h3 {
+            color: #495057;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc-list li {
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .toc-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-size: 0.8rem;
+        }
+
+        .toc-list a {
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc-list a:hover {
+            color: #007bff;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin: 2.5rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #007bff;
+            position: relative;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #007bff, #0056b3);
+            border-radius: 2px;
+        }
+
+        h4 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box h3::before {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            position: relative;
+            border-left: 4px solid #007bff;
+        }
+
+        .code-block::before {
+            content: attr(data-language);
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            background: #007bff;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+        }
+
+        .info-card {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .info-card::before {
+            content: 'ℹ';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #2196f3;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .info-card h4 {
+            margin-left: 2rem;
+            color: #1976d2;
+        }
+
+        .info-card p {
+            margin-left: 2rem;
+            margin-bottom: 0;
+        }
+
+        .warning-card {
+            background: #fff3e0;
+            border: 1px solid #ff9800;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-card::before {
+            content: '⚠';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #ff9800;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .warning-card h4 {
+            margin-left: 2rem;
+            color: #f57c00;
+        }
+
+        .warning-card p {
+            margin-left: 2rem;
+            margin-bottom: 0;
+        }
+
+        .success-card {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .success-card::before {
+            content: '✓';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #4caf50;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .success-card h4 {
+            margin-left: 2rem;
+            color: #388e3c;
+        }
+
+        .success-card p {
+            margin-left: 2rem;
+            margin-bottom: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #007bff;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .step-container {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            margin: 2rem 0;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+
+        .tool-card h5 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .nav-button i {
+            margin: 0 0.5rem;
+        }
+
+        .social-share {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .social-share h3 {
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .social-button:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .social-button.twitter {
+            background: #1da1f2;
+        }
+
+        .social-button.linkedin {
+            background: #0077b5;
+        }
+
+        .social-button.facebook {
+            background: #1877f2;
+        }
+
+        .social-button.reddit {
+            background: #ff4500;
+        }
+
+        .social-button i {
+            margin-right: 0.5rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #ecf0f1;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+            text-align: center;
+            color: #95a5a6;
+        }
+
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .content,
+        .dark-mode .article-meta,
+        .dark-mode .navigation,
+        .dark-mode .social-share,
+        .dark-mode .feature-card,
+        .dark-mode .tool-card {
+            background: #2d2d2d;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .comparison-table {
+            background: #2d2d2d;
+        }
+
+        .dark-mode .comparison-table td {
+            border-bottom-color: #404040;
+        }
+
+        .dark-mode .table-of-contents {
+            background: #2d2d2d;
+            border-color: #404040;
+        }
+
+        .dark-mode h2,
+        .dark-mode h3,
+        .dark-mode h4 {
+            color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Complete Guide to DevOps for Developers 2025</h1>
+            <p class="subtitle">Master DevOps practices, tools, and methodologies to streamline your development workflow</p>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">Home</a> >
+            <a href="../index.html">Blog</a> >
+            <span>Complete Guide to DevOps for Developers 2025</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="article-meta">
+            <div class="meta-item">
+                <i>📅</i>
+                <span>Published: January 15, 2025</span>
+            </div>
+            <div class="meta-item">
+                <i>⏱️</i>
+                <span>Reading Time: 25 minutes</span>
+            </div>
+            <div class="meta-item">
+                <i>👤</i>
+                <span>Author: RemoteToolHub Team</span>
+            </div>
+            <div class="meta-item">
+                <i>🏷️</i>
+                <span>Category: DevOps & Infrastructure</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="highlight-box">
+                <h3>🚀 What You'll Learn</h3>
+                <p>This comprehensive guide covers everything you need to know about DevOps in 2025, from fundamental concepts to advanced practices. You'll learn about CI/CD pipelines, containerization, cloud platforms, monitoring, security, and automation tools that will transform your development workflow.</p>
+            </div>
+
+            <div class="table-of-contents">
+                <h3>📋 Table of Contents</h3>
+                <ul class="toc-list">
+                    <li><a href="#introduction">Introduction to DevOps</a></li>
+                    <li><a href="#fundamentals">DevOps Fundamentals</a></li>
+                    <li><a href="#cicd">CI/CD Pipelines</a></li>
+                    <li><a href="#containerization">Containerization with Docker</a></li>
+                    <li><a href="#orchestration">Container Orchestration with Kubernetes</a></li>
+                    <li><a href="#cloud-platforms">Cloud Platforms</a></li>
+                    <li><a href="#infrastructure">Infrastructure as Code</a></li>
+                    <li><a href="#monitoring">Monitoring and Logging</a></li>
+                    <li><a href="#security">DevSecOps</a></li>
+                    <li><a href="#automation">Automation Tools</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#future">Future of DevOps</a></li>
+                </ul>
+            </div>
+
+            <section id="introduction">
+                <h2>🌟 Introduction to DevOps</h2>
+                
+                <p>DevOps has revolutionized the way we develop, deploy, and maintain software applications. In 2025, DevOps practices have become more sophisticated, automated, and essential for modern software development teams. This comprehensive guide will take you through everything you need to know to master DevOps as a developer.</p>
+
+                <p>DevOps, a portmanteau of "Development" and "Operations," represents a cultural shift that emphasizes collaboration between development and operations teams. It's not just about tools and technologies; it's about breaking down silos, improving communication, and creating a shared responsibility for the entire software lifecycle.</p>
+
+                <div class="info-card">
+                    <h4>Why DevOps Matters in 2025</h4>
+                    <p>Organizations implementing DevOps practices deploy code 30 times more frequently, have 60 times fewer failures, and recover from incidents 168 times faster than their traditional counterparts. In today's competitive landscape, these advantages are crucial for business success.</p>
+                </div>
+
+                <h3>The Evolution of DevOps</h3>
+                <p>Since its inception in the late 2000s, DevOps has evolved from a simple concept of collaboration to a comprehensive methodology encompassing:</p>
+                
+                <ul>
+                    <li><strong>Cultural Transformation:</strong> Breaking down organizational silos</li>
+                    <li><strong>Process Automation:</strong> Streamlining repetitive tasks</li>
+                    <li><strong>Tool Integration:</strong> Creating seamless workflows</li>
+                    <li><strong>Continuous Improvement:</strong> Iterating on processes and practices</li>
+                    <li><strong>Security Integration:</strong> Embedding security throughout the pipeline</li>
+                </ul>
+
+                <h3>DevOps vs Traditional Development</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <td>Storage</td>
+                            <td>S3, EBS, EFS</td>
+                            <td>Blob Storage, Disk Storage, Files</td>
+                            <td>Cloud Storage, Persistent Disk, Filestore</td>
+                        </tr>
+                        <tr>
+                            <td>Database</td>
+                            <td>RDS, DynamoDB, Aurora</td>
+                            <td>SQL Database, Cosmos DB, PostgreSQL</td>
+                            <td>Cloud SQL, Firestore, BigQuery</td>
+                        </tr>
+                        <tr>
+                            <td>Networking</td>
+                            <td>VPC, CloudFront, Route 53</td>
+                            <td>Virtual Network, CDN, DNS</td>
+                            <td>VPC, Cloud CDN, Cloud DNS</td>
+                        </tr>
+                        <tr>
+                            <td>Container Services</td>
+                            <td>EKS, ECS, ECR</td>
+                            <td>AKS, Container Instances, ACR</td>
+                            <td>GKE, Cloud Run, Container Registry</td>
+                        </tr>
+                        <tr>
+                            <td>CI/CD</td>
+                            <td>CodePipeline, CodeBuild, CodeDeploy</td>
+                            <td>Azure DevOps, Azure Pipelines</td>
+                            <td>Cloud Build, Cloud Deploy</td>
+                        </tr>
+                            <th>Aspect</th>
+                            <th>Traditional Development</th>
+                            <th>DevOps Approach</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Team Structure</td>
+                            <td>Siloed teams (Dev, Ops, QA)</td>
+                            <td>Cross-functional teams</td>
+                        </tr>
+                        <tr>
+                            <td>Deployment Frequency</td>
+                            <td>Monthly or quarterly</td>
+                            <td>Daily or multiple times per day</td>
+                        </tr>
+                        <tr>
+                            <td>Feedback Loop</td>
+                            <td>Long feedback cycles</td>
+                            <td>Immediate feedback</td>
+                        </tr>
+                        <tr>
+                            <td>Risk Management</td>
+                            <td>Risk-averse, big releases</td>
+                            <td>Small, frequent releases</td>
+                        </tr>
+                        <tr>
+                            <td>Automation Level</td>
+                            <td>Manual processes</td>
+                            <td>Highly automated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="fundamentals">
+                <h2>🏗️ DevOps Fundamentals</h2>
+                
+                <p>Understanding the core principles of DevOps is essential before diving into specific tools and technologies. These fundamentals form the foundation of successful DevOps implementation.</p>
+
+                <h3>The Three Ways of DevOps</h3>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🔄 The First Way: Flow</h4>
+                        <p>Optimize the flow of work from development to operations to customers. This involves understanding the entire value stream and eliminating bottlenecks that slow down delivery.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔁 The Second Way: Feedback</h4>
+                        <p>Create fast feedback loops from operations back to development. This enables quick detection and correction of problems, leading to higher quality and reliability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎯 The Third Way: Continuous Learning</h4>
+                        <p>Foster a culture of continuous experimentation and learning. This involves taking risks, learning from failures, and constantly improving processes.</p>
+                    </div>
+                </div>
+
+                <h3>CALMS Framework</h3>
+                <p>The CALMS framework provides a comprehensive approach to DevOps transformation:</p>
+
+                <div class="step-container">
+                    <div class="step">
+                        <div class="step-number">C</div>
+                        <div class="step-content">
+                            <h4>Culture</h4>
+                            <p>Foster collaboration, shared responsibility, and trust between teams. Culture is the most critical aspect of DevOps success.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">A</div>
+                        <div class="step-content">
+                            <h4>Automation</h4>
+                            <p>Automate repetitive tasks, testing, deployment, and infrastructure provisioning to reduce human error and increase efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">L</div>
+                        <div class="step-content">
+                            <h4>Lean</h4>
+                            <p>Apply lean principles to eliminate waste, optimize flow, and focus on delivering value to customers.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">M</div>
+                        <div class="step-content">
+                            <h4>Measurement</h4>
+                            <p>Implement comprehensive monitoring and metrics to make data-driven decisions and continuously improve.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">S</div>
+                        <div class="step-content">
+                            <h4>Sharing</h4>
+                            <p>Share knowledge, experiences, and learnings across teams to accelerate improvement and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Key DevOps Metrics</h3>
+                <p>Measuring success is crucial in DevOps. Here are the key metrics every DevOps team should track:</p>
+
+                <div class="info-card">
+                    <h4>The Four Key Metrics</h4>
+                    <p><strong>Lead Time:</strong> Time from code commit to production deployment<br>
+                    <strong>Deployment Frequency:</strong> How often you deploy to production<br>
+                    <strong>Mean Time to Recovery (MTTR):</strong> Time to recover from failures<br>
+                    <strong>Change Failure Rate:</strong> Percentage of deployments causing failures</p>
+                </div>
+            </section>
+
+            <section id="cicd">
+                <h2>🔄 CI/CD Pipelines</h2>
+                
+                <p>Continuous Integration and Continuous Deployment (CI/CD) form the backbone of modern DevOps practices. These automated pipelines ensure that code changes are integrated, tested, and deployed efficiently and reliably.</p>
+
+                <h3>Continuous Integration (CI)</h3>
+                <p>Continuous Integration is the practice of frequently integrating code changes into a shared repository. Each integration is verified by automated builds and tests, allowing teams to detect problems early.</p>
+
+                <div class="code-block" data-language="yaml">
+<pre># Example GitHub Actions CI Pipeline
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run linting
+      run: npm run lint
+    
+    - name: Run tests
+      run: npm run test:coverage
+    
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage/lcov.info
+    
+    - name: Build application
+      run: npm run build
+    
+    - name: Run security audit
+      run: npm audit --audit-level high</pre>
+                </div>
+
+                <h3>Continuous Deployment (CD)</h3>
+                <p>Continuous Deployment extends CI by automatically deploying all code changes that pass the automated tests to production. This practice requires high confidence in your automated testing suite.</p>
+
+                <div class="code-block" data-language="yaml">
+<pre># Example CD Pipeline with GitLab CI
+stages:
+  - build
+  - test
+  - security
+  - deploy-staging
+  - deploy-production
+
+variables:
+  DOCKER_REGISTRY: registry.gitlab.com
+  IMAGE_NAME: $CI_PROJECT_PATH
+  IMAGE_TAG: $CI_COMMIT_SHA
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -t $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG .
+    - docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+  only:
+    - main
+    - develop
+
+unit-tests:
+  stage: test
+  image: node:18
+  script:
+    - npm ci
+    - npm run test:unit
+  coverage: '/Lines\s*:\s*(\d+\.?\d*)%/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+
+integration-tests:
+  stage: test
+  image: docker/compose:latest
+  script:
+    - docker-compose -f docker-compose.test.yml up --build --abort-on-container-exit
+    - docker-compose -f docker-compose.test.yml down
+
+security-scan:
+  stage: security
+  image: owasp/zap2docker-stable
+  script:
+    - zap-baseline.py -t http://staging.example.com
+  allow_failure: true
+
+deploy-staging:
+  stage: deploy-staging
+  image: alpine/helm:latest
+  script:
+    - helm upgrade --install myapp-staging ./helm-chart 
+      --set image.tag=$IMAGE_TAG 
+      --set environment=staging
+  environment:
+    name: staging
+    url: https://staging.example.com
+  only:
+    - develop
+
+deploy-production:
+  stage: deploy-production
+  image: alpine/helm:latest
+  script:
+    - helm upgrade --install myapp-production ./helm-chart 
+      --set image.tag=$IMAGE_TAG 
+      --set environment=production
+  environment:
+    name: production
+    url: https://example.com
+  when: manual
+  only:
+    - main</pre>
+                </div>
+
+                <h3>Pipeline Best Practices</h3>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🚀 Fast Feedback</h4>
+                        <p>Keep pipeline execution time under 10 minutes. Use parallel execution, caching, and optimized test suites to achieve fast feedback loops.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔒 Security First</h4>
+                        <p>Integrate security scanning, dependency checks, and compliance validation into every pipeline stage.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📊 Comprehensive Testing</h4>
+                        <p>Implement unit tests, integration tests, end-to-end tests, and performance tests in your pipeline.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎯 Environment Parity</h4>
+                        <p>Ensure development, staging, and production environments are as similar as possible to catch environment-specific issues early.</p>
+                    </div>
+                </div>
+
+                <h3>Popular CI/CD Tools</h3>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">🐙</div>
+                        <h5>GitHub Actions</h5>
+                        <p>Native CI/CD for GitHub repositories with extensive marketplace</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🦊</div>
+                        <h5>GitLab CI/CD</h5>
+                        <p>Integrated CI/CD platform with built-in container registry</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🏗️</div>
+                        <h5>Jenkins</h5>
+                        <p>Open-source automation server with thousands of plugins</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🔵</div>
+                        <h5>Azure DevOps</h5>
+                        <p>Microsoft's comprehensive DevOps platform</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">⚡</div>
+                        <h5>CircleCI</h5>
+                        <p>Cloud-native CI/CD with powerful caching and parallelization</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🚀</div>
+                        <h5>TeamCity</h5>
+                        <p>JetBrains' enterprise CI/CD solution</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="containerization">
+                <h2>🐳 Containerization with Docker</h2>
+                
+                <p>Containerization has revolutionized how we package, distribute, and run applications. Docker, the leading containerization platform, enables developers to create lightweight, portable, and consistent environments across different stages of the development lifecycle.</p>
+
+                <h3>Why Containerization Matters</h3>
+                <p>Containers solve the "it works on my machine" problem by packaging applications with all their dependencies, ensuring consistent behavior across different environments.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🎯 Consistency</h4>
+                        <p>Applications run the same way in development, testing, and production environments.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>⚡ Efficiency</h4>
+                        <p>Containers share the host OS kernel, making them more resource-efficient than virtual machines.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📦 Portability</h4>
+                        <p>Containers can run on any system that supports the container runtime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔄 Scalability</h4>
+                        <p>Easy to scale applications horizontally by spinning up additional container instances.</p>
+                    </div>
+                </div>
+
+                <h3>Docker Fundamentals</h3>
+                <p>Let's explore the core concepts and practical implementation of Docker:</p>
+
+                <div class="code-block" data-language="dockerfile">
+<pre># Multi-stage Dockerfile for Node.js application
+# Build stage
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy source code
+COPY . .
+
+# Build application
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine AS production
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
+WORKDIR /app
+
+# Copy built application from builder stage
+COPY --from=builder --chown=nextjs:nodejs /app/dist ./dist
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+
+# Switch to non-root user
+USER nextjs
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:3000/health || exit 1
+
+# Start application
+CMD ["npm", "start"]</pre>
+                </div>
+
+                <h3>Docker Compose for Multi-Container Applications</h3>
+                <p>Docker Compose allows you to define and run multi-container Docker applications using a YAML file:</p>
+
+                <div class="code-block" data-language="yaml">
+<pre># docker-compose.yml for full-stack application
+version: '3.8'
+
+services:
+  # Frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/api
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - app-network
+
+  # Backend service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/myapp
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=your-secret-key
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - app-network
+
+  # Database service
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=myapp
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  # Redis service
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - app-network
+
+  # Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  app-network:
+    driver: bridge</pre>
+                </div>
+
+                <h3>Container Security Best Practices</h3>
+                
+                <div class="warning-card">
+                    <h4>Security Considerations</h4>
+                    <p>Container security is crucial. Always use official base images, keep them updated, run containers as non-root users, and scan images for vulnerabilities regularly.</p>
+                </div>
+
+                <div class="step-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Use Official Base Images</h4>
+                            <p>Start with official images from Docker Hub or use minimal base images like Alpine Linux to reduce attack surface.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Run as Non-Root User</h4>
+                            <p>Create and use a non-root user in your containers to limit potential damage from security breaches.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Scan for Vulnerabilities</h4>
+                            <p>Use tools like Trivy, Clair, or Docker Scout to scan images for known vulnerabilities before deployment.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Minimize Image Size</h4>
+                            <p>Use multi-stage builds and .dockerignore files to create smaller, more secure images with fewer attack vectors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Container Orchestration Preview</h3>
+                <p>While Docker handles individual containers, orchestration platforms like Kubernetes manage containers at scale. We'll dive deeper into Kubernetes in the next section.</p>
+            </section>
+
+            <section id="orchestration">
+                <h2>☸️ Container Orchestration with Kubernetes</h2>
+                
+                <p>Kubernetes (K8s) is the de facto standard for container orchestration, providing automated deployment, scaling, and management of containerized applications. As applications grow in complexity and scale, Kubernetes becomes essential for managing distributed systems effectively.</p>
+
+                <h3>Kubernetes Architecture</h3>
+                <p>Understanding Kubernetes architecture is crucial for effective implementation:</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🎛️ Control Plane</h4>
+                        <p>Manages the cluster state, including API server, etcd, scheduler, and controller manager.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🖥️ Worker Nodes</h4>
+                        <p>Run application workloads with kubelet, kube-proxy, and container runtime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📦 Pods</h4>
+                        <p>Smallest deployable units that can contain one or more containers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔄 Services</h4>
+                        <p>Provide stable network endpoints for accessing pods.</p>
+                    </div>
+                </div>
+
+                <h3>Essential Kubernetes Resources</h3>
+                <p>Let's explore the key Kubernetes resources with practical examples:</p>
+
+                <div class="code-block" data-language="yaml">
+<pre># Deployment for a web application
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  labels:
+    app: web-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: myregistry/web-app:v1.2.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: url
+        - name: REDIS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: redis-url
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+# Service to expose the deployment
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-service
+spec:
+  selector:
+    app: web-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
+---
+# ConfigMap for application configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  redis-url: "redis://redis-service:6379"
+  log-level: "info"
+  max-connections: "100"
+---
+# Secret for sensitive data
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-secret
+type: Opaque
+data:
+  url: cG9zdGdyZXNxbDovL3VzZXI6cGFzc3dvcmRAZGItc2VydmljZTo1NDMyL215YXBw # base64 encoded</pre>
+                </div>
+
+                <h3>Advanced Kubernetes Features</h3>
+                
+                <h4>Horizontal Pod Autoscaler (HPA)</h4>
+                <p>Automatically scale your applications based on CPU utilization, memory usage, or custom metrics:</p>
+
+                <div class="code-block" data-language="yaml">
+<pre># HPA configuration
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: web-app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: web-app
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Percent
+        value: 10
+        periodSeconds: 60
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15</pre>
+                </div>
+
+                <h4>Ingress for External Access</h4>
+                <p>Manage external access to services with advanced routing capabilities:</p>
+
+                <div class="code-block" data-language="yaml">
+<pre># Ingress configuration with SSL termination
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-app-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+spec:
+  tls:
+  - hosts:
+    - api.example.com
+    - www.example.com
+    secretName: web-app-tls
+  rules:
+  - host: api.example.com
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: api-service
+            port:
+              number: 80
+  - host: www.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-app-service
+            port:
+              number: 80</pre>
+                </div>
+
+                <h3>Kubernetes Best Practices</h3>
+                
+                <div class="success-card">
+                    <h4>Production Readiness Checklist</h4>
+                    <p>Ensure your Kubernetes deployments are production-ready by following these essential practices for security, reliability, and performance.</p>
+                </div>
+
+                <div class="step-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Resource Management</h4>
+                            <p>Always set resource requests and limits to ensure proper scheduling and prevent resource starvation.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Health Checks</h4>
+                            <p>Implement liveness and readiness probes to ensure Kubernetes can properly manage your application lifecycle.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Security Policies</h4>
+                            <p>Use Pod Security Standards, Network Policies, and RBAC to secure your cluster and applications.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Monitoring & Logging</h4>
+                            <p>Implement comprehensive monitoring with Prometheus and centralized logging with ELK stack or similar solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Kubernetes Ecosystem Tools</h3>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">⎈</div>
+                        <h5>Helm</h5>
+                        <p>Package manager for Kubernetes applications</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🔍</div>
+                        <h5>Prometheus</h5>
+                        <p>Monitoring and alerting toolkit</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📊</div>
+                        <h5>Grafana</h5>
+                        <p>Visualization and dashboarding platform</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🔒</div>
+                        <h5>Istio</h5>
+                        <p>Service mesh for microservices</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🚪</div>
+                        <h5>ArgoCD</h5>
+                        <p>GitOps continuous delivery tool</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🛡️</div>
+                        <h5>Falco</h5>
+                        <p>Runtime security monitoring</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cloud-platforms">
+                <h2>☁️ Cloud Platforms</h2>
+                
+                <p>Cloud platforms provide the infrastructure foundation for modern DevOps practices. Understanding the major cloud providers and their services is essential for building scalable, reliable applications in 2025.</p>
+
+                <h3>Major Cloud Providers Comparison</h3>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Service Category</th>
+                            <th>AWS</th>
+                            <th>Azure</th>
+                            <th>Google Cloud</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Compute</td>
+                            <td>EC2, Lambda, Fargate</td>
+                            <td>Virtual Machines, Functions, Container Instances</td>
+                            <td>Compute Engine, Cloud Functions, Cloud Run</td>
+                        </tr>
+                        <tr>
