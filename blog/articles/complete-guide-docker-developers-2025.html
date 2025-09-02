@@ -56,229 +56,402 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+        
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        
+        .animation-delay-1000 {
+            animation-delay: 1s;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced Hover Effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient Text Animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+<body class="bg-gradient-to-br from-gray-50 to-blue-50">
+    <!-- Enhanced Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-xl sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
-                    <a href="../../index.html" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <a href="../../index.html" class="flex items-center space-x-3 group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
                             </svg>
                         </div>
-                        <span class="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">RemoteToolHub</span>
+                        <span class="font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">RemoteToolHub</span>
                     </a>
                 </div>
+                
                 <div class="hidden md:flex space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Tools</a>
-                    <a href="../index.html" class="text-blue-600 font-semibold">Blog</a>
-                    <a href="../affiliate-offers.html" class="text-green-600 hover:text-green-700 font-semibold transition-colors">
-                        <i class="fas fa-gift mr-1"></i>Exclusive Offers
+                    <a href="../../index.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-blue-50">Tools</a>
+                    <a href="../index.html" class="text-blue-600 font-semibold px-4 py-2 rounded-lg bg-blue-50">Blog</a>
+                    <a href="../affiliate-offers.html" class="text-green-600 hover:text-green-700 font-semibold transition-colors px-4 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-gift mr-2"></i>Exclusive Offers
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-700">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="mb-8">
-                <!-- Docker Icon with Gradient Background -->
-                <div class="w-full h-64 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden">
-                    <!-- Docker Logo SVG -->
-                    <svg class="w-32 h-32 text-white opacity-90" viewBox="0 0 24 24" fill="currentColor">
+    <!-- Hero Section with Modern Design -->
+    <section class="relative py-24 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div class="absolute top-0 right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-12">
+                <!-- Enhanced Docker Icon with 3D Effect -->
+                <div class="w-full max-w-md mx-auto h-80 bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-3xl shadow-2xl flex items-center justify-center relative overflow-hidden transform hover:scale-105 transition-transform duration-500 animate-float">
+                    <!-- Glassmorphism Effect -->
+                    <div class="absolute inset-0 glass"></div>
+                    
+                    <!-- Docker Logo with Animation -->
+                    <svg class="w-40 h-40 text-white opacity-90 transform hover:rotate-12 transition-transform duration-700 relative z-10" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M13.5 3H11v2.5h2.5V3zm-2.5 0H8.5v2.5H11V3zm-2.5 0H6v2.5h2.5V3zm-2.5 0H3.5v2.5H6V3zm10 2.5H16v2.5h2.5V5.5zm-2.5 0H13.5v2.5H16V5.5zm-2.5 0H11v2.5h2.5V5.5zm-2.5 0H8.5v2.5H11V5.5zm-2.5 0H6v2.5h2.5V5.5zm10 2.5H18.5v2.5H21V8zm-2.5 0H16v2.5h2.5V8zm-2.5 0H13.5v2.5H16V8zm-2.5 0H11v2.5h2.5V8zm-2.5 0H8.5v2.5H11V8zm-2.5 0H6v2.5h2.5V8zm-2.5 0H3.5v2.5H6V8z"/>
                     </svg>
-                    <!-- Floating Elements -->
-                    <div class="absolute top-4 right-4 w-8 h-8 bg-white bg-opacity-20 rounded-full animate-pulse"></div>
-                    <div class="absolute bottom-6 left-6 w-6 h-6 bg-white bg-opacity-30 rounded-full animate-bounce"></div>
-                    <div class="absolute top-1/2 right-8 w-4 h-4 bg-white bg-opacity-25 rounded-full"></div>
+                    
+                    <!-- Floating Particles -->
+                    <div class="absolute top-6 right-6 w-3 h-3 bg-white bg-opacity-40 rounded-full animate-ping"></div>
+                    <div class="absolute bottom-8 left-8 w-2 h-2 bg-white bg-opacity-50 rounded-full animate-bounce"></div>
+                    <div class="absolute top-1/2 right-12 w-4 h-4 bg-white bg-opacity-30 rounded-full animate-pulse"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-1 h-1 bg-white bg-opacity-60 rounded-full animate-ping animation-delay-1000"></div>
                 </div>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                Complete Guide to Docker for Developers 2025
+            
+            <!-- Enhanced Typography -->
+            <h1 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-purple-200 mb-8 leading-tight animate-gradient">
+                Complete Guide to Docker
+                <span class="block text-4xl md:text-6xl mt-4">for Developers 2025</span>
             </h1>
-            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            
+            <p class="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
                 Master containerization technology and revolutionize your development workflow with Docker
             </p>
-            <div class="flex items-center justify-center space-x-6 text-blue-100">
-                <div class="flex items-center">
-                    <i class="fas fa-calendar-alt mr-2"></i>
-                    <span>January 20, 2025</span>
+            
+            <!-- Enhanced Meta Info -->
+            <div class="flex flex-wrap items-center justify-center gap-6 text-blue-100 mb-10">
+                <div class="flex items-center glass rounded-full px-6 py-3 hover-lift">
+                    <i class="fas fa-calendar-alt mr-3 text-blue-300"></i>
+                    <span class="font-medium">January 20, 2025</span>
                 </div>
-                <div class="flex items-center">
-                    <i class="fas fa-clock mr-2"></i>
-                    <span>15 min read</span>
+                <div class="flex items-center glass rounded-full px-6 py-3 hover-lift">
+                    <i class="fas fa-clock mr-3 text-green-300"></i>
+                    <span class="font-medium">15 min read</span>
                 </div>
-                <div class="flex items-center">
-                    <i class="fas fa-tag mr-2"></i>
-                    <span>DevOps</span>
+                <div class="flex items-center glass rounded-full px-6 py-3 hover-lift">
+                    <i class="fas fa-tag mr-3 text-purple-300"></i>
+                    <span class="font-medium">DevOps</span>
                 </div>
             </div>
+            
+            <!-- CTA Button -->
+            <button class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl text-lg">
+                <i class="fas fa-rocket mr-3"></i>
+                Start Learning Now
+            </button>
         </div>
     </section>
 
-    <!-- Article Content -->
-    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <!-- Table of Contents -->
-            <div class="bg-gray-50 rounded-xl p-6 mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">
-                    <i class="fas fa-list-ul text-blue-600 mr-2"></i>
+    <!-- Enhanced Article Content -->
+    <article class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-16 relative overflow-hidden hover-lift">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full -translate-y-20 translate-x-20 opacity-50"></div>
+            <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-pink-100 to-yellow-100 rounded-full translate-y-16 -translate-x-16 opacity-50"></div>
+            
+            <!-- Enhanced Table of Contents -->
+            <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 mb-16 border border-gray-100 relative overflow-hidden hover-lift">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-blue-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
+                
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                        <i class="fas fa-list-ul text-white text-xl"></i>
+                    </div>
                     Table of Contents
                 </h2>
-                <ul class="space-y-2 text-gray-700">
-                    <li><a href="#introduction" class="hover:text-blue-600 transition-colors">1. Introduction to Docker</a></li>
-                    <li><a href="#installation" class="hover:text-blue-600 transition-colors">2. Installation and Setup</a></li>
-                    <li><a href="#basics" class="hover:text-blue-600 transition-colors">3. Docker Basics</a></li>
-                    <li><a href="#dockerfile" class="hover:text-blue-600 transition-colors">4. Creating Dockerfiles</a></li>
-                    <li><a href="#compose" class="hover:text-blue-600 transition-colors">5. Docker Compose</a></li>
-                    <li><a href="#best-practices" class="hover:text-blue-600 transition-colors">6. Best Practices</a></li>
-                    <li><a href="#conclusion" class="hover:text-blue-600 transition-colors">7. Conclusion</a></li>
+                
+                <ul class="grid md:grid-cols-2 gap-4">
+                    <li class="group">
+                        <a href="#introduction" class="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 group-hover:transform group-hover:translate-x-2">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-blue-600 font-medium">Introduction to Docker</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a href="#installation" class="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 group-hover:transform group-hover:translate-x-2">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-green-600 font-medium">Installation and Setup</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a href="#basics" class="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 group-hover:transform group-hover:translate-x-2">
+                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-purple-600 font-medium">Docker Basics</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a href="#dockerfile" class="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 group-hover:transform group-hover:translate-x-2">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-yellow-600 font-medium">Creating Dockerfiles</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a href="#compose" class="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 group-hover:transform group-hover:translate-x-2">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                                <span class="font-bold">5</span>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-indigo-600 font-medium">Docker Compose</span>
+                        </a>
+                    </li>
+                    <li class="group">
+                        <a href="#best-practices" class="flex items-center p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 group-hover:transform group-hover:translate-x-2">
+                            <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                <span class="font-bold">6</span>
+                            </div>
+                            <span class="text-gray-700 group-hover:text-red-600 font-medium">Best Practices</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
-
-            <!-- Introduction -->
-            <section id="introduction" class="mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                    <i class="fas fa-rocket text-blue-600 mr-2"></i>
-                    Introduction to Docker
-                </h2>
-                <div class="prose prose-lg max-w-none">
-                    <p class="text-gray-700 leading-relaxed mb-6">
+            
+            <!-- Enhanced Section Headers -->
+            <section id="introduction" class="mb-20">
+                <div class="flex items-center mb-10">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mr-6 shadow-xl animate-float">
+                        <i class="fas fa-rocket text-white text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-5xl font-bold text-gray-900 mb-3">Introduction to Docker</h2>
+                        <div class="w-32 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Content Cards -->
+                <div class="prose prose-xl max-w-none">
+                    <p class="text-gray-700 leading-relaxed mb-10 text-xl">
                         Docker has revolutionized the way developers build, ship, and run applications. In 2025, containerization has become an essential skill for every developer, enabling consistent environments across development, testing, and production.
                     </p>
-                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
-                        <div class="flex items-center mb-2">
-                            <i class="fas fa-info-circle text-blue-600 mr-2"></i>
-                            <h3 class="text-lg font-semibold text-blue-900">What is Docker?</h3>
+                    
+                    <!-- Enhanced Info Box -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-l-8 border-blue-500 rounded-2xl p-10 mb-10 relative overflow-hidden hover-lift">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -translate-y-16 translate-x-16 opacity-20"></div>
+                        
+                        <div class="flex items-start relative z-10">
+                            <div class="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center mr-6 flex-shrink-0 shadow-lg">
+                                <i class="fas fa-info-circle text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-bold text-blue-900 mb-4">What is Docker?</h3>
+                                <p class="text-blue-800 text-xl leading-relaxed">
+                                    Docker is a containerization platform that packages applications and their dependencies into lightweight, portable containers that can run consistently across any environment.
+                                </p>
+                            </div>
                         </div>
-                        <p class="text-blue-800">
-                            Docker is a containerization platform that packages applications and their dependencies into lightweight, portable containers that can run consistently across any environment.
-                        </p>
+                    </div>
+                    
+                    <!-- Additional Content Sections -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 hover-lift">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-check text-white text-lg"></i>
+                                </div>
+                                <h4 class="text-2xl font-bold text-green-900">Benefits</h4>
+                            </div>
+                            <ul class="text-green-800 space-y-2">
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-green-600 mr-2"></i>Consistent environments</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-green-600 mr-2"></i>Easy deployment</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-green-600 mr-2"></i>Resource efficiency</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-green-600 mr-2"></i>Scalability</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover-lift">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-cogs text-white text-lg"></i>
+                                </div>
+                                <h4 class="text-2xl font-bold text-purple-900">Use Cases</h4>
+                            </div>
+                            <ul class="text-purple-800 space-y-2">
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Microservices</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-purple-600 mr-2"></i>CI/CD pipelines</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Development environments</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Cloud migration</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
-
-            <!-- Installation -->
-            <section id="installation" class="mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                    <i class="fas fa-download text-green-600 mr-2"></i>
-                    Installation and Setup
-                </h2>
-                <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <div class="bg-gray-50 rounded-xl p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
-                            <i class="fab fa-windows text-blue-500 mr-2"></i>
-                            Windows
-                        </h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li>Download Docker Desktop from official website</li>
-                            <li>Run the installer as administrator</li>
+            
+            <!-- Installation Section -->
+            <section id="installation" class="mb-20">
+                <div class="flex items-center mb-10">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-xl animate-float">
+                        <i class="fas fa-download text-white text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-5xl font-bold text-gray-900 mb-3">Installation and Setup</h2>
+                        <div class="w-32 h-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover-lift">
+                        <div class="flex items-center mb-6">
+                            <i class="fab fa-windows text-4xl text-blue-600 mr-4"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Windows</h3>
+                        </div>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                            <li>Download Docker Desktop</li>
+                            <li>Run installer as admin</li>
                             <li>Enable WSL 2 integration</li>
-                            <li>Restart your computer</li>
+                            <li>Restart computer</li>
                         </ol>
                     </div>
-                    <div class="bg-gray-50 rounded-xl p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
-                            <i class="fab fa-apple text-gray-700 mr-2"></i>
-                            macOS
-                        </h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li>Download Docker Desktop for Mac</li>
-                            <li>Drag to Applications folder</li>
+                    
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 hover-lift">
+                        <div class="flex items-center mb-6">
+                            <i class="fab fa-apple text-4xl text-gray-700 mr-4"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">macOS</h3>
+                        </div>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                            <li>Download Docker Desktop</li>
+                            <li>Drag to Applications</li>
                             <li>Launch Docker Desktop</li>
-                            <li>Complete the setup wizard</li>
+                            <li>Complete setup wizard</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 hover-lift">
+                        <div class="flex items-center mb-6">
+                            <i class="fab fa-linux text-4xl text-orange-600 mr-4"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Linux</h3>
+                        </div>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                            <li>Update package index</li>
+                            <li>Install Docker Engine</li>
+                            <li>Start Docker service</li>
+                            <li>Add user to docker group</li>
                         </ol>
                     </div>
                 </div>
                 
-                <div class="bg-gray-900 rounded-xl p-6 mb-6">
-                    <h3 class="text-lg font-semibold text-white mb-4">
-                        <i class="fas fa-terminal text-green-400 mr-2"></i>
-                        Verify Installation
-                    </h3>
-                    <pre class="text-green-400 font-mono"><code>docker --version
+                <!-- Command Example -->
+                <div class="bg-gray-900 rounded-2xl p-8 mb-8">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-terminal text-green-400 text-xl mr-3"></i>
+                        <h4 class="text-xl font-bold text-white">Verify Installation</h4>
+                    </div>
+                    <pre class="text-green-400 text-lg"><code>docker --version
 docker run hello-world</code></pre>
                 </div>
             </section>
-
-            <!-- Docker Basics -->
-            <section id="basics" class="mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                    <i class="fas fa-cube text-purple-600 mr-2"></i>
-                    Docker Basics
-                </h2>
-                
-                <div class="grid md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center">
-                        <i class="fas fa-box text-blue-600 text-3xl mb-4"></i>
-                        <h3 class="text-lg font-semibold text-blue-900 mb-2">Images</h3>
-                        <p class="text-blue-700 text-sm">Read-only templates used to create containers</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center">
-                        <i class="fas fa-play-circle text-green-600 text-3xl mb-4"></i>
-                        <h3 class="text-lg font-semibold text-green-900 mb-2">Containers</h3>
-                        <p class="text-green-700 text-sm">Running instances of Docker images</p>
-                    </div>
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 text-center">
-                        <i class="fas fa-file-code text-purple-600 text-3xl mb-4"></i>
-                        <h3 class="text-lg font-semibold text-purple-900 mb-2">Dockerfile</h3>
-                        <p class="text-purple-700 text-sm">Text file with instructions to build images</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-xl p-6 mb-6">
-                    <h3 class="text-lg font-semibold text-white mb-4">
-                        <i class="fas fa-terminal text-green-400 mr-2"></i>
-                        Essential Docker Commands
-                    </h3>
-                    <pre class="text-green-400 font-mono text-sm"><code># Pull an image from Docker Hub
-docker pull nginx:latest
-
-# Run a container
-docker run -d -p 80:80 --name my-nginx nginx
-
-# List running containers
-docker ps
-
-# Stop a container
-docker stop my-nginx
-
-# Remove a container
-docker rm my-nginx</code></pre>
-                </div>
-            </section>
-
-            <!-- Continue Reading Button -->
-            <div class="text-center py-8">
-                <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-8">
-                    <h3 class="text-2xl font-bold text-white mb-4">Want to Continue Reading?</h3>
-                    <p class="text-blue-100 mb-6">This is just the beginning! The complete guide covers Dockerfile creation, Docker Compose, advanced networking, security best practices, and production deployment strategies.</p>
-                    <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                        <i class="fas fa-book-open mr-2"></i>
-                        Read Full Article
-                    </button>
-                </div>
-            </div>
         </div>
     </article>
 
     <!-- Navigation Section -->
-    <section class="bg-gray-100 py-12">
+    <section class="bg-gradient-to-r from-gray-100 to-blue-100 py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-800 mb-8">Continue Exploring</h3>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="../index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center">
-                    <i class="fas fa-arrow-left mr-2"></i>
+            <h3 class="text-3xl font-bold text-gray-800 mb-10">Continue Exploring</h3>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="../index.html" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-arrow-left mr-3"></i>
                     Back to Blog
                 </a>
-                <a href="../../index.html" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center">
-                    <i class="fas fa-tools mr-2"></i>
+                <a href="../../index.html" class="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-10 py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-tools mr-3"></i>
                     Explore Tools
                 </a>
             </div>
@@ -286,58 +459,77 @@ docker rm my-nginx</code></pre>
     </section>
 
     <!-- Related Articles -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Related Articles</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <article class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kubernetes" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Kubernetes for Beginners</h3>
-                    <p class="text-gray-600 text-sm mb-4">Learn container orchestration with Kubernetes</p>
-                    <a href="#" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Read More →</a>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Related Articles</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <article class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover-lift">
+                <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kubernetes" class="w-full h-56 object-cover">
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Kubernetes for Beginners</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Learn container orchestration with Kubernetes</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-bold flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </article>
-            <article class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="DevOps" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">DevOps Best Practices</h3>
-                    <p class="text-gray-600 text-sm mb-4">Essential DevOps practices for modern development</p>
-                    <a href="#" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Read More →</a>
+            
+            <article class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover-lift">
+                <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="DevOps" class="w-full h-56 object-cover">
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">DevOps Best Practices</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Essential DevOps practices for modern development</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-bold flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </article>
-            <article class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CI/CD" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">CI/CD Pipeline Setup</h3>
-                    <p class="text-gray-600 text-sm mb-4">Build automated deployment pipelines</p>
-                    <a href="#" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Read More →</a>
+            
+            <article class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover-lift">
+                <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CI/CD" class="w-full h-56 object-cover">
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">CI/CD Pipeline Setup</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Build automated deployment pipelines</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-bold flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex items-center justify-center space-x-3 mb-4">
-                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+    <!-- Enhanced Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+            <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center space-x-4 mb-8">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl animate-float">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
                     </svg>
                 </div>
-                <span class="font-bold text-xl">RemoteToolHub</span>
+                <span class="font-bold text-4xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">RemoteToolHub</span>
             </div>
-            <p class="text-gray-400 mb-6">Empowering developers with the best tools and resources</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-twitter text-xl"></i>
+            
+            <p class="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">Empowering developers with the best tools and resources for modern development</p>
+            
+            <div class="flex justify-center space-x-8 mb-10">
+                <a href="#" class="w-16 h-16 bg-white bg-opacity-10 rounded-2xl flex items-center justify-center hover:bg-opacity-20 transition-all duration-300 hover:scale-110 glass">
+                    <i class="fab fa-twitter text-2xl"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-github text-xl"></i>
+                <a href="#" class="w-16 h-16 bg-white bg-opacity-10 rounded-2xl flex items-center justify-center hover:bg-opacity-20 transition-all duration-300 hover:scale-110 glass">
+                    <i class="fab fa-github text-2xl"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-linkedin text-xl"></i>
+                <a href="#" class="w-16 h-16 bg-white bg-opacity-10 rounded-2xl flex items-center justify-center hover:bg-opacity-20 transition-all duration-300 hover:scale-110 glass">
+                    <i class="fab fa-linkedin text-2xl"></i>
                 </a>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-gray-400 text-lg">© 2025 RemoteToolHub. All rights reserved.</p>
             </div>
         </div>
     </footer>

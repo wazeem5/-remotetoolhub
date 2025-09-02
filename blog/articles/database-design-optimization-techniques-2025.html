@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Design and Optimization Techniques 2025 | Complete Guide</title>
+    <meta name="description" content="Master database design and optimization in 2025. Learn SQL performance tuning, indexing strategies, normalization, and best practices for MySQL, PostgreSQL, and NoSQL databases.">
+    <meta name="keywords" content="database design, SQL optimization, database performance, indexing, normalization, MySQL, PostgreSQL, MongoDB, database tuning, query optimization">
+    <meta name="author" content="RemoteToolHub">
+    <meta property="og:title" content="Database Design and Optimization Techniques 2025">
+    <meta property="og:description" content="Complete guide to database design and optimization with practical SQL examples and performance tips.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://remotetoolhub.com/blog/articles/database-design-optimization-techniques-2025.html">
+    <meta property="og:image" content="https://remotetoolhub.com/blog/assets/images/database-optimization-2025.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Database Design and Optimization Techniques 2025">
+    <meta name="twitter:description" content="Master database design and optimization with practical examples and expert tips.">
+    <meta name="twitter:image" content="https://remotetoolhub.com/blog/assets/images/database-optimization-2025.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Database Design and Optimization Techniques 2025",
+        "description": "Complete guide to database design and optimization with practical SQL examples and performance tips.",
+        "author": {
+            "@type": "Organization",
+            "name": "RemoteToolHub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RemoteToolHub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://remotetoolhub.com/logo.png"
+            }
+        },
+        "datePublished": "2025-01-21",
+        "dateModified": "2025-01-21",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://remotetoolhub.com/blog/articles/database-design-optimization-techniques-2025.html"
+        },
+        "image": "https://remotetoolhub.com/blog/assets/images/database-optimization-2025.jpg"
+    }
+    </script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+    
+    <!-- Chart.js for performance charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-section p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            color: #f39c12;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .nav-btn.secondary {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+            box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
+        }
+        
+        .nav-btn.secondary:hover {
+            box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
+        }
+        
+        .table-of-contents {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .table-of-contents h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .toc-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8em;
+        }
+        
+        .toc-list a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .toc-list a:hover {
+            color: #3498db;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #3498db;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ecf0f1;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .section h3 {
+            color: #34495e;
+            font-size: 1.6em;
+            margin: 30px 0 20px 0;
+            padding-left: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .section h4 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        .section p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(116, 185, 255, 0.3);
+        }
+        
+        .highlight-box h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(253, 121, 168, 0.3);
+        }
+        
+        .warning-box h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #55efc4, #00b894);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(85, 239, 196, 0.3);
+        }
+        
+        .success-box h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .code-container {
+            position: relative;
+            margin: 25px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .code-header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .code-language {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            margin: 0 !important;
+            border-radius: 0 !important;
+            background: #2d3748 !important;
+        }
+        
+        pre code {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+            transition: background 0.3s ease;
+        }
+        
+        .performance-chart {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s ease;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tip-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .tip-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .checklist {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .footer-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .footer-section p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-buttons {
+                justify-content: center;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 15px;
+            }
+        }
+        
+        /* Custom syntax highlighting colors */
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+            color: #8292a2;
+        }
+        
+        .token.punctuation {
+            color: #f8f8f2;
+        }
+        
+        .token.property,
+        .token.tag,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+            color: #f92672;
+        }
+        
+        .token.boolean,
+        .token.number {
+            color: #ae81ff;
+        }
+        
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin,
+        .token.inserted {
+            color: #a6e22e;
+        }
+        
+        .token.operator,
+        .token.entity,
+        .token.url,
+        .language-css .token.string,
+        .style .token.string,
+        .token.variable {
+            color: #f8f8f2;
+        }
+        
+        .token.atrule,
+        .token.attr-value,
+        .token.function,
+        .token.class-name {
+            color: #e6db74;
+        }
+        
+        .token.keyword {
+            color: #66d9ef;
+        }
+        
+        .token.regex,
+        .token.important {
+            color: #fd971f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="../index.html" class="nav-btn">← Back to Blog</a>
+            <a href="../../tools.html" class="nav-btn secondary">🛠️ Tools</a>
+            <a href="../../index.html" class="nav-btn secondary">🏠 Home</a>
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Database Design & Optimization</h1>
+                <p>Master database architecture, performance tuning, and optimization techniques for 2025</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">SQL Examples</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Database Types</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Optimization Tips</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="table-of-contents">
+            <h2>📋 Table of Contents</h2>
+            <ul class="toc-list">
+                <li><a href="#introduction">Introduction to Database Design</a></li>
+                <li><a href="#fundamentals">Database Design Fundamentals</a></li>
+                <li><a href="#normalization">Normalization Techniques</a></li>
+                <li><a href="#indexing">Advanced Indexing Strategies</a></li>
+                <li><a href="#query-optimization">Query Optimization Techniques</a></li>
+                <li><a href="#performance-tuning">Performance Tuning</a></li>
+                <li><a href="#database-comparison">Database Comparison 2025</a></li>
+                <li><a href="#best-practices">Best Practices & Security</a></li>
+                <li><a href="#monitoring">Monitoring & Maintenance</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="section" id="introduction">
+            <h2>🚀 Introduction to Database Design</h2>
+            <p>Database design and optimization are critical skills for modern developers. In 2025, with the exponential growth of data and the demand for high-performance applications, understanding how to design efficient databases and optimize their performance has become more important than ever.</p>
+            
+            <div class="highlight-box">
+                <h4>🎯 What You'll Learn</h4>
+                <p>This comprehensive guide covers everything from basic database design principles to advanced optimization techniques. You'll learn how to create scalable database architectures, write efficient queries, implement proper indexing strategies, and monitor database performance.</p>
+            </div>
+            
+            <h3>Why Database Optimization Matters in 2025</h3>
+            <p>Modern applications handle massive amounts of data, and users expect lightning-fast response times. Poor database design can lead to:</p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>⚡ Performance Issues</h4>
+                    <p>Slow query execution, high response times, and poor user experience due to inefficient database operations.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Increased Costs</h4>
+                    <p>Higher infrastructure costs due to inefficient resource utilization and the need for more powerful hardware.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📈 Scalability Problems</h4>
+                    <p>Inability to handle growing data volumes and user loads, limiting business growth and expansion.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🔒 Security Vulnerabilities</h4>
+                    <p>Poor database design can expose sensitive data and create security risks that compromise business operations.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Database Design Fundamentals -->
+        <div class="section" id="fundamentals">
+            <h2>🏗️ Database Design Fundamentals</h2>
+            
+            <h3>Entity-Relationship (ER) Modeling</h3>
+            <p>The foundation of good database design starts with proper entity-relationship modeling. This process helps you identify the key entities in your system and their relationships.</p>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Example: E-commerce Database Design</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- Users table
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_active BOOLEAN DEFAULT TRUE,
+    INDEX idx_email (email),
+    INDEX idx_username (username),
+    INDEX idx_created_at (created_at)
+);
+
+-- Products table
+CREATE TABLE products (
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(200) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    category_id INT NOT NULL,
+    stock_quantity INT DEFAULT 0,
+    sku VARCHAR(50) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_active BOOLEAN DEFAULT TRUE,
+    INDEX idx_category (category_id),
+    INDEX idx_sku (sku),
+    INDEX idx_price (price),
+    INDEX idx_stock (stock_quantity),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
+
+-- Orders table
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    order_status ENUM('pending', 'processing', 'shipped', 'delivered', 'cancelled') DEFAULT 'pending',
+    shipping_address TEXT NOT NULL,
+    billing_address TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_user_id (user_id),
+    INDEX idx_status (order_status),
+    INDEX idx_created_at (created_at),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);</code></pre>
+            </div>
+            
+            <h3>Key Design Principles</h3>
+            
+            <div class="checklist">
+                <h4>✅ Essential Design Principles</h4>
+                <ul>
+                    <li><strong>Data Integrity:</strong> Ensure data accuracy and consistency through constraints and validation</li>
+                    <li><strong>Normalization:</strong> Eliminate data redundancy while maintaining data relationships</li>
+                    <li><strong>Performance:</strong> Design for optimal query performance and scalability</li>
+                    <li><strong>Security:</strong> Implement proper access controls and data protection measures</li>
+                    <li><strong>Maintainability:</strong> Create a structure that's easy to understand and modify</li>
+                    <li><strong>Scalability:</strong> Design to handle future growth in data volume and user load</li>
+                </ul>
+            </div>
+            
+            <h3>Data Types and Storage Optimization</h3>
+            <p>Choosing the right data types is crucial for storage efficiency and query performance:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Use Case</th>
+                        <th>Storage Size</th>
+                        <th>Performance Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>INT</code></td>
+                        <td>Primary keys, counters</td>
+                        <td>4 bytes</td>
+                        <td>Excellent for indexing</td>
+                    </tr>
+                    <tr>
+                        <td><code>BIGINT</code></td>
+                        <td>Large numbers, timestamps</td>
+                        <td>8 bytes</td>
+                        <td>Good for large datasets</td>
+                    </tr>
+                    <tr>
+                        <td><code>VARCHAR(n)</code></td>
+                        <td>Variable-length strings</td>
+                        <td>Length + 1-2 bytes</td>
+                        <td>Efficient for short strings</td>
+                    </tr>
+                    <tr>
+                        <td><code>TEXT</code></td>
+                        <td>Long text content</td>
+                        <td>Length + 2 bytes</td>
+                        <td>Slower for sorting/indexing</td>
+                    </tr>
+                    <tr>
+                        <td><code>DECIMAL(p,s)</code></td>
+                        <td>Financial data</td>
+                        <td>Variable</td>
+                        <td>Precise but slower</td>
+                    </tr>
+                    <tr>
+                        <td><code>TIMESTAMP</code></td>
+                        <td>Date/time with timezone</td>
+                        <td>4 bytes</td>
+                        <td>Efficient for time queries</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Normalization Section -->
+        <div class="section" id="normalization">
+            <h2>🔄 Normalization Techniques</h2>
+            
+            <p>Database normalization is the process of organizing data to reduce redundancy and improve data integrity. Let's explore the different normal forms with practical examples.</p>
+            
+            <h3>First Normal Form (1NF)</h3>
+            <p>Eliminates repeating groups and ensures each column contains atomic values.</p>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Before 1NF (Unnormalized)</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- BAD: Violates 1NF - multiple phone numbers in one column
+CREATE TABLE customers_bad (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    phone_numbers VARCHAR(255), -- "123-456-7890, 098-765-4321"
+    address VARCHAR(255)
+);</code></pre>
+            </div>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>After 1NF (Normalized)</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- GOOD: Follows 1NF - atomic values
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    address VARCHAR(255)
+);
+
+CREATE TABLE customer_phones (
+    phone_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT,
+    phone_number VARCHAR(20),
+    phone_type ENUM('home', 'work', 'mobile'),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);</code></pre>
+            </div>
+            
+            <h3>Second Normal Form (2NF)</h3>
+            <p>Eliminates partial dependencies on composite primary keys.</p>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>2NF Example: Order Items</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- Before 2NF: Product name depends only on product_id, not the full composite key
+CREATE TABLE order_items_bad (
+    order_id INT,
+    product_id INT,
+    product_name VARCHAR(200), -- Partial dependency
+    quantity INT,
+    unit_price DECIMAL(10, 2),
+    PRIMARY KEY (order_id, product_id)
+);
+
+-- After 2NF: Remove partial dependencies
+CREATE TABLE order_items (
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    unit_price DECIMAL(10, 2),
+    PRIMARY KEY (order_id, product_id),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+-- Product names are stored in the products table
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(200),
+    description TEXT,
+    base_price DECIMAL(10, 2)
+);</code></pre>
+            </div>
+            
+            <h3>Third Normal Form (3NF)</h3>
+            <p>Eliminates transitive dependencies where non-key attributes depend on other non-key attributes.</p>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>3NF Example: Employee Data</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- Before 3NF: Department name depends on department_id (transitive dependency)
+CREATE TABLE employees_bad (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    department_id INT,
+    department_name VARCHAR(100), -- Transitive dependency
+    salary DECIMAL(10, 2)
+);
+
+-- After 3NF: Remove transitive dependencies
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    department_id INT,
+    salary DECIMAL(10, 2),
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(100),
+    manager_id INT,
+    budget DECIMAL(12, 2)
+);</code></pre>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ When to Denormalize</h4>
+                <p>While normalization reduces redundancy, sometimes controlled denormalization can improve performance for read-heavy applications. Consider denormalization when:</p>
+                <ul>
+                    <li>Query performance is critical and joins are expensive</li>
+                    <li>Data is read much more frequently than it's updated</li>
+                    <li>You need to reduce complex joins for reporting queries</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Indexing Strategies -->
+        <div class="section" id="indexing">
+            <h2>📊 Advanced Indexing Strategies</h2>
+            
+            <p>Proper indexing is one of the most effective ways to improve database performance. Understanding different types of indexes and when to use them is crucial for optimization.</p>
+            
+            <h3>Types of Indexes</h3>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🔍 B-Tree Indexes</h4>
+                    <p>Default index type, excellent for equality and range queries. Best for columns with high cardinality.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🔗 Hash Indexes</h4>
+                    <p>Optimized for equality comparisons. Very fast for exact matches but cannot be used for range queries.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📝 Full-Text Indexes</h4>
+                    <p>Designed for searching text content. Essential for applications with search functionality.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🌐 Spatial Indexes</h4>
+                    <p>Optimized for geometric data types. Critical for location-based applications and GIS systems.</p>
+                </div>
+            </div>
+            
+            <h3>Creating Effective Indexes</h3>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Index Creation Examples</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- Single column index for frequent WHERE clauses
+CREATE INDEX idx_users_email ON users(email);
+
+-- Composite index for multi-column queries
+CREATE INDEX idx_orders_user_status ON orders(user_id, order_status);
+
+-- Partial index for specific conditions (PostgreSQL)
+CREATE INDEX idx_active_products ON products(category_id) 
+WHERE is_active = true;
+
+-- Covering index to avoid table lookups
+CREATE INDEX idx_product_summary ON products(category_id, price) 
+INCLUDE (name, stock_quantity);
+
+-- Full-text index for search functionality
+CREATE FULLTEXT INDEX idx_product_search ON products(name, description);
+
+-- Functional index for computed values (PostgreSQL)
+CREATE INDEX idx_users_lower_email ON users(LOWER(email));
+
+-- Unique index for data integrity
+CREATE UNIQUE INDEX idx_users_username ON users(username);</code></pre>
+            </div>
+            
+            <h3>Index Optimization Strategies</h3>
+            
+            <div class="highlight-box">
+                <h4>🎯 Index Selection Guidelines</h4>
+                <ul>
+                    <li><strong>Selectivity:</strong> Create indexes on columns with high selectivity (many unique values)</li>
+                    <li><strong>Query Patterns:</strong> Analyze your most frequent queries and create indexes accordingly</li>
+                    <li><strong>Composite Indexes:</strong> Order columns by selectivity (most selective first)</li>
+                    <li><strong>Covering Indexes:</strong> Include frequently accessed columns to avoid table lookups</li>
+                </ul>
+            </div>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Index Analysis Queries</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- Check index usage (MySQL)
+SELECT 
+    TABLE_SCHEMA,
+    TABLE_NAME,
+    INDEX_NAME,
+    CARDINALITY,
+    SUB_PART,
+    NULLABLE
+FROM INFORMATION_SCHEMA.STATISTICS 
+WHERE TABLE_SCHEMA = 'your_database'
+ORDER BY TABLE_NAME, SEQ_IN_INDEX;
+
+-- Find unused indexes (PostgreSQL)
+SELECT 
+    schemaname,
+    tablename,
+    indexname,
+    idx_tup_read,
+    idx_tup_fetch
+FROM pg_stat_user_indexes 
+WHERE idx_tup_read = 0 AND idx_tup_fetch = 0;
+
+-- Analyze query execution plan
+EXPLAIN ANALYZE 
+SELECT * FROM products 
+WHERE category_id = 5 AND price BETWEEN 100 AND 500;
+
+-- Check index fragmentation (SQL Server)
+SELECT 
+    OBJECT_NAME(i.object_id) AS TableName,
+    i.name AS IndexName,
+    s.avg_fragmentation_in_percent
+FROM sys.dm_db_index_physical_stats(DB_ID(), NULL, NULL, NULL, 'DETAILED') s
+JOIN sys.indexes i ON s.object_id = i.object_id AND s.index_id = i.index_id
+WHERE s.avg_fragmentation_in_percent > 10;</code></pre>
+            </div>
+            
+            <div class="performance-chart">
+                <h4>📈 Index Performance Impact</h4>
+                <div class="chart-container">
+                    <canvas id="indexPerformanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Query Optimization -->
+        <div class="section" id="query-optimization">
+            <h2>⚡ Query Optimization Techniques</h2>
+            
+            <p>Writing efficient queries is essential for database performance. Let's explore advanced techniques to optimize your SQL queries.</p>
+            
+            <h3>Query Execution Plans</h3>
+            <p>Understanding execution plans helps identify performance bottlenecks and optimization opportunities.</p>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Execution Plan Analysis</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- MySQL: Analyze query execution
+EXPLAIN FORMAT=JSON
+SELECT 
+    u.username,
+    COUNT(o.order_id) as order_count,
+    SUM(o.total_amount) as total_spent
+FROM users u
+LEFT JOIN orders o ON u.user_id = o.user_id
+WHERE u.created_at >= '2024-01-01'
+GROUP BY u.user_id, u.username
+HAVING total_spent > 1000
+ORDER BY total_spent DESC;
+
+-- PostgreSQL: Detailed execution analysis
+EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)
+SELECT 
+    p.name,
+    p.price,
+    c.name as category_name,
+    AVG(r.rating) as avg_rating
+FROM products p
+JOIN categories c ON p.category_id = c.category_id
+LEFT JOIN reviews r ON p.product_id = r.product_id
+WHERE p.is_active = true
+  AND p.price BETWEEN 50 AND 200
+GROUP BY p.product_id, p.name, p.price, c.name
+HAVING COUNT(r.review_id) >= 5;</code></pre>
+            </div>
+            
+            <h3>Query Optimization Techniques</h3>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Optimized Query Examples</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- 1. Use EXISTS instead of IN for better performance
+-- SLOW: Using IN with subquery
+SELECT * FROM products 
+WHERE category_id IN (
+    SELECT category_id FROM categories WHERE is_active = true
+);
+
+-- FAST: Using EXISTS
+SELECT p.* FROM products p
+WHERE EXISTS (
+    SELECT 1 FROM categories c 
+    WHERE c.category_id = p.category_id AND c.is_active = true
+);
+
+-- 2. Optimize JOIN operations
+-- SLOW: Cartesian product risk
+SELECT u.username, o.order_id, oi.product_id
+FROM users u, orders o, order_items oi
+WHERE u.user_id = o.user_id 
+  AND o.order_id = oi.order_id;
+
+-- FAST: Explicit JOINs with proper conditions
+SELECT u.username, o.order_id, oi.product_id
+FROM users u
+INNER JOIN orders o ON u.user_id = o.user_id
+INNER JOIN order_items oi ON o.order_id = oi.order_id
+WHERE u.is_active = true;
+
+-- 3. Use LIMIT with ORDER BY efficiently
+-- SLOW: Large result set then limit
+SELECT * FROM products 
+ORDER BY created_at DESC 
+LIMIT 10;
+
+-- FAST: Use index on created_at
+SELECT product_id, name, price, created_at 
+FROM products 
+WHERE is_active = true
+ORDER BY created_at DESC 
+LIMIT 10;
+
+-- 4. Optimize aggregate queries
+-- SLOW: Multiple separate queries
+SELECT COUNT(*) FROM orders WHERE order_status = 'pending';
+SELECT COUNT(*) FROM orders WHERE order_status = 'shipped';
+SELECT COUNT(*) FROM orders WHERE order_status = 'delivered';
+
+-- FAST: Single query with conditional aggregation
+SELECT 
+    COUNT(CASE WHEN order_status = 'pending' THEN 1 END) as pending_count,
+    COUNT(CASE WHEN order_status = 'shipped' THEN 1 END) as shipped_count,
+    COUNT(CASE WHEN order_status = 'delivered' THEN 1 END) as delivered_count
+FROM orders;</code></pre>
+            </div>
+            
+            <h3>Advanced Query Patterns</h3>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Window Functions and CTEs</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- Window functions for analytics
+WITH monthly_sales AS (
+    SELECT 
+        DATE_TRUNC('month', created_at) as month,
+        SUM(total_amount) as monthly_total,
+        COUNT(*) as order_count
+    FROM orders
+    WHERE created_at >= '2024-01-01'
+    GROUP BY DATE_TRUNC('month', created_at)
+),
+ranked_months AS (
+    SELECT 
+        month,
+        monthly_total,
+        order_count,
+        LAG(monthly_total) OVER (ORDER BY month) as prev_month_total,
+        ROW_NUMBER() OVER (ORDER BY monthly_total DESC) as revenue_rank
+    FROM monthly_sales
+)
+SELECT 
+    month,
+    monthly_total,
+    order_count,
+    COALESCE(
+        ROUND(((monthly_total - prev_month_total) / prev_month_total) * 100, 2), 
+        0
+    ) as growth_percentage,
+    revenue_rank
+FROM ranked_months
+ORDER BY month;
+
+-- Recursive CTE for hierarchical data
+WITH RECURSIVE category_hierarchy AS (
+    -- Base case: root categories
+    SELECT 
+        category_id,
+        name,
+        parent_id,
+        0 as level,
+        CAST(name AS VARCHAR(1000)) as path
+    FROM categories 
+    WHERE parent_id IS NULL
+    
+    UNION ALL
+    
+    -- Recursive case: child categories
+    SELECT 
+        c.category_id,
+        c.name,
+        c.parent_id,
+        ch.level + 1,
+        CONCAT(ch.path, ' > ', c.name)
+    FROM categories c
+    JOIN category_hierarchy ch ON c.parent_id = ch.category_id
+)
+SELECT 
+    category_id,
+    REPEAT('  ', level) || name as indented_name,
+    level,
+    path
+FROM category_hierarchy
+ORDER BY path;</code></pre>
+            </div>
+            
+            <div class="success-box">
+                <h4>✅ Query Optimization Checklist</h4>
+                <ul>
+                    <li>Use appropriate indexes for WHERE, JOIN, and ORDER BY clauses</li>
+                    <li>Avoid SELECT * - specify only needed columns</li>
+                    <li>Use LIMIT to restrict result sets when possible</li>
+                    <li>Optimize subqueries by converting to JOINs when appropriate</li>
+                    <li>Use prepared statements to avoid SQL injection and improve performance</li>
+                    <li>Consider query caching for frequently executed queries</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Performance Tuning -->
+        <div class="section" id="performance-tuning">
+            <h2>🔧 Performance Tuning</h2>
+            
+            <p>Database performance tuning involves optimizing various aspects of your database system to achieve maximum efficiency and responsiveness.</p>
+            
+            <h3>Memory and Buffer Management</h3>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>MySQL Configuration Optimization</span>
+                    <span class="code-language">SQL</span>
+                </div>
+                <pre class="line-numbers"><code class="language-sql">-- Check current buffer pool usage
+SELECT 
+    VARIABLE_NAME,
+    VARIABLE_VALUE
+FROM performance_schema.global_status
+WHERE VARIABLE_NAME IN (
+    'Innodb_buffer_pool_size',
+    'Innodb_buffer_pool_pages_total',
+    'Innodb_buffer_pool_pages_free',
+    'Innodb_buffer_pool_pages_data'
+);
+
+-- Optimize key MySQL parameters
+-- In my.cnf file:
+/*
+[mysqld]
+# Buffer Pool (70-80% of available RAM)
+innodb_buffer_pool_size = 4G
+innodb_buffer_pool_instances = 4
+
+# Log files
+innodb_log_file_size = 512M
+innodb_log_buffer_size = 64M
+
+# Query cache (if using MySQL < 8.0)
+query_cache_size = 256M
+query_cache_type = 1
+
+# Connection settings
+max_connections = 200
+max_connect_errors = 10000
+
+# Table cache
+table_open_cache = 4000
+table_definition_cache = 2000
+*/
+
+-- Monitor slow queries
+SET GLOBAL slow_query_log = 'ON';
+SET GLOBAL long_query_time = 2;
+SET GLOBAL log_queries_not_using_indexes = 'ON';
+
+-- Check slow query log
+SELECT 
+    sql_text,
+    exec_count,
+    avg_timer_wait/1000000000 as avg_exec_time_sec,
+    sum_timer_wait/1000000000 as total_exec_time_sec
+FROM performance_schema.events_statements_summary_by_digest
+ORDER BY avg_timer_wait DESC
+LIMIT 10;</code></pre>
+            </div>
+            
+            <h3>Connection Pool Optimization</h3>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Connection Pool Configuration (Node.js)</span>
+                    <span class="code-language">JavaScript</span>
+                </div>
+                <pre class="line-numbers"><code class="language-javascript">const mysql = require('mysql2/promise');
+
+// Optimized connection pool configuration
+const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'your_user',
+    password: 'your_password',
+    database: 'your_database',
+    
+    // Connection pool settings
+    connectionLimit: 20,        // Maximum connections
+    queueLimit: 0,             // No limit on queued requests
+    acquireTimeout: 60000,     // 60 seconds timeout
+    timeout: 60000,            // Query timeout
+    reconnect: true,           // Auto-reconnect
+    
+    // Performance optimizations
+    multipleStatements: false, // Security: prevent SQL injection
+    dateStrings: false,        // Return dates as Date objects
+    supportBigNumbers: true,   // Handle large numbers
+    bigNumberStrings: false,   // Return as numbers when possible
+    
+    // SSL configuration for production
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
+// Connection pool monitoring
+pool.on('connection', (connection) => {
+    console.log('New connection established as id ' + connection.threadId);
+});
+
+pool.on('error', (err) => {
+    console.error('Database pool error:', err);
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+        // Handle connection lost
+        console.log('Database connection lost, reconnecting...');
+    }
+});
+
+// Optimized query execution with error handling
+async function executeQuery(sql, params = []) {
+    const start = Date.now();
+    let connection;
+    
+    try {
+        connection = await pool.getConnection();
+        const [rows] = await connection.execute(sql, params);
+        
+        const duration = Date.now() - start;
+        if (duration > 1000) {
+            console.warn(`Slow query detected (${duration}ms):`, sql);
+        }
+        
+        return rows;
+    } catch (error) {
+        console.error('Query execution error:', error);
+        throw error;
+    } finally {
+        if (connection) connection.release();
+    }
+}
+
+// Batch operations for better performance
+async function batchInsert(tableName, records) {
+    if (!records.length) return;
+    
+    const columns = Object.keys(records[0]);
+    const placeholders = columns.map(() => '?').join(',');
+    const sql = `INSERT INTO ${tableName} (${columns.join(',')}) VALUES ${records.map(() => `(${placeholders})`).join(',')}`;
+    
+    const values = records.flatMap(record => columns.map(col => record[col]));
+    
+    return await executeQuery(sql, values);
+}</code></pre>
+            </div>
+            
+            <h3>Caching Strategies</h3>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Redis Caching Implementation</span>
+                    <span class="code-language">JavaScript</span>
+                </div>
+                <pre class="line-numbers"><code class="language-javascript">const redis = require('redis');
+const client = redis.createClient({
+    host: 'localhost',
+    port: 6379,
+    retry_strategy: (options) => {
+        if (options.error && options.error.code === 'ECONNREFUSED') {
+            return new Error('Redis server connection refused');
+        }
+        if (options.total_retry_time > 1000 * 60 * 60) {
+            return new Error('Redis retry time exhausted');
+        }
+        if (options.attempt > 10) {
+            return undefined;
+        }
+        return Math.min(options.attempt * 100, 3000);
+    }
+});
+
+// Cache wrapper for database queries
+class DatabaseCache {
+    constructor(redisClient, defaultTTL = 3600) {
+        this.redis = redisClient;
+        this.defaultTTL = defaultTTL;
+    }
+    
+    // Generate cache key
+    generateKey(prefix, params) {
+        const paramString = JSON.stringify(params);
+        return `${prefix}:${Buffer.from(paramString).toString('base64')}`;
+    }
+    
+    // Get cached result or execute query
+    async getCachedQuery(cacheKey, queryFunction, ttl = this.defaultTTL) {
+        try {
+            // Try to get from cache first
+            const cached = await this.redis.get(cacheKey);
+            if (cached) {
+                console.log('Cache hit:', cacheKey);
+                return JSON.parse(cached);
+            }
+            
+            // Execute query if not in cache
+            console.log('Cache miss:', cacheKey);
+            const result = await queryFunction();
+            
+            // Store in cache
+            await this.redis.setex(cacheKey, ttl, JSON.stringify(result));
+            
+            return result;
+        } catch (error) {
+            console.error('Cache error:', error);
+            // Fallback to direct query execution
+            return await queryFunction();
+        }
+    }
+    
+    // Invalidate cache patterns
+    async invalidatePattern(pattern) {
+        const keys = await this.redis.keys(pattern);
+        if (keys.length > 0) {
+            await this.redis.del(...keys);
+            console.log(`Invalidated ${keys.length} cache keys matching: ${pattern}`);
+        }
+    }
+    
+    // Cache popular products with different TTL
+    async getPopularProducts(limit = 10) {
+        const cacheKey = this.generateKey('popular_products', { limit });
+        
+        return await this.getCachedQuery(
+            cacheKey,
+            async () => {
+                return await executeQuery(`
+                    SELECT 
+                        p.product_id,
+                        p.name,
+                        p.price,
+                        p.image_url,
+                        COUNT(oi.product_id) as order_count
+                    FROM products p
+                    JOIN order_items oi ON p.product_id = oi.product_id
+                    JOIN orders o ON oi.order_id = o.order_id
+                    WHERE o.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+                    GROUP BY p.product_id
+                    ORDER BY order_count DESC
+                    LIMIT ?
+                `, [limit]);
+            },
+            1800 // 30 minutes TTL for popular products
+        );
+    }
+    
+    // Cache user profile with longer TTL
+    async getUserProfile(userId) {
+        return await this.cache.getOrSet(
+            `user:${userId}`,
+            async () => {
+                return await db.query(`
+                    SELECT u.*, p.preferences, s.settings
+                    FROM users u
+                    LEFT JOIN user_preferences p ON u.id = p.user_id
+                    LEFT JOIN user_settings s ON u.id = s.user_id
+                    WHERE u.id = ?
+                `, [userId]);
+            },
+            3600 // 1 hour TTL for user profiles
+        );
+    }
+}
+
+// Usage example
+const cacheManager = new CacheManager();
+const popularProducts = await cacheManager.getPopularProducts(10);
+                </code>
+            </pre>
+        </div>
+
+        <h3>🔄 Cache Invalidation Strategies</h3>
+        <p>Proper cache invalidation is crucial for maintaining data consistency:</p>
+        
+        <div class="code-container">
+            <div class="code-header">
+                <span>Cache Invalidation Patterns</span>
+                <span class="code-language">JavaScript</span>
+            </div>
+            <pre class="line-numbers"><code class="language-javascript">
+class CacheInvalidator {
+    constructor(cache, db) {
+        this.cache = cache;
+        this.db = db;
+    }
+    
+    // Invalidate related caches when data changes
+    async invalidateProductCaches(productId) {
+        const keys = [
+            `product:${productId}`,
+            'popular_products',
+            `category:${await this.getProductCategory(productId)}`,
+            'featured_products'
+        ];
+        
+        await Promise.all(keys.map(key => this.cache.delete(key)));
+    }
+    
+    // Time-based invalidation
+    async scheduleInvalidation(key, delay) {
+        setTimeout(async () => {
+            await this.cache.delete(key);
+        }, delay);
+    }
+    
+    // Event-driven invalidation
+    setupEventListeners() {
+        this.db.on('product_updated', (productId) => {
+            this.invalidateProductCaches(productId);
+        });
+        
+        this.db.on('user_updated', (userId) => {
+            this.cache.delete(`user:${userId}`);
+        });
+    }
+}
+            </code></pre>
+        </div>
+    </div>
+
+    <!-- Database Comparison Section -->
+    <div class="section" id="database-comparison">
+        <h2>⚖️ Database Comparison 2025</h2>
+        <p>Choosing the right database technology is crucial for your application's success. Here's a comprehensive comparison of popular database systems in 2025:</p>
+        
+        <h3>🔍 SQL vs NoSQL Comparison</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>SQL Databases</th>
+                    <th>NoSQL Databases</th>
+                    <th>Best Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Data Structure</strong></td>
+                    <td>Structured, relational</td>
+                    <td>Flexible, document/key-value</td>
+                    <td>SQL for complex relationships</td>
+                </tr>
+                <tr>
+                    <td><strong>Scalability</strong></td>
+                    <td>Vertical scaling</td>
+                    <td>Horizontal scaling</td>
+                    <td>NoSQL for massive scale</td>
+                </tr>
+                <tr>
+                    <td><strong>ACID Compliance</strong></td>
+                    <td>Full ACID support</td>
+                    <td>Eventually consistent</td>
+                    <td>SQL for financial systems</td>
+                </tr>
+                <tr>
+                    <td><strong>Query Language</strong></td>
+                    <td>Standardized SQL</td>
+                    <td>Database-specific APIs</td>
+                    <td>SQL for complex queries</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Optimized for complex queries</td>
+                    <td>Fast for simple operations</td>
+                    <td>Depends on use case</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>🏆 Top Database Systems 2025</h3>
+        
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h4>🐘 PostgreSQL</h4>
+                <p><strong>Best for:</strong> Complex applications requiring ACID compliance and advanced features like JSON support, full-text search, and geospatial data.</p>
+                <p><strong>Pros:</strong> Feature-rich, excellent performance, strong community</p>
+                <p><strong>Cons:</strong> Steeper learning curve, more resource-intensive</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>🐬 MySQL</h4>
+                <p><strong>Best for:</strong> Web applications, e-commerce platforms, and applications requiring proven reliability and wide hosting support.</p>
+                <p><strong>Pros:</strong> Easy to use, fast, widely supported</p>
+                <p><strong>Cons:</strong> Limited advanced features compared to PostgreSQL</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>🍃 MongoDB</h4>
+                <p><strong>Best for:</strong> Rapid development, content management, real-time analytics, and applications with evolving schemas.</p>
+                <p><strong>Pros:</strong> Flexible schema, horizontal scaling, developer-friendly</p>
+                <p><strong>Cons:</strong> Memory usage, eventual consistency challenges</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>⚡ Redis</h4>
+                <p><strong>Best for:</strong> Caching, session storage, real-time analytics, and high-performance applications requiring sub-millisecond latency.</p>
+                <p><strong>Pros:</strong> Extremely fast, versatile data structures</p>
+                <p><strong>Cons:</strong> In-memory limitations, data persistence complexity</p>
+            </div>
+        </div>
+        
+        <h3>☁️ Cloud Database Services</h3>
+        <p>Cloud databases offer managed services with automatic scaling, backups, and maintenance:</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>SQL Options</th>
+                    <th>NoSQL Options</th>
+                    <th>Key Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>AWS</strong></td>
+                    <td>RDS (MySQL, PostgreSQL), Aurora</td>
+                    <td>DynamoDB, DocumentDB</td>
+                    <td>Auto-scaling, Multi-AZ, Read replicas</td>
+                </tr>
+                <tr>
+                    <td><strong>Google Cloud</strong></td>
+                    <td>Cloud SQL, Spanner</td>
+                    <td>Firestore, Bigtable</td>
+                    <td>Global distribution, Strong consistency</td>
+                </tr>
+                <tr>
+                    <td><strong>Azure</strong></td>
+                    <td>SQL Database, PostgreSQL</td>
+                    <td>Cosmos DB</td>
+                    <td>Multi-model, Global distribution</td>
+                </tr>
+                <tr>
+                    <td><strong>MongoDB Atlas</strong></td>
+                    <td>-</td>
+                    <td>MongoDB</td>
+                    <td>Managed MongoDB, Global clusters</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Best Practices Section -->
+    <div class="section" id="best-practices">
+        <h2>🛡️ Best Practices & Security</h2>
+        <p>Following database best practices ensures security, performance, and maintainability of your database systems.</p>
+        
+        <h3>🔒 Security Best Practices</h3>
+        
+        <div class="checklist">
+            <h4>Essential Security Measures:</h4>
+            <ul>
+                <li>Use parameterized queries to prevent SQL injection</li>
+                <li>Implement proper authentication and authorization</li>
+                <li>Encrypt sensitive data at rest and in transit</li>
+                <li>Regular security audits and vulnerability assessments</li>
+                <li>Principle of least privilege for database users</li>
+                <li>Regular backup and disaster recovery testing</li>
+                <li>Monitor and log database access and changes</li>
+                <li>Keep database software updated with security patches</li>
+            </ul>
+        </div>
+        
+        <div class="code-container">
+            <div class="code-header">
+                <span>Secure Database Connection Example</span>
+                <span class="code-language">Node.js</span>
+            </div>
+            <pre class="line-numbers"><code class="language-javascript">
+const mysql = require('mysql2/promise');
+const bcrypt = require('bcrypt');
+
+// Secure connection configuration
+const dbConfig = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    ssl: {
+        rejectUnauthorized: true,
+        ca: fs.readFileSync('ca-cert.pem'),
+        key: fs.readFileSync('client-key.pem'),
+        cert: fs.readFileSync('client-cert.pem')
+    },
+    connectionLimit: 10,
+    acquireTimeout: 60000,
+    timeout: 60000
+};
+
+class SecureDatabase {
+    constructor() {
+        this.pool = mysql.createPool(dbConfig);
+    }
+    
+    // Secure user authentication
+    async authenticateUser(email, password) {
+        const [rows] = await this.pool.execute(
+            'SELECT id, password_hash FROM users WHERE email = ? AND active = 1',
+            [email]
+        );
+        
+        if (rows.length === 0) {
+            throw new Error('Invalid credentials');
+        }
+        
+        const isValid = await bcrypt.compare(password, rows[0].password_hash);
+        if (!isValid) {
+            throw new Error('Invalid credentials');
+        }
+        
+        // Log successful login
+        await this.logActivity(rows[0].id, 'LOGIN', 'Successful login');
+        
+        return rows[0].id;
+    }
+    
+    // Secure data insertion with validation
+    async createUser(userData) {
+        const { email, password, firstName, lastName } = userData;
+        
+        // Validate input
+        if (!this.isValidEmail(email) || !this.isStrongPassword(password)) {
+            throw new Error('Invalid input data');
+        }
+        
+        // Hash password
+        const saltRounds = 12;
+        const passwordHash = await bcrypt.hash(password, saltRounds);
+        
+        // Insert user with transaction
+        const connection = await this.pool.getConnection();
+        try {
+            await connection.beginTransaction();
+            
+            const [result] = await connection.execute(
+                'INSERT INTO users (email, password_hash, first_name, last_name, created_at) VALUES (?, ?, ?, ?, NOW())',
+                [email, passwordHash, firstName, lastName]
+            );
+            
+            await this.logActivity(result.insertId, 'USER_CREATED', 'New user account created');
+            
+            await connection.commit();
+            return result.insertId;
+        } catch (error) {
+            await connection.rollback();
+            throw error;
+        } finally {
+            connection.release();
+        }
+    }
+    
+    // Activity logging for security audit
+    async logActivity(userId, action, details) {
+        await this.pool.execute(
+            'INSERT INTO audit_log (user_id, action, details, ip_address, timestamp) VALUES (?, ?, ?, ?, NOW())',
+            [userId, action, details, this.getCurrentIP()]
+        );
+    }
+    
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    isStrongPassword(password) {
+        // At least 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special char
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        return passwordRegex.test(password);
+    }
+    
+    getCurrentIP() {
+        // Implementation depends on your application context
+        return '127.0.0.1'; // Placeholder
+    }
+}
+            </code></pre>
+        </div>
+        
+        <h3>📊 Performance Best Practices</h3>
+        
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h4>🎯 Query Optimization</h4>
+                <p>Write efficient queries by using appropriate indexes, avoiding SELECT *, limiting result sets, and using JOINs instead of subqueries when possible.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>🗂️ Index Management</h4>
+                <p>Create indexes on frequently queried columns, but avoid over-indexing. Monitor index usage and remove unused indexes to improve write performance.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>🔄 Connection Pooling</h4>
+                <p>Use connection pooling to manage database connections efficiently. Configure appropriate pool sizes based on your application's concurrency needs.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>📈 Regular Maintenance</h4>
+                <p>Perform regular database maintenance including updating statistics, rebuilding indexes, and cleaning up old data to maintain optimal performance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Monitoring Section -->
+    <div class="section" id="monitoring">
+        <h2>📊 Monitoring & Maintenance</h2>
+        <p>Effective database monitoring is essential for maintaining performance, identifying issues early, and ensuring optimal operation.</p>
+        
+        <h3>🔍 Key Performance Metrics</h3>
+        
+        <div class="performance-chart">
+            <h4>Database Performance Metrics Dashboard</h4>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h4>⚡ Response Time</h4>
+                <p>Monitor query execution times and overall response times. Set alerts for queries taking longer than expected thresholds.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>🔄 Throughput</h4>
+                <p>Track queries per second, transactions per second, and concurrent connections to understand database load patterns.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>💾 Resource Usage</h4>
+                <p>Monitor CPU usage, memory consumption, disk I/O, and network traffic to identify resource bottlenecks.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>🚨 Error Rates</h4>
+                <p>Track failed queries, connection errors, and timeout rates to identify and resolve issues quickly.</p>
+            </div>
+        </div>
+        
+        <h3>🛠️ Monitoring Tools and Techniques</h3>
+        
+        <div class="code-container">
+            <div class="code-header">
+                <span>Database Monitoring Script</span>
+                <span class="code-language">SQL</span>
+            </div>
+            <pre class="line-numbers"><code class="language-sql">
+-- Monitor slow queries (MySQL)
+SELECT 
+    query_time,
+    lock_time,
+    rows_sent,
+    rows_examined,
+    sql_text
+FROM mysql.slow_log 
+WHERE start_time >= DATE_SUB(NOW(), INTERVAL 1 HOUR)
+ORDER BY query_time DESC
+LIMIT 10;
+
+-- Check index usage (PostgreSQL)
+SELECT 
+    schemaname,
+    tablename,
+    indexname,
+    idx_scan as index_scans,
+    idx_tup_read as tuples_read,
+    idx_tup_fetch as tuples_fetched
+FROM pg_stat_user_indexes 
+WHERE idx_scan = 0
+ORDER BY schemaname, tablename;
+
+-- Monitor connection statistics
+SELECT 
+    state,
+    COUNT(*) as connection_count,
+    AVG(EXTRACT(EPOCH FROM (now() - query_start))) as avg_duration
+FROM pg_stat_activity 
+WHERE state IS NOT NULL
+GROUP BY state;
+
+-- Check table sizes and growth
+SELECT 
+    table_name,
+    ROUND(((data_length + index_length) / 1024 / 1024), 2) as size_mb,
+    table_rows
+FROM information_schema.tables 
+WHERE table_schema = 'your_database'
+ORDER BY (data_length + index_length) DESC;
+            </code></pre>
+        </div>
+        
+        <div class="warning-box">
+            <h4>⚠️ Maintenance Schedule</h4>
+            <p>Establish a regular maintenance schedule including:</p>
+            <ul>
+                <li>Daily: Monitor performance metrics and error logs</li>
+                <li>Weekly: Review slow query logs and optimize problematic queries</li>
+                <li>Monthly: Update database statistics and rebuild fragmented indexes</li>
+                <li>Quarterly: Review and optimize database schema and archival strategies</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Conclusion Section -->
+    <div class="section" id="conclusion">
+        <h2>🎯 Conclusion</h2>
+        <p>Database design and optimization are ongoing processes that require continuous attention and refinement. The techniques and best practices covered in this guide provide a solid foundation for building high-performance, scalable database systems.</p>
+        
+        <div class="success-box">
+            <h4>🚀 Key Takeaways</h4>
+            <ul>
+                <li><strong>Design First:</strong> Invest time in proper database design and normalization</li>
+                <li><strong>Index Strategically:</strong> Create indexes based on query patterns, not assumptions</li>
+                <li><strong>Monitor Continuously:</strong> Regular monitoring prevents small issues from becoming big problems</li>
+                <li><strong>Optimize Iteratively:</strong> Database optimization is an ongoing process, not a one-time task</li>
+                <li><strong>Security Always:</strong> Implement security measures from the beginning, not as an afterthought</li>
+            </ul>
+        </div>
+        
+        <p>As data continues to grow and applications become more complex, the importance of efficient database design and optimization will only increase. Stay updated with the latest database technologies and best practices to ensure your applications can handle future challenges.</p>
+        
+        <div class="highlight-box">
+            <h4>📚 Continue Learning</h4>
+            <p>Database technology is constantly evolving. Consider exploring advanced topics like database sharding, distributed databases, and emerging technologies like NewSQL databases to stay ahead of the curve.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <h3>🌟 Ready to Optimize Your Database?</h3>
+        <p>Apply these database design and optimization techniques to improve your application's performance and scalability.</p>
+        
+        <div class="nav-buttons" style="justify-content: center; margin-top: 30px;">
+            <a href="../index.html" class="nav-btn">← More Articles</a>
+            <a href="../../tools.html" class="nav-btn secondary">🛠️ Developer Tools</a>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" title="Share on Twitter">🐦</a>
+            <a href="#" title="Share on LinkedIn">💼</a>
+            <a href="#" title="Share on Facebook">📘</a>
+            <a href="#" title="Copy Link">🔗</a>
+        </div>
+    </div>
+</div>
+
+<!-- Prism.js for syntax highlighting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+<script>
+// Performance Chart
+const ctx = document.getElementById('performanceChart').getContext('2d');
+const performanceChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
+        datasets: [{
+            label: 'Query Response Time (ms)',
+            data: [45, 52, 78, 125, 98, 67, 51],
+            borderColor: '#3498db',
+            backgroundColor: 'rgba(52, 152, 219, 0.1)',
+            tension: 0.4
+        }, {
+            label: 'Queries per Second',
+            data: [120, 95, 180, 250, 220, 165, 130],
+            borderColor: '#e74c3c',
+            backgroundColor: 'rgba(231, 76, 60, 0.1)',
+            tension: 0.4,
+            yAxisID: 'y1'
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Database Performance Over 24 Hours'
+            },
+            legend: {
+                display: true,
+                position: 'top'
+            }
+        },
+        scales: {
+            y: {
+                type: 'linear',
+                display: true,
+                position: 'left',
+                title: {
+                    display: true,
+                    text: 'Response Time (ms)'
+                }
+            },
+            y1: {
+                type: 'linear',
+                display: true,
+                position: 'right',
+                title: {
+                    display: true,
+                    text: 'Queries per Second'
+                },
+                grid: {
+                    drawOnChartArea: false,
+                }
+            }
+        }
+    }
+});
+
+// Smooth scrolling for table of contents links
+document.querySelectorAll('.toc-list a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Copy code functionality
+document.querySelectorAll('.code-container').forEach(container => {
+    const header = container.querySelector('.code-header');
+    const copyBtn = document.createElement('button');
+    copyBtn.innerHTML = '📋 Copy';
+    copyBtn.style.cssText = `
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+    `;
+    
+    copyBtn.addEventListener('click', () => {
+        const code = container.querySelector('code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            copyBtn.innerHTML = '✅ Copied!';
+            setTimeout(() => {
+                copyBtn.innerHTML = '📋 Copy';
+            }, 2000);
+        });
+    });
+    
+    header.appendChild(copyBtn);
+});
+
+// Add loading animation for charts
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        performanceChart.update('active');
+    }, 500);
+});
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTful API Development Best Practices 2025 | Complete Guide with Node.js & Express</title>
+    <meta name="description" content="Master RESTful API development in 2025 with comprehensive best practices, Node.js examples, Express.js tutorials, authentication, security, and performance optimization techniques.">
+    <meta name="keywords" content="RESTful API, Node.js, Express.js, API development, REST API best practices, API security, JWT authentication, API documentation, Swagger, OpenAPI, API testing">
+    <meta name="author" content="Remote Tool Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://remotetoolhub.github.io/blog/articles/restful-api-development-best-practices-2025.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="RESTful API Development Best Practices 2025 | Complete Guide">
+    <meta property="og:description" content="Master RESTful API development with Node.js, Express.js, authentication, security, and performance optimization. Complete guide with practical examples.">
+    <meta property="og:image" content="https://remotetoolhub.github.io/blog/assets/images/restful-api-guide-2025.jpg">
+    <meta property="og:url" content="https://remotetoolhub.github.io/blog/articles/restful-api-development-best-practices-2025.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Remote Tool Hub">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RESTful API Development Best Practices 2025">
+    <meta name="twitter:description" content="Complete guide to RESTful API development with Node.js and Express.js examples">
+    <meta name="twitter:image" content="https://remotetoolhub.github.io/blog/assets/images/restful-api-guide-2025.jpg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "RESTful API Development Best Practices 2025: Complete Guide with Node.js & Express",
+        "description": "Comprehensive guide to RESTful API development covering Node.js, Express.js, authentication, security, performance optimization, and best practices for 2025.",
+        "image": "https://remotetoolhub.github.io/blog/assets/images/restful-api-guide-2025.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Remote Tool Hub",
+            "url": "https://remotetoolhub.github.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Remote Tool Hub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://remotetoolhub.github.io/logo.png"
+            }
+        },
+        "datePublished": "2025-01-21",
+        "dateModified": "2025-01-21",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://remotetoolhub.github.io/blog/articles/restful-api-development-best-practices-2025.html"
+        },
+        "keywords": "RESTful API, Node.js, Express.js, API development, REST API best practices, API security, JWT authentication"
+    }
+    </script>
+    
+    <!-- Prism.js for Code Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+    
+    <!-- Chart.js for Performance Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .toc h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 10px;
+        }
+        
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toc a:hover {
+            color: #764ba2;
+        }
+        
+        .toc .toc-number {
+            background: #667eea;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        /* Content Sections */
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            color: #333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .section h3 {
+            color: #555;
+            font-size: 1.6em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        
+        /* Code Blocks */
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        pre code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .code-header {
+            background: #1a202c;
+            color: #a0aec0;
+            padding: 10px 20px;
+            border-radius: 10px 10px 0 0;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: -5px;
+        }
+        
+        /* Interactive Elements */
+        .interactive-demo {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .demo-title {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        /* Comparison Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f7fafc;
+        }
+        
+        /* Performance Charts */
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .chart-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Best Practices Boxes */
+        .best-practice {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .best-practice::before {
+            content: '💡';
+            font-size: 2em;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        
+        .best-practice h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        /* Warning Boxes */
+        .warning {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .warning::before {
+            content: '⚠️';
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        /* Info Boxes */
+        .info {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .info::before {
+            content: 'ℹ️';
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .nav-buttons {
+                justify-content: center;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            pre {
+                padding: 15px;
+                font-size: 0.8em;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+        }
+        
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="../../index.html" class="nav-btn">
+                <i class="fas fa-home"></i> Back to Blog
+            </a>
+            <a href="../../tools.js" class="nav-btn">
+                <i class="fas fa-tools"></i> Developer Tools
+            </a>
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>RESTful API Development Best Practices 2025</h1>
+                <p>Master modern API development with Node.js, Express.js, and industry best practices</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Code Examples</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Major Topics</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Best Practices</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2><i class="fas fa-list"></i> Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction"><span class="toc-number">1</span>Introduction to RESTful APIs</a></li>
+                <li><a href="#fundamentals"><span class="toc-number">2</span>REST Fundamentals & Principles</a></li>
+                <li><a href="#nodejs-setup"><span class="toc-number">3</span>Node.js & Express Setup</a></li>
+                <li><a href="#api-design"><span class="toc-number">4</span>API Design Best Practices</a></li>
+                <li><a href="#authentication"><span class="toc-number">5</span>Authentication & Security</a></li>
+                <li><a href="#performance"><span class="toc-number">6</span>Performance Optimization</a></li>
+                <li><a href="#documentation"><span class="toc-number">7</span>API Documentation & Testing</a></li>
+                <li><a href="#deployment"><span class="toc-number">8</span>Deployment & Production</a></li>
+            </ul>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="section" id="introduction">
+            <h2><i class="fas fa-rocket"></i> Introduction to RESTful APIs</h2>
+            
+            <p>RESTful APIs (Representational State Transfer) have become the backbone of modern web development, enabling seamless communication between different systems and applications. In 2025, understanding how to build robust, scalable, and secure APIs is more crucial than ever.</p>
+            
+            <h3>What Makes an API RESTful?</h3>
+            <p>A RESTful API adheres to specific architectural principles that make it predictable, scalable, and easy to maintain:</p>
+            
+            <ul>
+                <li><strong>Stateless:</strong> Each request contains all necessary information</li>
+                <li><strong>Client-Server Architecture:</strong> Clear separation of concerns</li>
+                <li><strong>Cacheable:</strong> Responses can be cached for better performance</li>
+                <li><strong>Uniform Interface:</strong> Consistent resource identification and manipulation</li>
+                <li><strong>Layered System:</strong> Architecture can be composed of hierarchical layers</li>
+            </ul>
+            
+            <div class="info">
+                <strong>Why RESTful APIs in 2025?</strong> With the rise of microservices, mobile applications, and IoT devices, RESTful APIs provide the flexibility and scalability needed for modern distributed systems.
+            </div>
+        </div>
+        
+        <!-- REST Fundamentals Section -->
+        <div class="section" id="fundamentals">
+            <h2><i class="fas fa-cogs"></i> REST Fundamentals & Principles</h2>
+            
+            <h3>HTTP Methods and Their Usage</h3>
+            <p>Understanding when and how to use different HTTP methods is fundamental to RESTful API design:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>HTTP Method</th>
+                        <th>Purpose</th>
+                        <th>Idempotent</th>
+                        <th>Safe</th>
+                        <th>Example Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GET</strong></td>
+                        <td>Retrieve data</td>
+                        <td>✅ Yes</td>
+                        <td>✅ Yes</td>
+                        <td>GET /api/users/123</td>
+                    </tr>
+                    <tr>
+                        <td><strong>POST</strong></td>
+                        <td>Create new resource</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>POST /api/users</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PUT</strong></td>
+                        <td>Update/Replace resource</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>PUT /api/users/123</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PATCH</strong></td>
+                        <td>Partial update</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>PATCH /api/users/123</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DELETE</strong></td>
+                        <td>Remove resource</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>DELETE /api/users/123</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>HTTP Status Codes</h3>
+            <p>Proper use of HTTP status codes helps clients understand the result of their requests:</p>
+            
+            <div class="interactive-demo">
+                <div class="demo-title">Common HTTP Status Codes</div>
+                <ul>
+                    <li><strong>200 OK:</strong> Request successful</li>
+                    <li><strong>201 Created:</strong> Resource created successfully</li>
+                    <li><strong>400 Bad Request:</strong> Invalid request data</li>
+                    <li><strong>401 Unauthorized:</strong> Authentication required</li>
+                    <li><strong>403 Forbidden:</strong> Access denied</li>
+                    <li><strong>404 Not Found:</strong> Resource doesn't exist</li>
+                    <li><strong>500 Internal Server Error:</strong> Server error</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Node.js Setup Section -->
+        <div class="section" id="nodejs-setup">
+            <h2><i class="fab fa-node-js"></i> Node.js & Express Setup</h2>
+            
+            <h3>Project Initialization</h3>
+            <p>Let's start by setting up a new Node.js project with Express.js:</p>
+            
+            <div class="code-header">Terminal</div>
+            <pre><code class="language-bash"># Create new project directory
+mkdir restful-api-2025
+cd restful-api-2025
+
+# Initialize npm project
+npm init -y
+
+# Install essential dependencies
+npm install express cors helmet morgan dotenv
+npm install --save-dev nodemon jest supertest
+
+# Install additional packages for advanced features
+npm install jsonwebtoken bcryptjs express-rate-limit
+npm install express-validator mongoose swagger-jsdoc swagger-ui-express</code></pre>
+            
+            <h3>Basic Express Server Setup</h3>
+            <p>Create the foundation of your API server:</p>
+            
+            <div class="code-header">server.js</div>
+            <pre><code class="language-javascript">const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Security middleware
+app.use(helmet());
+
+// CORS configuration
+app.use(cors({
+    origin: process.env.ALLOWED_ORIGINS?.split(',') || ['http://localhost:3000'],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Rate limiting
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    message: {
+        error: 'Too many requests from this IP, please try again later.',
+        retryAfter: '15 minutes'
+    },
+    standardHeaders: true,
+    legacyHeaders: false
+});
+app.use('/api/', limiter);
+
+// Logging
+app.use(morgan('combined'));
+
+// Body parsing middleware
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'OK',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        environment: process.env.NODE_ENV || 'development'
+    });
+});
+
+// API routes
+app.use('/api/v1/users', require('./routes/users'));
+app.use('/api/v1/auth', require('./routes/auth'));
+app.use('/api/v1/products', require('./routes/products'));
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    
+    // Don't leak error details in production
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    
+    res.status(err.status || 500).json({
+        error: {
+            message: err.message || 'Internal Server Error',
+            ...(isDevelopment && { stack: err.stack }),
+            timestamp: new Date().toISOString()
+        }
+    });
+});
+
+// 404 handler
+app.use('*', (req, res) => {
+    res.status(404).json({
+        error: {
+            message: `Route ${req.originalUrl} not found`,
+            timestamp: new Date().toISOString()
+        }
+    });
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+    console.log('SIGTERM received, shutting down gracefully');
+    server.close(() => {
+        console.log('Process terminated');
+    });
+});
+
+const server = app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📚 Environment: ${process.env.NODE_ENV || 'development'}`);
+});
+
+module.exports = app;</code></pre>
+            
+            <div class="best-practice">
+                <h4>Best Practice: Environment Configuration</h4>
+                <p>Always use environment variables for configuration. Create a <code>.env</code> file for local development and never commit it to version control.</p>
+            </div>
+            
+            <div class="code-header">.env</div>
+            <pre><code class="language-bash"># Server Configuration
+PORT=3000
+NODE_ENV=development
+
+# Database
+MONGODB_URI=mongodb://localhost:27017/restful-api-2025
+DB_NAME=restful_api_2025
+
+# JWT Configuration
+JWT_SECRET=your-super-secret-jwt-key-change-in-production
+JWT_EXPIRES_IN=7d
+JWT_REFRESH_EXPIRES_IN=30d
+
+# CORS
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
+
+# Email Configuration (for notifications)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password</code></pre>
+        </div>
+        
+        <!-- API Design Section -->
+        <div class="section" id="api-design">
+            <h2><i class="fas fa-drafting-compass"></i> API Design Best Practices</h2>
+            
+            <h3>Resource Naming Conventions</h3>
+            <p>Consistent and intuitive resource naming is crucial for API usability:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>✅ Good Practice</th>
+                        <th>❌ Bad Practice</th>
+                        <th>Explanation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/api/v1/users</td>
+                        <td>/api/v1/getUsers</td>
+                        <td>Use nouns, not verbs</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/users/123/orders</td>
+                        <td>/api/v1/user-orders/123</td>
+                        <td>Show relationships clearly</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/products?category=electronics</td>
+                        <td>/api/v1/electronics-products</td>
+                        <td>Use query parameters for filtering</td>
+                    </tr>
+                    <tr>
+                        <td>/api/v1/users</td>
+                        <td>/api/v1/Users</td>
+                        <td>Use lowercase with hyphens</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Request/Response Structure</h3>
+            <p>Implement a consistent structure for all API responses:</p>
+            
+            <div class="code-header">utils/responseHandler.js</div>
+            <pre><code class="language-javascript">class ResponseHandler {
+    static success(res, data, message = 'Success', statusCode = 200) {
+        return res.status(statusCode).json({
+            success: true,
+            message,
+            data,
+            timestamp: new Date().toISOString()
+        });
+    }
+    
+    static error(res, message = 'Internal Server Error', statusCode = 500, errors = null) {
+        return res.status(statusCode).json({
+            success: false,
+            message,
+            errors,
+            timestamp: new Date().toISOString()
+        });
+    }
+    
+    static paginated(res, data, pagination, message = 'Success') {
+        return res.status(200).json({
+            success: true,
+            message,
+            data,
+            pagination: {
+                currentPage: pagination.page,
+                totalPages: pagination.totalPages,
+                totalItems: pagination.totalItems,
+                itemsPerPage: pagination.limit,
+                hasNextPage: pagination.page < pagination.totalPages,
+                hasPrevPage: pagination.page > 1
+            },
+            timestamp: new Date().toISOString()
+        });
+    }
+}
+
+module.exports = ResponseHandler;</code></pre>
+            
+            <h3>Complete CRUD Operations Example</h3>
+            <p>Let's implement a complete users resource with all CRUD operations:</p>
+            
+            <div class="code-header">routes/users.js</div>
+            <pre><code class="language-javascript">const express = require('express');
+const { body, param, query, validationResult } = require('express-validator');
+const ResponseHandler = require('../utils/responseHandler');
+const User = require('../models/User');
+const auth = require('../middleware/auth');
+
+const router = express.Router();
+
+// Validation middleware
+const handleValidationErrors = (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return ResponseHandler.error(res, 'Validation failed', 400, errors.array());
+    }
+    next();
+};
+
+// GET /api/v1/users - Get all users with pagination and filtering
+router.get('/', [
+    query('page').optional().isInt({ min: 1 }).withMessage('Page must be a positive integer'),
+    query('limit').optional().isInt({ min: 1, max: 100 }).withMessage('Limit must be between 1 and 100'),
+    query('search').optional().isLength({ min: 1 }).withMessage('Search term cannot be empty'),
+    query('role').optional().isIn(['admin', 'user', 'moderator']).withMessage('Invalid role'),
+    handleValidationErrors
+], async (req, res) => {
+    try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const search = req.query.search;
+        const role = req.query.role;
+        
+        // Build query
+        let query = {};
+        
+        if (search) {
+            query.$or = [
+                { name: { $regex: search, $options: 'i' } },
+                { email: { $regex: search, $options: 'i' } }
+            ];
+        }
+        
+        if (role) {
+            query.role = role;
+        }
+        
+        // Execute query with pagination
+        const skip = (page - 1) * limit;
+        const users = await User.find(query)
+            .select('-password')
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit);
+            
+        const totalItems = await User.countDocuments(query);
+        const totalPages = Math.ceil(totalItems / limit);
+        
+        const pagination = {
+            page,
+            limit,
+            totalPages,
+            totalItems
+        };
+        
+        ResponseHandler.paginated(res, users, pagination, 'Users retrieved successfully');
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        ResponseHandler.error(res, 'Failed to fetch users', 500);
+    }
+});
+
+// GET /api/v1/users/:id - Get user by ID
+router.get('/:id', [
+    param('id').isMongoId().withMessage('Invalid user ID'),
+    handleValidationErrors
+], async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id).select('-password');
+        
+        if (!user) {
+            return ResponseHandler.error(res, 'User not found', 404);
+        }
+        
+        ResponseHandler.success(res, user, 'User retrieved successfully');
+    } catch (error) {
+        console.error('Error fetching user:', error);
+        ResponseHandler.error(res, 'Failed to fetch user', 500);
+    }
+});
+
+// POST /api/v1/users - Create new user
+router.post('/', [
+    body('name')
+        .trim()
+        .isLength({ min: 2, max: 50 })
+        .withMessage('Name must be between 2 and 50 characters'),
+    body('email')
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please provide a valid email'),
+    body('password')
+        .isLength({ min: 8 })
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/)
+        .withMessage('Password must be at least 8 characters with uppercase, lowercase, number and special character'),
+    body('role')
+        .optional()
+        .isIn(['admin', 'user', 'moderator'])
+        .withMessage('Invalid role'),
+    handleValidationErrors
+], async (req, res) => {
+    try {
+        const { name, email, password, role = 'user' } = req.body;
+        
+        // Check if user already exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return ResponseHandler.error(res, 'User with this email already exists', 409);
+        }
+        
+        // Create new user
+        const user = new User({
+            name,
+            email,
+            password, // Will be hashed by the model's pre-save middleware
+            role
+        });
+        
+        await user.save();
+        
+        // Remove password from response
+        const userResponse = user.toObject();
+        delete userResponse.password;
+        
+        ResponseHandler.success(res, userResponse, 'User created successfully', 201);
+    } catch (error) {
+        console.error('Error creating user:', error);
+        ResponseHandler.error(res, 'Failed to create user', 500);
+    }
+});
+
+// PUT /api/v1/users/:id - Update user (full update)
+router.put('/:id', [
+    param('id').isMongoId().withMessage('Invalid user ID'),
+    body('name')
+        .trim()
+        .isLength({ min: 2, max: 50 })
+        .withMessage('Name must be between 2 and 50 characters'),
+    body('email')
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please provide a valid email'),
+    body('role')
+        .optional()
+        .isIn(['admin', 'user', 'moderator'])
+        .withMessage('Invalid role'),
+    handleValidationErrors,
+    auth // Require authentication
+], async (req, res) => {
+    try {
+        const { name, email, role } = req.body;
+        
+        // Check if user exists
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return ResponseHandler.error(res, 'User not found', 404);
+        }
+        
+        // Check if email is already taken by another user
+        if (email !== user.email) {
+            const existingUser = await User.findOne({ email });
+            if (existingUser) {
+                return ResponseHandler.error(res, 'Email already in use', 409);
+            }
+        }
+        
+        // Update user
+        user.name = name;
+        user.email = email;
+        if (role) user.role = role;
+        user.updatedAt = new Date();
+        
+        await user.save();
+        
+        // Remove password from response
+        const userResponse = user.toObject();
+        delete userResponse.password;
+        
+        ResponseHandler.success(res, userResponse, 'User updated successfully');
+    } catch (error) {
+        console.error('Error updating user:', error);
+        ResponseHandler.error(res, 'Failed to update user', 500);
+    }
+});
+
+// PATCH /api/v1/users/:id - Partial update
+router.patch('/:id', [
+    param('id').isMongoId().withMessage('Invalid user ID'),
+    body('name')
+        .optional()
+        .trim()
+        .isLength({ min: 2, max: 50 })
+        .withMessage('Name must be between 2 and 50 characters'),
+    body('email')
+        .optional()
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please provide a valid email'),
+    body('role')
+        .optional()
+        .isIn(['admin', 'user', 'moderator'])
+        .withMessage('Invalid role'),
+    handleValidationErrors,
+    auth
+], async (req, res) => {
+    try {
+        const updates = req.body;
+        const allowedUpdates = ['name', 'email', 'role'];
+        const actualUpdates = {};
+        
+        // Filter allowed updates
+        Object.keys(updates).forEach(key => {
+            if (allowedUpdates.includes(key)) {
+                actualUpdates[key] = updates[key];
+            }
+        });
+        
+        if (Object.keys(actualUpdates).length === 0) {
+            return ResponseHandler.error(res, 'No valid updates provided', 400);
+        }
+        
+        // Check if user exists
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return ResponseHandler.error(res, 'User not found', 404);
+        }
+        
+        // Check email uniqueness if email is being updated
+        if (actualUpdates.email && actualUpdates.email !== user.email) {
+            const existingUser = await User.findOne({ email: actualUpdates.email });
+            if (existingUser) {
+                return ResponseHandler.error(res, 'Email already in use', 409);
+            }
+        }
+        
+        // Apply updates
+        Object.assign(user, actualUpdates);
+        user.updatedAt = new Date();
+        
+        await user.save();
+        
+        // Remove password from response
+        const userResponse = user.toObject();
+        delete userResponse.password;
+        
+        ResponseHandler.success(res, userResponse, 'User updated successfully');
+    } catch (error) {
+        console.error('Error updating user:', error);
+        ResponseHandler.error(res, 'Failed to update user', 500);
+    }
+});
+
+// DELETE /api/v1/users/:id - Delete user
+router.delete('/:id', [
+    param('id').isMongoId().withMessage('Invalid user ID'),
+    handleValidationErrors,
+    auth
+], async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        
+        if (!user) {
+            return ResponseHandler.error(res, 'User not found', 404);
+        }
+        
+        // Soft delete (recommended) or hard delete
+        // Soft delete:
+        user.isDeleted = true;
+        user.deletedAt = new Date();
+        await user.save();
+        
+        // Hard delete (uncomment if preferred):
+        // await User.findByIdAndDelete(req.params.id);
+        
+        ResponseHandler.success(res, null, 'User deleted successfully');
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        ResponseHandler.error(res, 'Failed to delete user', 500);
+    }
+});
+
+module.exports = router;</code></pre>
+            
+            <div class="warning">
+                <strong>Security Note:</strong> Always validate and sanitize input data. Never trust client-side validation alone. Implement server-side validation for all endpoints.
+            </div>
+        </div>
+        
+        <!-- Authentication Section -->
+        <div class="section" id="authentication">
+            <h2><i class="fas fa-shield-alt"></i> Authentication & Security</h2>
+            
+            <h3>JWT Authentication Implementation</h3>
+            <p>JSON Web Tokens (JWT) provide a stateless authentication mechanism perfect for RESTful APIs:</p>
+            
+            <div class="code-header">middleware/auth.js</div>
+            <pre><code class="language-javascript">const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const ResponseHandler = require('../utils/responseHandler');
+
+const auth = async (req, res, next) => {
+    try {
+        // Get token from header
+        const authHeader = req.header('Authorization');
+        
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return ResponseHandler.error(res, 'Access denied. No token provided.', 401);
+        }
+        
+        const token = authHeader.substring(7); // Remove 'Bearer ' prefix
+        
+        // Verify token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        
+        // Get user from database
+        const user = await User.findById(decoded.userId).select('-password');
+        
+        if (!user) {
+            return ResponseHandler.error(res, 'Token is not valid', 401);
+        }
+        
+        // Check if user is active
+        if (user.isDeleted || !user.isActive) {
+            return ResponseHandler.error(res, 'Account is deactivated', 401);
+        }
+        
+        // Add user to request object
+        req.user = user;
+        next();
+    } catch (error) {
+        if (error.name === 'JsonWebTokenError') {
+            return ResponseHandler.error(res, 'Invalid token', 401);
+        }
+        if (error.name === 'TokenExpiredError') {
+            return ResponseHandler.error(res, 'Token expired', 401);
+        }
+        
+        console.error('Auth middleware error:', error);
+        ResponseHandler.error(res, 'Server error', 500);
+    }
+};
+
+// Role-based authorization middleware
+const authorize = (...roles) => {
+    return (req, res, next) => {
+        if (!req.user) {
+            return ResponseHandler.error(res, 'Access denied. Authentication required.', 401);
+        }
+        
+        if (!roles.includes(req.user.role)) {
+            return ResponseHandler.error(res, 'Access denied. Insufficient permissions.', 403);
+        }
+        
+        next();
+    };
+};
+
+module.exports = { auth, authorize };</code></pre>
+            
+            <h3>Authentication Routes</h3>
+            <p>Implement secure login, registration, and token refresh endpoints:</p>
+            
+            <div class="code-header">routes/auth.js</div>
+            <pre><code class="language-javascript">const express = require('express');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { body, validationResult } = require('express-validator');
+const rateLimit = require('express-rate-limit');
+const User = require('../models/User');
+const ResponseHandler = require('../utils/responseHandler');
+const { auth } = require('../middleware/auth');
+
+const router = express.Router();
+
+// Rate limiting for auth endpoints
+const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // limit each IP to 5 requests per windowMs
+    message: {
+        error: 'Too many authentication attempts, please try again later.',
+        retryAfter: '15 minutes'
+    },
+    standardHeaders: true,
+    legacyHeaders: false
+});
+
+// Generate JWT tokens
+const generateTokens = (userId) => {
+    const accessToken = jwt.sign(
+        { userId },
+        process.env.JWT_SECRET,
+        { expiresIn: process.env.JWT_EXPIRES_IN || '15m' }
+    );
+    
+    const refreshToken = jwt.sign(
+        { userId, type: 'refresh' },
+        process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET,
+        { expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d' }
+    );
+    
+    return { accessToken, refreshToken };
+};
+
+// POST /api/v1/auth/register - User registration
+router.post('/register', [
+    authLimiter,
+    body('name')
+        .trim()
+        .isLength({ min: 2, max: 50 })
+        .withMessage('Name must be between 2 and 50 characters'),
+    body('email')
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please provide a valid email'),
+    body('password')
+        .isLength({ min: 8 })
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/)
+        .withMessage('Password must be at least 8 characters with uppercase, lowercase, number and special character')
+], async (req, res) => {
+    try {
+        // Check validation errors
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return ResponseHandler.error(res, 'Validation failed', 400, errors.array());
+        }
+        
+        const { name, email, password } = req.body;
+        
+        // Check if user already exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return ResponseHandler.error(res, 'User with this email already exists', 409);
+        }
+        
+        // Create new user
+        const user = new User({
+            name,
+            email,
+            password // Will be hashed by the model's pre-save middleware
+        });
+        
+        await user.save();
+        
+        // Generate tokens
+        const { accessToken, refreshToken } = generateTokens(user._id);
+        
+        // Save refresh token to user (optional, for token revocation)
+        user.refreshToken = refreshToken;
+        await user.save();
+        
+        // Prepare response
+        const userResponse = {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            createdAt: user.createdAt
+        };
+        
+        ResponseHandler.success(res, {
+            user: userResponse,
+            tokens: {
+                accessToken,
+                refreshToken,
+                expiresIn: process.env.JWT_EXPIRES_IN || '15m'
+            }
+        }, 'User registered successfully', 201);
+        
+    } catch (error) {
+        console.error('Registration error:', error);
+        ResponseHandler.error(res, 'Registration failed', 500);
+    }
+});
+
+// POST /api/v1/auth/login - User login
+router.post('/login', [
+    authLimiter,
+    body('email')
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please provide a valid email'),
+    body('password')
+        .notEmpty()
+        .withMessage('Password is required')
+], async (req, res) => {
+    try {
+        // Check validation errors
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return ResponseHandler.error(res, 'Validation failed', 400, errors.array());
+        }
+        
+        const { email, password } = req.body;
+        
+        // Find user by email
+        const user = await User.findOne({ email }).select('+password');
+        if (!user) {
+            return ResponseHandler.error(res, 'Invalid credentials', 401);
+        }
+        
+        // Check if account is active
+        if (user.isDeleted || !user.isActive) {
+            return ResponseHandler.error(res, 'Account is deactivated', 401);
+        }
+        
+        // Verify password
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return ResponseHandler.error(res, 'Invalid credentials', 401);
+        }
+        
+        // Update last login
+        user.lastLogin = new Date();
+        await user.save();
+        
+        // Generate tokens
+        const { accessToken, refreshToken } = generateTokens(user._id);
+        
+        // Save refresh token to user
+        user.refreshToken = refreshToken;
+        await user.save();
+        
+        // Prepare response
+        const userResponse = {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            lastLogin: user.lastLogin
+        };
+        
+        ResponseHandler.success(res, {
+            user: userResponse,
+            tokens: {
+                accessToken,
+                refreshToken,
+                expiresIn: process.env.JWT_EXPIRES_IN || '15m'
+            }
+        }, 'Login successful');
+        
+    } catch (error) {
+        console.error('Login error:', error);
+        ResponseHandler.error(res, 'Login failed', 500);
+    }
+});
+
+// POST /api/v1/auth/refresh - Refresh access token
+router.post('/refresh', [
+    body('refreshToken')
+        .notEmpty()
+        .withMessage('Refresh token is required')
+], async (req, res) => {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return ResponseHandler.error(res, 'Validation failed', 400, errors.array());
+        }
+        
+        const { refreshToken } = req.body;
+        
+        // Verify refresh token
+        const decoded = jwt.verify(
+            refreshToken,
+            process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET
+        );
+        
+        if (decoded.type !== 'refresh') {
+            return ResponseHandler.error(res, 'Invalid token type', 401);
+        }
+        
+        // Find user and verify refresh token
+        const user = await User.findById(decoded.userId);
+        if (!user || user.refreshToken !== refreshToken) {
+            return ResponseHandler.error(res, 'Invalid refresh token', 401);
+        }
+        
+        // Check if account is active
+        if (user.isDeleted || !user.isActive) {
+            return ResponseHandler.error(res, 'Account is deactivated', 401);
+        }
+        
+        // Generate new tokens
+        const tokens = generateTokens(user._id);
+        
+        // Update refresh token in database
+        user.refreshToken = tokens.refreshToken;
+        await user.save();
+        
+        ResponseHandler.success(res, {
+            tokens: {
+                accessToken: tokens.accessToken,
+                refreshToken: tokens.refreshToken,
+                expiresIn: process.env.JWT_EXPIRES_IN || '15m'
+            }
+        }, 'Token refreshed successfully');
+        
+    } catch (error) {
+        if (error.name === 'JsonWebTokenError' || error.name === 'TokenExpiredError') {
+            return ResponseHandler.error(res, 'Invalid or expired refresh token', 401);
+        }
+        
+        console.error('Token refresh error:', error);
+        ResponseHandler.error(res, 'Token refresh failed', 500);
+    }
+});
+
+// POST /api/v1/auth/logout - Logout user
+router.post('/logout', auth, async (req, res) => {
+    try {
+        // Clear refresh token from database
+        req.user.refreshToken = null;
+        await req.user.save();
+        
+        ResponseHandler.success(res, null, 'Logout successful');
+    } catch (error) {
+        console.error('Logout error:', error);
+        ResponseHandler.error(res, 'Logout failed', 500);
+    }
+});
+
+// GET /api/v1/auth/me - Get current user profile
+router.get('/me', auth, async (req, res) => {
+    try {
+        const userResponse = {
+            id: req.user._id,
+            name: req.user.name,
+            email: req.user.email,
+            role: req.user.role,
+            createdAt: req.user.createdAt,
+            lastLogin: req.user.lastLogin
+        };
+        
+        ResponseHandler.success(res, userResponse, 'Profile retrieved successfully');
+    } catch (error) {
+        console.error('Profile fetch error:', error);
+    }
+}
+
+// Rate limiting example
+const rateLimitMap = new Map();
+
+function rateLimit(req, res, next) {
+    const clientIP = req.ip;
+    const now = Date.now();
+    const windowMs = 15 * 60 * 1000; // 15 minutes
+    const maxRequests = 100;
+    
+    if (!rateLimitMap.has(clientIP)) {
+        rateLimitMap.set(clientIP, { count: 1, resetTime: now + windowMs });
+        return next();
+    }
+    
+    const clientData = rateLimitMap.get(clientIP);
+    
+    if (now > clientData.resetTime) {
+        rateLimitMap.set(clientIP, { count: 1, resetTime: now + windowMs });
+        return next();
+    }
+    
+    if (clientData.count >= maxRequests) {
+        return res.status(429).json({
+            error: 'Too Many Requests',
+            message: 'Rate limit exceeded. Try again later.',
+            retryAfter: Math.ceil((clientData.resetTime - now) / 1000)
+        });
+    }
+    
+    clientData.count++;
+    next();
+}
+
+// API versioning example
+app.use('/api/v1', v1Routes);
+app.use('/api/v2', v2Routes);
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'healthy',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        version: process.env.API_VERSION || '1.0.0'
+    });
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+    console.log('SIGTERM received, shutting down gracefully');
+    server.close(() => {
+        console.log('Process terminated');
+    });
+});
+        </script>
+    </section>
+
+    <!-- API Testing Section -->
+    <section class="content-section">
+        <h2 id="testing">🧪 API Testing Strategies</h2>
+        
+        <div class="info-box">
+            <h3>Testing Pyramid for APIs</h3>
+            <p>Implement comprehensive testing at multiple levels to ensure API reliability and performance.</p>
+        </div>
+
+        <h3>Unit Testing with Jest</h3>
+        <pre><code class="language-javascript">// tests/user.test.js
+const request = require('supertest');
+const app = require('../app');
+const User = require('../models/User');
+
+describe('User API', () => {
+    beforeEach(async () => {
+        await User.deleteMany({});
+    });
+
+    describe('POST /api/users', () => {
+        it('should create a new user', async () => {
+            const userData = {
+                name: 'John Doe',
+                email: 'john@example.com',
+                password: 'securePassword123'
+            };
+
+            const response = await request(app)
+                .post('/api/users')
+                .send(userData)
+                .expect(201);
+
+            expect(response.body.user.name).toBe(userData.name);
+            expect(response.body.user.email).toBe(userData.email);
+            expect(response.body.user.password).toBeUndefined();
+        });
+
+        it('should return 400 for invalid email', async () => {
+            const userData = {
+                name: 'John Doe',
+                email: 'invalid-email',
+                password: 'securePassword123'
+            };
+
+            const response = await request(app)
+                .post('/api/users')
+                .send(userData)
+                .expect(400);
+
+            expect(response.body.error).toBe('Validation Error');
+        });
+    });
+
+    describe('GET /api/users/:id', () => {
+        it('should return user by id', async () => {
+            const user = new User({
+                name: 'Jane Doe',
+                email: 'jane@example.com',
+                password: 'hashedPassword'
+            });
+            await user.save();
+
+            const response = await request(app)
+                .get(`/api/users/${user._id}`)
+                .expect(200);
+
+            expect(response.body.user.name).toBe(user.name);
+        });
+
+        it('should return 404 for non-existent user', async () => {
+            const fakeId = '507f1f77bcf86cd799439011';
+            
+            await request(app)
+                .get(`/api/users/${fakeId}`)
+                .expect(404);
+        });
+    });
+});
+
+// Integration testing
+describe('User Authentication Flow', () => {
+    it('should register, login, and access protected route', async () => {
+        // Register user
+        const userData = {
+            name: 'Test User',
+            email: 'test@example.com',
+            password: 'testPassword123'
+        };
+
+        await request(app)
+            .post('/api/auth/register')
+            .send(userData)
+            .expect(201);
+
+        // Login user
+        const loginResponse = await request(app)
+            .post('/api/auth/login')
+            .send({
+                email: userData.email,
+                password: userData.password
+            })
+            .expect(200);
+
+        const token = loginResponse.body.token;
+
+        // Access protected route
+        await request(app)
+            .get('/api/profile')
+            .set('Authorization', `Bearer ${token}`)
+            .expect(200);
+    });
+});</code></pre>
+
+        <h3>Load Testing with Artillery</h3>
+        <pre><code class="language-yaml"># artillery-config.yml
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 60
+      arrivalRate: 10
+    - duration: 120
+      arrivalRate: 50
+    - duration: 60
+      arrivalRate: 100
+  defaults:
+    headers:
+      Content-Type: 'application/json'
+
+scenarios:
+  - name: "API Load Test"
+    weight: 70
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            email: "test@example.com"
+            password: "testPassword123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      - get:
+          url: "/api/users"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+      - post:
+          url: "/api/posts"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          json:
+            title: "Test Post {{ $randomString() }}"
+            content: "This is a test post content"
+
+  - name: "Health Check"
+    weight: 30
+    flow:
+      - get:
+          url: "/health"</code></pre>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="content-section">
+        <h2 id="documentation">📚 API Documentation with OpenAPI</h2>
+        
+        <div class="tip-box">
+            <h3>💡 Documentation Best Practices</h3>
+            <ul>
+                <li>Use OpenAPI 3.0 specification</li>
+                <li>Include comprehensive examples</li>
+                <li>Document all error responses</li>
+                <li>Provide interactive testing interface</li>
+                <li>Keep documentation up-to-date</li>
+            </ul>
+        </div>
+
+        <h3>OpenAPI Specification Example</h3>
+        <pre><code class="language-yaml"># swagger.yml
+openapi: 3.0.0
+info:
+  title: User Management API
+  description: A comprehensive API for user management operations
+  version: 2.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.example.com/v2
+    description: Production server
+  - url: https://staging-api.example.com/v2
+    description: Staging server
+
+paths:
+  /users:
+    get:
+      summary: Get all users
+      description: Retrieve a paginated list of users
+      tags:
+        - Users
+      parameters:
+        - name: page
+          in: query
+          description: Page number
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: limit
+          in: query
+          description: Number of users per page
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 10
+        - name: sort
+          in: query
+          description: Sort field
+          required: false
+          schema:
+            type: string
+            enum: [name, email, createdAt]
+            default: createdAt
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+              examples:
+                success:
+                  summary: Successful user list
+                  value:
+                    users:
+                      - id: "507f1f77bcf86cd799439011"
+                        name: "John Doe"
+                        email: "john@example.com"
+                        createdAt: "2025-01-01T00:00:00Z"
+                    pagination:
+                      page: 1
+                      limit: 10
+                      total: 25
+                      pages: 3
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - bearerAuth: []
+
+    post:
+      summary: Create a new user
+      description: Create a new user account
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+            examples:
+              user:
+                summary: Create user example
+                value:
+                  name: "Jane Doe"
+                  email: "jane@example.com"
+                  password: "securePassword123"
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          description: User already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique user identifier
+        name:
+          type: string
+          description: User's full name
+        email:
+          type: string
+          format: email
+          description: User's email address
+        createdAt:
+          type: string
+          format: date-time
+          description: User creation timestamp
+        updatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp
+      required:
+        - id
+        - name
+        - email
+        - createdAt
+
+    CreateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 100
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+          pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)'
+      required:
+        - name
+        - email
+        - password
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+          minimum: 1
+        limit:
+          type: integer
+          minimum: 1
+        total:
+          type: integer
+          minimum: 0
+        pages:
+          type: integer
+          minimum: 0
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+      required:
+        - error
+        - message
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT</code></pre>
+
+        <h3>Swagger UI Integration</h3>
+        <pre><code class="language-javascript">// swagger.js
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+const options = {
+    definition: {
+        openapi: '3.0.0',
+        info: {
+            title: 'RESTful API',
+            version: '2.0.0',
+            description: 'A comprehensive RESTful API with best practices'
+        },
+        servers: [
+            {
+                url: process.env.API_URL || 'http://localhost:3000',
+                description: 'Development server'
+            }
+        ]
+    },
+    apis: ['./routes/*.js', './models/*.js']
+};
+
+const specs = swaggerJsdoc(options);
+
+module.exports = {
+    serve: swaggerUi.serve,
+    setup: swaggerUi.setup(specs, {
+        explorer: true,
+        customCss: '.swagger-ui .topbar { display: none }',
+        customSiteTitle: 'API Documentation'
+    })
+};</code></pre>
+    </section>
+
+    <!-- Deployment Section -->
+    <section class="content-section">
+        <h2 id="deployment">🚀 Production Deployment</h2>
+        
+        <div class="warning-box">
+            <h3>⚠️ Production Checklist</h3>
+            <ul>
+                <li>Environment variables configuration</li>
+                <li>Database connection pooling</li>
+                <li>Logging and monitoring setup</li>
+                <li>SSL/TLS certificates</li>
+                <li>Load balancer configuration</li>
+                <li>Health checks and graceful shutdown</li>
+            </ul>
+        </div>
+
+        <h3>Docker Configuration</h3>
+        <pre><code class="language-dockerfile"># Dockerfile
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production && npm cache clean --force
+
+FROM node:18-alpine AS runtime
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nodeuser -u 1001
+
+WORKDIR /app
+
+# Copy dependencies
+COPY --from=builder --chown=nodeuser:nodejs /app/node_modules ./node_modules
+COPY --chown=nodeuser:nodejs . .
+
+# Security: Remove unnecessary packages
+RUN apk del --purge
+
+# Switch to non-root user
+USER nodeuser
+
+EXPOSE 3000
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD node healthcheck.js
+
+CMD ["node", "server.js"]</code></pre>
+
+        <h3>Docker Compose for Development</h3>
+        <pre><code class="language-yaml"># docker-compose.yml
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+      - DB_NAME=api_dev
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - mongodb
+      - redis
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - api-network
+
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=api_dev
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - api-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - api-network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - api
+    networks:
+      - api-network
+
+volumes:
+  mongodb_data:
+  redis_data:
+
+networks:
+  api-network:
+    driver: bridge</code></pre>
+
+        <h3>Kubernetes Deployment</h3>
+        <pre><code class="language-yaml"># k8s-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    app: api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: your-registry/api:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: api-secrets
+              key: db-host
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: api-secrets
+              key: db-password
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+spec:
+  selector:
+    app: api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer</code></pre>
+    </section>
+
+    <!-- Monitoring Section -->
+    <section class="content-section">
+        <h2 id="monitoring">📊 Monitoring and Analytics</h2>
+        
+        <div class="info-box">
+            <h3>Key Metrics to Monitor</h3>
+            <ul>
+                <li><strong>Response Time:</strong> Average and 95th percentile</li>
+                <li><strong>Throughput:</strong> Requests per second</li>
+                <li><strong>Error Rate:</strong> 4xx and 5xx responses</li>
+                <li><strong>Resource Usage:</strong> CPU, Memory, Disk</li>
+                <li><strong>Database Performance:</strong> Query time, connections</li>
+            </ul>
+        </div>
+
+        <h3>Prometheus Metrics</h3>
+        <pre><code class="language-javascript">// metrics.js
+const promClient = require('prom-client');
+
+// Create a Registry
+const register = new promClient.Registry();
+
+// Add default metrics
+promClient.collectDefaultMetrics({ register });
+
+// Custom metrics
+const httpRequestDuration = new promClient.Histogram({
+    name: 'http_request_duration_seconds',
+    help: 'Duration of HTTP requests in seconds',
+    labelNames: ['method', 'route', 'status'],
+    buckets: [0.1, 0.5, 1, 2, 5]
+});
+
+const httpRequestTotal = new promClient.Counter({
+    name: 'http_requests_total',
+    help: 'Total number of HTTP requests',
+    labelNames: ['method', 'route', 'status']
+});
+
+const activeConnections = new promClient.Gauge({
+    name: 'active_connections',
+    help: 'Number of active connections'
+});
+
+const databaseQueryDuration = new promClient.Histogram({
+    name: 'database_query_duration_seconds',
+    help: 'Duration of database queries in seconds',
+    labelNames: ['operation', 'collection'],
+    buckets: [0.01, 0.05, 0.1, 0.5, 1, 2]
+});
+
+// Register metrics
+register.registerMetric(httpRequestDuration);
+register.registerMetric(httpRequestTotal);
+register.registerMetric(activeConnections);
+register.registerMetric(databaseQueryDuration);
+
+// Middleware to collect metrics
+function metricsMiddleware(req, res, next) {
+    const start = Date.now();
+    
+    res.on('finish', () => {
+        const duration = (Date.now() - start) / 1000;
+        const route = req.route ? req.route.path : req.path;
+        
+        httpRequestDuration
+            .labels(req.method, route, res.statusCode)
+            .observe(duration);
+            
+        httpRequestTotal
+            .labels(req.method, route, res.statusCode)
+            .inc();
+    });
+    
+    next();
+}
+
+// Metrics endpoint
+function getMetrics() {
+    return register.metrics();
+}
+
+module.exports = {
+    metricsMiddleware,
+    getMetrics,
+    httpRequestDuration,
+    httpRequestTotal,
+    activeConnections,
+    databaseQueryDuration
+};</code></pre>
+
+        <h3>Structured Logging</h3>
+        <pre><code class="language-javascript">// logger.js
+const winston = require('winston');
+const { ElasticsearchTransport } = require('winston-elasticsearch');
+
+const logFormat = winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+);
+
+const logger = winston.createLogger({
+    level: process.env.LOG_LEVEL || 'info',
+    format: logFormat,
+    defaultMeta: {
+        service: 'api',
+        version: process.env.API_VERSION || '1.0.0'
+    },
+    transports: [
+        new winston.transports.Console({
+            format: winston.format.combine(
+                winston.format.colorize(),
+                winston.format.simple()
+            )
+        }),
+        new winston.transports.File({
+            filename: 'logs/error.log',
+            level: 'error'
+        }),
+        new winston.transports.File({
+            filename: 'logs/combined.log'
+        })
+    ]
+});
+
+// Add Elasticsearch transport in production
+if (process.env.NODE_ENV === 'production') {
+    logger.add(new ElasticsearchTransport({
+        level: 'info',
+        clientOpts: {
+            node: process.env.ELASTICSEARCH_URL
+        },
+        index: 'api-logs'
+    }));
+}
+
+// Request logging middleware
+function requestLogger(req, res, next) {
+    const start = Date.now();
+    
+    res.on('finish', () => {
+        const duration = Date.now() - start;
+        
+        logger.info('HTTP Request', {
+            method: req.method,
+            url: req.url,
+            status: res.statusCode,
+            duration,
+            userAgent: req.get('User-Agent'),
+            ip: req.ip,
+            userId: req.user?.id
+        });
+    });
+    
+    next();
+}
+
+module.exports = { logger, requestLogger };</code></pre>
+    </section>
+
+    <!-- Performance Chart -->
+    <section class="content-section">
+        <h2>📈 API Performance Metrics</h2>
+        <div class="chart-container">
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Best Practices Summary -->
+    <section class="content-section">
+        <h2 id="best-practices">✅ Best Practices Summary</h2>
+        
+        <div class="practices-grid">
+            <div class="practice-card">
+                <h3>🏗️ Design Principles</h3>
+                <ul>
+                    <li>Follow RESTful conventions</li>
+                    <li>Use consistent naming</li>
+                    <li>Implement proper HTTP methods</li>
+                    <li>Design for scalability</li>
+                    <li>Version your APIs</li>
+                </ul>
+            </div>
+            
+            <div class="practice-card">
+                <h3>🔒 Security</h3>
+                <ul>
+                    <li>Implement authentication</li>
+                    <li>Use HTTPS everywhere</li>
+                    <li>Validate all inputs</li>
+                    <li>Rate limit requests</li>
+                    <li>Sanitize outputs</li>
+                </ul>
+            </div>
+            
+            <div class="practice-card">
+                <h3>⚡ Performance</h3>
+                <ul>
+                    <li>Implement caching</li>
+                    <li>Use pagination</li>
+                    <li>Optimize database queries</li>
+                    <li>Compress responses</li>
+                    <li>Monitor performance</li>
+                </ul>
+            </div>
+            
+            <div class="practice-card">
+                <h3>📚 Documentation</h3>
+                <ul>
+                    <li>Use OpenAPI specification</li>
+                    <li>Provide examples</li>
+                    <li>Document error responses</li>
+                    <li>Keep docs updated</li>
+                    <li>Include interactive testing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="content-section">
+        <h2 id="conclusion">🎯 Conclusion</h2>
+        
+        <div class="conclusion-box">
+            <p>Building robust RESTful APIs requires careful attention to design principles, security, performance, and maintainability. By following the best practices outlined in this guide, you'll create APIs that are:</p>
+            
+            <ul>
+                <li><strong>Scalable:</strong> Handle growing traffic and data</li>
+                <li><strong>Secure:</strong> Protect against common vulnerabilities</li>
+                <li><strong>Maintainable:</strong> Easy to update and extend</li>
+                <li><strong>Developer-friendly:</strong> Well-documented and intuitive</li>
+                <li><strong>Production-ready:</strong> Monitored and reliable</li>
+            </ul>
+            
+            <p>Remember that API development is an iterative process. Start with a solid foundation, gather feedback from users, and continuously improve your implementation based on real-world usage patterns and performance metrics.</p>
+        </div>
+        
+        <div class="next-steps">
+            <h3>🚀 Next Steps</h3>
+            <ol>
+                <li>Set up your development environment with Node.js and Express</li>
+                <li>Implement basic CRUD operations following REST principles</li>
+                <li>Add authentication and authorization</li>
+                <li>Implement comprehensive testing</li>
+                <li>Set up monitoring and logging</li>
+                <li>Deploy to production with proper DevOps practices</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="article-navigation">
+        <a href="../index.html" class="nav-btn back-btn">
+            <span class="nav-icon">←</span>
+            <span class="nav-text">Back to Blog</span>
+        </a>
+        <a href="../../tools.js" class="nav-btn tools-btn">
+            <span class="nav-icon">🛠️</span>
+            <span class="nav-text">Developer Tools</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Related Articles</h4>
+                <ul>
+                    <li><a href="nodejs-backend-development-2025-part1.html">Node.js Backend Development</a></li>
+                    <li><a href="database-design-optimization-techniques-2025.html">Database Design & Optimization</a></li>
+                    <li><a href="cybersecurity-essentials-developers-2025.html">Cybersecurity Essentials</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://swagger.io/specification/" target="_blank">OpenAPI Specification</a></li>
+                    <li><a href="https://expressjs.com/" target="_blank">Express.js Documentation</a></li>
+                    <li><a href="https://jestjs.io/" target="_blank">Jest Testing Framework</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Developer Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Performance Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['0ms', '100ms', '200ms', '500ms', '1s', '2s', '5s'],
+                datasets: [{
+                    label: 'Response Time Distribution',
+                    data: [95, 85, 70, 45, 20, 5, 1],
+                    borderColor: '#4f46e5',
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'API Response Time Percentiles'
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Percentile (%)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Response Time'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Code copy functionality
+        document.querySelectorAll('pre code').forEach(block => {
+            const button = document.createElement('button');
+            button.className = 'copy-btn';
+            button.textContent = 'Copy';
+            button.addEventListener('click', () => {
+                navigator.clipboard.writeText(block.textContent).then(() => {
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                });
+            });
+            block.parentNode.appendChild(button);
+        });
+
+        // Progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
