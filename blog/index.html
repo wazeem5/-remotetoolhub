@@ -954,8 +954,8 @@
                 <div class="max-w-4xl mx-auto">
                     <!-- Search Bar -->
                     <div class="relative mb-6">
-                        <input type="text" id="searchInput" placeholder="ابحث في المقالات..." 
-                               class="w-full px-4 py-3 pl-12 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        <input type="text" id="searchInput" placeholder="Search articles..." 
+               class="w-full px-4 py-3 pl-12 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-4">
                             <i class="fas fa-search text-gray-400"></i>
                         </div>
@@ -967,16 +967,13 @@
                     <!-- Category Filters -->
                     <div class="flex flex-wrap gap-2 mb-4">
                         <button class="filter-btn active" data-category="all">
-                            <i class="fas fa-th-large mr-2"></i>جميع المقالات
+                            <i class="fas fa-th-large mr-2"></i>All Articles
                         </button>
                         <button class="filter-btn" data-category="JavaScript">
                             <i class="fab fa-js-square mr-2"></i>JavaScript
                         </button>
                         <button class="filter-btn" data-category="Python">
                             <i class="fab fa-python mr-2"></i>Python
-                        </button>
-                        <button class="filter-btn" data-category="React">
-                            <i class="fab fa-react mr-2"></i>React
                         </button>
                         <button class="filter-btn" data-category="Cloud Computing">
                             <i class="fas fa-cloud mr-2"></i>Cloud Computing
@@ -987,14 +984,33 @@
                         <button class="filter-btn" data-category="Machine Learning">
                             <i class="fas fa-brain mr-2"></i>Machine Learning
                         </button>
-                        <button class="filter-btn" data-category="Web Development">
-                            <i class="fas fa-code mr-2"></i>Web Development
+                        <button class="filter-btn" data-category="Development Tools">
+                            <i class="fas fa-tools mr-2"></i>Development Tools
                         </button>
+                        <button class="filter-btn" data-category="Mobile Development">
+                            <i class="fas fa-mobile-alt mr-2"></i>Mobile Development
+                        </button>
+                        <button class="filter-btn" data-category="Cybersecurity">
+                            <i class="fas fa-shield-alt mr-2"></i>Cybersecurity
+                        </button>
+                        <button class="filter-btn" data-category="CSS">
+                            <i class="fab fa-css3-alt mr-2"></i>CSS
+                        </button>
+                        <button class="filter-btn" data-category="Database">
+                            <i class="fas fa-database mr-2"></i>Database
+                        </button>
+                        <button class="filter-btn" data-category="Docker">
+                            <i class="fab fa-docker mr-2"></i>Docker
+                        </button>
+                        <button class="filter-btn" data-category="Git">
+                            <i class="fab fa-git-alt mr-2"></i>Git
+                        </button>
+                    </div>
                     </div>
 
                     <!-- Search Results Counter -->
                     <div id="searchResults" class="text-sm text-gray-600 mb-4 hidden">
-                        <span id="resultsCount">0</span> نتيجة موجودة
+                        <span id="resultsCount">0</span>
                     </div>
                 </div>
             </div>
@@ -1087,475 +1103,530 @@
             </div>
         </section>
 
-        <!-- All Articles Section -->
-        <section class="py-12">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8">All Articles</h2>
-                <div id="all-articles" class="space-y-6">
-                    <!-- Article 1 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/50-essential-developer-tools-2025.html" class="hover:text-blue-600 transition-colors">
-                                        50 Essential Developer Tools for 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Comprehensive guide to the most essential development tools every programmer should know in 2025.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Development Tools</span>
-                                    <span>15 min read</span>
-                                </div>
-                            </div>
-                        </div>
+           <!-- All Articles Section with Images -->
+<section class="py-12">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">All Articles</h2>
+        <div id="all-articles" class="space-y-6">
+            <!-- Article 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop&crop=center" alt="Developer Tools" class="w-full h-48 md:h-full object-cover">
                     </div>
-
-                    <!-- Article 2 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/advanced-javascript-debugging-techniques.html" class="hover:text-blue-600 transition-colors">
-                                        Advanced JavaScript Debugging Techniques
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Master advanced debugging techniques to identify and fix complex JavaScript issues efficiently.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">JavaScript</span>
-                                    <span>12 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 3 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/advanced-python-programming-techniques-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Advanced Python Programming Techniques 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Explore advanced Python concepts and techniques to write more efficient and maintainable code.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Python</span>
-                                    <span>18 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 4 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/cloud-computing-essentials-aws-azure-gcp-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Cloud Computing Essentials: AWS, Azure, GCP 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Complete guide to cloud computing platforms and their essential services for developers.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Cloud Computing</span>
-                                    <span>22 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 5 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/complete-guide-devops-developers-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Complete Guide to DevOps for Developers 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Master DevOps practices, tools, and methodologies to streamline development workflows.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">DevOps</span>
-                                    <span>25 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 6 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/complete-guide-docker-developers-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Complete Guide to Docker for Developers 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Learn Docker containerization from basics to advanced deployment strategies.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Docker</span>
-                                    <span>20 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 7 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/complete-guide-machine-learning-developers-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Complete Guide to Machine Learning for Developers 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Comprehensive introduction to machine learning concepts and practical implementation.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Machine Learning</span>
-                                    <span>30 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 8 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/css-grid-flexbox-mastery-2025.html" class="hover:text-blue-600 transition-colors">
-                                        CSS Grid & Flexbox Mastery 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Master modern CSS layout techniques with Grid and Flexbox for responsive designs.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">CSS</span>
-                                    <span>16 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 9 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/cybersecurity-essentials-developers-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Cybersecurity Essentials for Developers 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Essential cybersecurity practices and tools every developer should implement.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Cybersecurity</span>
-                                    <span>24 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 10 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/database-design-optimization-techniques-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Database Design & Optimization Techniques 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Advanced database design principles and optimization strategies for better performance.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Database</span>
-                                    <span>28 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 11 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/javascript-performance-optimization-2025.html" class="hover:text-blue-600 transition-colors">
-                                        JavaScript Performance Optimization 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Comprehensive guide to optimizing JavaScript performance for faster web applications.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">JavaScript</span>
-                                    <span>19 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 12 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/mastering-git-workflows-best-practices-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Mastering Git Workflows & Best Practices 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Advanced Git workflows and best practices for efficient team collaboration.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Git</span>
-                                    <span>17 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 13 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/mobile-app-development-react-native-vs-flutter-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Mobile App Development: React Native vs Flutter 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Comprehensive comparison of React Native and Flutter for mobile app development.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Mobile Development</span>
-                                    <span>21 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 14 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/modern-web-frameworks-2025-react-vue-angular.html" class="hover:text-blue-600 transition-colors">
-                                        Modern Web Frameworks 2025: React, Vue, Angular
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Detailed comparison and guide to choosing the right web framework for your project.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Web Development</span>
-                                    <span>26 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 15 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/nodejs-backend-development-2025-part1.html" class="hover:text-blue-600 transition-colors">
-                                        Node.js Backend Development 2025 - Part 1
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Complete guide to building scalable backend applications with Node.js.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Node.js</span>
-                                    <span>23 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 16 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/programming-for-beginners-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Programming for Beginners 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Complete beginner's guide to programming with practical examples and exercises.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Programming</span>
-                                    <span>14 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 17 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/react-hooks-state-management-2025.html" class="hover:text-blue-600 transition-colors">
-                                        React Hooks & State Management 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Master React Hooks and modern state management patterns for better applications.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">React</span>
-                                    <span>18 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 18 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/restful-api-development-best-practices-2025.html" class="hover:text-blue-600 transition-colors">
-                                        RESTful API Development Best Practices 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Best practices and patterns for designing and implementing robust RESTful APIs.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">API Development</span>
-                                    <span>22 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 19 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/top-10-ai-tools-developers-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Top 10 AI Tools for Developers 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Discover the most powerful AI tools that can enhance your development workflow.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">AI Tools</span>
-                                    <span>13 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 20 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/unlock-your-ecommerce-success-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Unlock Your E-commerce Success 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Complete guide to building and scaling successful e-commerce platforms.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">E-commerce</span>
-                                    <span>27 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 21 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/web-performance-optimization-guide-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Web Performance Optimization Guide 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Advanced techniques for optimizing web performance and improving user experience.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Performance</span>
-                                    <span>25 min read</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 22 -->
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                    <a href="articles/website-performance-optimization-guide-2025.html" class="hover:text-blue-600 transition-colors">
-                                        Website Performance Optimization Guide 2025
-                                    </a>
-                                </h3>
-                                <p class="text-gray-600 mb-3">
-                                    Comprehensive website optimization strategies for better speed, SEO, and user engagement.
-                                </p>
-                                <div class="flex items-center text-sm text-gray-500">
-                                    <span class="category-tag mr-3">Website Optimization</span>
-                                    <span>25 min read</span>
-                                </div>
-                            </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/50-essential-developer-tools-2025.html" class="hover:text-blue-600 transition-colors">
+                                50 Essential Developer Tools for 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Comprehensive guide to the most essential development tools every programmer should know in 2025.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Development Tools</span>
+                            <span>15 min read</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-              </div>
-        </section>
 
-        <!-- Pagination Section -->
-        <section class="py-12 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="flex justify-center items-center space-x-2">
-                    <button id="prevBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors">
-                        السابق
-                    </button>
-                    
+            <!-- Article 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=250&fit=crop&crop=center" alt="JavaScript Debugging" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/advanced-javascript-debugging-techniques.html" class="hover:text-blue-600 transition-colors">
+                                Advanced JavaScript Debugging Techniques
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Master advanced debugging techniques to identify and fix complex JavaScript issues efficiently.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">JavaScript</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop&crop=center" alt="Python Programming" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/advanced-python-programming-techniques-2025.html" class="hover:text-blue-600 transition-colors">
+                                Advanced Python Programming Techniques 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Explore advanced Python concepts and techniques to write more efficient and maintainable code.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Python</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&crop=center" alt="Cloud Computing" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/cloud-computing-essentials-aws-azure-gcp-2025.html" class="hover:text-blue-600 transition-colors">
+                                Cloud Computing Essentials: AWS, Azure, GCP 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Complete guide to cloud computing platforms and their essential services for developers.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Cloud Computing</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=400&h=250&fit=crop&crop=center" alt="DevOps" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/complete-guide-devops-developers-2025.html" class="hover:text-blue-600 transition-colors">
+                                Complete Guide to DevOps for Developers 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Master DevOps practices, tools, and methodologies to streamline development workflows.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">DevOps</span>
+                            <span>25 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&h=250&fit=crop&crop=center" alt="Docker" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/complete-guide-docker-developers-2025.html" class="hover:text-blue-600 transition-colors">
+                                Complete Guide to Docker for Developers 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Learn Docker containerization from basics to advanced deployment strategies.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Docker</span>
+                            <span>20 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 7 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop&crop=center" alt="Machine Learning" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/complete-guide-machine-learning-developers-2025.html" class="hover:text-blue-600 transition-colors">
+                                Complete Guide to Machine Learning for Developers 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Comprehensive introduction to machine learning concepts and practical implementation.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Machine Learning</span>
+                            <span>30 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 8 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=center" alt="CSS Grid Flexbox" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/css-grid-flexbox-mastery-2025.html" class="hover:text-blue-600 transition-colors">
+                                CSS Grid & Flexbox Mastery 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Master modern CSS layout techniques with Grid and Flexbox for responsive designs.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">CSS</span>
+                            <span>16 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 9 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop&crop=center" alt="Cybersecurity" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/cybersecurity-essentials-developers-2025.html" class="hover:text-blue-600 transition-colors">
+                                Cybersecurity Essentials for Developers 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Essential cybersecurity practices and tools every developer should implement.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Cybersecurity</span>
+                            <span>24 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 10 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=250&fit=crop&crop=center" alt="Database Design" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/database-design-optimization-techniques-2025.html" class="hover:text-blue-600 transition-colors">
+                                Database Design & Optimization Techniques 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Advanced database design principles and optimization strategies for better performance.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Database</span>
+                            <span>28 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 11 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=400&h=250&fit=crop&crop=center" alt="JavaScript Performance" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/javascript-performance-optimization-2025.html" class="hover:text-blue-600 transition-colors">
+                                JavaScript Performance Optimization 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Comprehensive guide to optimizing JavaScript performance for faster web applications.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">JavaScript</span>
+                            <span>19 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 12 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=250&fit=crop&crop=center" alt="Git Workflows" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/mastering-git-workflows-best-practices-2025.html" class="hover:text-blue-600 transition-colors">
+                                Mastering Git Workflows & Best Practices 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Advanced Git workflows and best practices for efficient team collaboration.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Git</span>
+                            <span>17 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 13 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop&crop=center" alt="Mobile Development" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/mobile-app-development-react-native-vs-flutter-2025.html" class="hover:text-blue-600 transition-colors">
+                                Mobile App Development: React Native vs Flutter 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Comprehensive comparison of React Native and Flutter for mobile app development.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Mobile Development</span>
+                            <span>21 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 14 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop&crop=center" alt="Web Frameworks" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/modern-web-frameworks-2025-react-vue-angular.html" class="hover:text-blue-600 transition-colors">
+                                Modern Web Frameworks 2025: React, Vue, Angular
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Detailed comparison and guide to choosing the right web framework for your project.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Web Development</span>
+                            <span>26 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 15 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&crop=center" alt="Node.js Backend" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/nodejs-backend-development-2025-part1.html" class="hover:text-blue-600 transition-colors">
+                                Node.js Backend Development 2025 - Part 1
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Complete guide to building scalable backend applications with Node.js.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Node.js</span>
+                            <span>23 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 16 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&h=250&fit=crop&crop=center" alt="Programming Beginners" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/programming-for-beginners-2025.html" class="hover:text-blue-600 transition-colors">
+                                Programming for Beginners 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Complete beginner's guide to programming with practical examples and exercises.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Programming</span>
+                            <span>14 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 17 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=400&h=250&fit=crop&crop=center" alt="React Hooks" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/react-hooks-state-management-2025.html" class="hover:text-blue-600 transition-colors">
+                                React Hooks & State Management 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Master React Hooks and modern state management patterns for better applications.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">React</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 18 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&crop=center" alt="RESTful API" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/restful-api-development-best-practices-2025.html" class="hover:text-blue-600 transition-colors">
+                                RESTful API Development Best Practices 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Best practices and patterns for designing and implementing robust RESTful APIs.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">API Development</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 19 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop&crop=center" alt="AI Tools" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/top-10-ai-tools-developers-2025.html" class="hover:text-blue-600 transition-colors">
+                                Top 10 AI Tools for Developers 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Discover the most powerful AI tools that can enhance your development workflow.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">AI Tools</span>
+                            <span>13 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 20 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center" alt="E-commerce" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/unlock-your-ecommerce-success-2025.html" class="hover:text-blue-600 transition-colors">
+                                Unlock Your E-commerce Success 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Complete guide to building and scaling successful e-commerce platforms.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">E-commerce</span>
+                            <span>27 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 21 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center" alt="Web Performance" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/web-performance-optimization-guide-2025.html" class="hover:text-blue-600 transition-colors">
+                                Web Performance Optimization Guide 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Advanced techniques for optimizing web performance and improving user experience.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Performance</span>
+                            <span>25 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 22 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow article-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center" alt="Website Optimization" class="w-full h-48 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                            <a href="articles/website-performance-optimization-guide-2025.html" class="hover:text-blue-600 transition-colors">
+                                Website Performance Optimization Guide 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Comprehensive website optimization strategies for better speed, SEO, and user engagement.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="category-tag mr-3">Website Optimization</span>
+                            <span>25 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>            
                     <div id="pageNumbers" class="flex space-x-1">
                         <!-- Page numbers will be generated by JavaScript -->
                     </div>
                     
                     <button id="nextBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors">
-                        التالي
+                        Next
                     </button>
                 </div>
                 
                 <div class="text-center mt-4 text-gray-600">
-                    <span id="pageInfo">صفحة 1 من 3</span>
+                    <span id="pageInfo">Page 1 of 3</span>
                 </div>
             </div>
         </section>
@@ -1566,26 +1637,26 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
                         <h3 class="text-xl font-bold mb-4">Remote Tool Hub</h3>
-                        <p class="text-gray-400">أدوات وموارد تقنية متقدمة للمطورين والمحترفين</p>
+                        <p class="text-gray-400">Advanced technical tools and resources for developers and professionals</p>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold mb-4">الأقسام</h4>
+                        <h4 class="text-lg font-semibold mb-4">Sections</h4>
                         <ul class="space-y-2 text-gray-400">
-                            <li><a href="#" class="hover:text-white transition-colors">الأدوات</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">المقالات</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">الدورات</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Tools</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Articles</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Courses</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold mb-4">روابط مفيدة</h4>
+                        <h4 class="text-lg font-semibold mb-4">Useful Links</h4>
                         <ul class="space-y-2 text-gray-400">
-                            <li><a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">شروط الاستخدام</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">اتصل بنا</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold mb-4">تابعنا</h4>
+                        <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
                         <div class="flex space-x-4">
                             <a href="#" class="text-gray-400 hover:text-white transition-colors">
                                 <i class="fab fa-twitter"></i>
@@ -1600,24 +1671,30 @@
                     </div>
                 </div>
                 <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                    <p>&copy; 2025 Remote Tool Hub. جميع الحقوق محفوظة.</p>
+                    <p>&copy; 2025 Remote Tool Hub. All rights reserved.</p>
                 </div>
             </div>
         </footer>
 
     <script>
-        // Search and Filter Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            const clearSearch = document.getElementById('clearSearch');
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const articlesContainer = document.getElementById('all-articles');
-            const searchResults = document.getElementById('searchResults');
-            const resultsCount = document.getElementById('resultsCount');
-            
-            let allArticles = [];
-            let filteredArticles = [];
-            let currentCategory = 'all';
+        // Search and Filter Functionality with Pagination
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articlesContainer = document.getElementById('all-articles');
+    const searchResults = document.getElementById('searchResults');
+    const resultsCount = document.getElementById('resultsCount');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageInfo = document.getElementById('pageInfo');
+    const pageNumbers = document.getElementById('pageNumbers');
+    
+    let allArticles = [];
+    let filteredArticles = [];
+    let currentCategory = 'all';
+    let currentPage = 1;
+    const articlesPerPage = 6;
             
             // Initialize articles array
             function initializeArticles() {
@@ -1722,8 +1799,8 @@
                     noResultsMsg.className = 'search-no-results';
                     noResultsMsg.innerHTML = `
                         <i class="fas fa-search text-4xl text-gray-300 mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-600 mb-2">لا توجد نتائج</h3>
-                        <p class="text-gray-500">جرب البحث بكلمات مختلفة أو اختر فئة أخرى</p>
+                        <h3 class="text-xl font-semibold text-gray-600 mb-2">No Results Found</h3>
+                        <p class="text-gray-500">Try searching with different keywords or select another category</p>
                     `;
                     articlesContainer.appendChild(noResultsMsg);
                 }
