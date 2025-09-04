@@ -1,23 +1,252 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- الصفحة الرئيسية -->
   <url>
     <loc>https://remotetoolhub.com/</loc>
     <lastmod>2025-01-27</lastmod>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
+  
+  <!-- الصفحات الأساسية -->
+  <url>
+    <loc>https://remotetoolhub.com/tools.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/about.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
   <url>
     <loc>https://remotetoolhub.com/blog/</loc>
     <lastmod>2025-01-27</lastmod>
     <priority>0.8</priority>
+    <changefreq>daily</changefreq>
   </url>
+  
+  <!-- جميع المقالات الـ 27 مع أولويات مناسبة -->
+  <url>
+    <loc>https://remotetoolhub.com/blog/affiliate-offers.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- الصفحات القانونية -->
+  <url>
+    <loc>https://remotetoolhub.com/privacy-policy.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/terms-of-service.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/disclaimer.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  
+  <!-- مقالات المدونة -->
   <url>
     <loc>https://remotetoolhub.com/blog/articles/50-essential-developer-tools-2025.html</loc>
     <lastmod>2025-01-27</lastmod>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
+  
   <url>
     <loc>https://remotetoolhub.com/blog/articles/advanced-javascript-debugging-techniques.html</loc>
     <lastmod>2025-01-27</lastmod>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/advanced-python-programming-techniques-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/cloud-computing-essentials-aws-azure-gcp-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/complete-guide-cloud-computing-developers-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/complete-guide-devops-developers-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/complete-guide-docker-developers-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/complete-guide-machine-learning-developers-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/css-grid-flexbox-mastery-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/cybersecurity-essentials-developers-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/database-design-optimization-techniques-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/javascript-performance-optimization-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/machine-learning-developers-complete-guide-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/mastering-git-workflows-best-practices-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/mobile-app-development-react-native-vs-flutter-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/modern-web-frameworks-2025-react-vue-angular.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/modern-web-frameworks-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/nodejs-backend-development-2025-part1.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/nodejs-backend-development-2025-part2.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/nodejs-backend-development-2025-part3a.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/programming-for-beginners-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/react-hooks-state-management-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/restful-api-development-best-practices-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/top-10-ai-tools-developers-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/unlock-your-ecommerce-success-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/web-performance-optimization-guide-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://remotetoolhub.com/blog/articles/website-performance-optimization-guide-2025.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>

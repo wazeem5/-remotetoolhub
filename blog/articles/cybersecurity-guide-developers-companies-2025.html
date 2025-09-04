@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Cybersecurity Guide for Developers and Companies 2025 | Security Best Practices</title>
+    <meta name="description" content="Comprehensive cybersecurity guide for developers and companies in 2025. Learn security best practices, threat detection, secure coding, infrastructure protection, and compliance standards.">
+    <meta name="keywords" content="cybersecurity, security guide, developers, companies, secure coding, threat detection, data protection, compliance, penetration testing, vulnerability assessment">
+    <meta name="author" content="RemoteToolHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://remotetoolhub.com/blog/articles/cybersecurity-guide-developers-companies-2025.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Complete Cybersecurity Guide for Developers and Companies 2025">
+    <meta property="og:description" content="Master cybersecurity with our comprehensive guide covering secure coding, threat detection, compliance, and modern security tools for developers and companies.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    <meta property="og:url" content="https://remotetoolhub.com/blog/articles/cybersecurity-guide-developers-companies-2025.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="RemoteToolHub">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complete Cybersecurity Guide for Developers and Companies 2025">
+    <meta name="twitter:description" content="Master cybersecurity with our comprehensive guide covering secure coding, threat detection, compliance, and modern security tools.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Complete Cybersecurity Guide for Developers and Companies 2025",
+        "description": "Comprehensive cybersecurity guide for developers and companies in 2025. Learn security best practices, threat detection, secure coding, infrastructure protection, and compliance standards.",
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630",
+        "author": {
+            "@type": "Organization",
+            "name": "RemoteToolHub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RemoteToolHub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://remotetoolhub.com/logo.png"
+            }
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://remotetoolhub.com/blog/articles/cybersecurity-guide-developers-companies-2025.html"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .code-block {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            color: #e6e6e6;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #4a5568;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .copy-btn:hover {
+            background: #2d3748;
+        }
+        .security-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .security-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .threat-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .threat-high { background-color: #ef4444; }
+        .threat-medium { background-color: #f59e0b; }
+        .threat-low { background-color: #10b981; }
+        .security-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .security-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3b82f6;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-blue-600">
+                        <i class="fas fa-shield-alt mr-2"></i>RemoteToolHub
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/blog" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-arrow-left mr-1"></i>Back to Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <i class="fas fa-shield-alt text-yellow-300 mr-4"></i>
+                Complete Cybersecurity Guide for Developers and Companies 2025
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                Master cybersecurity with comprehensive security practices, threat detection, and modern protection strategies
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-code mr-1"></i>Secure Coding
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-bug mr-1"></i>Threat Detection
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-server mr-1"></i>Infrastructure Security
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-certificate mr-1"></i>Compliance
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                <i class="fas fa-list-ul text-blue-600 mr-3"></i>
+                Table of Contents
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <a href="#fundamentals" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-foundation text-blue-600 mr-3"></i>
+                        1. Cybersecurity Fundamentals
+                    </a>
+                    <a href="#secure-coding" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-code text-green-600 mr-3"></i>
+                        2. Secure Coding Practices
+                    </a>
+                    <a href="#application-security" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-mobile-alt text-purple-600 mr-3"></i>
+                        3. Application Security
+                    </a>
+                    <a href="#infrastructure" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-server text-red-600 mr-3"></i>
+                        4. Infrastructure Security
+                    </a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#identity-access" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-user-shield text-indigo-600 mr-3"></i>
+                        5. Identity & Access Management
+                    </a>
+                    <a href="#threat-detection" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-search text-yellow-600 mr-3"></i>
+                        6. Threat Detection & Response
+                    </a>
+                    <a href="#compliance" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-certificate text-teal-600 mr-3"></i>
+                        7. Compliance & Standards
+                    </a>
+                    <a href="#tools" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-tools text-orange-600 mr-3"></i>
+                        8. Security Tools & Technologies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Introduction -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl border border-blue-200">
+                <h2 class="text-3xl font-bold mb-6 text-blue-800">
+                    <i class="fas fa-info-circle mr-3"></i>
+                    Introduction to Cybersecurity in 2025
+                </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    In 2025, cybersecurity has become more critical than ever as digital transformation accelerates and cyber threats evolve. This comprehensive guide provides developers and companies with essential knowledge, practical strategies, and cutting-edge tools to build robust security defenses.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-3xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800">Rising Threats</h3>
+                        <p class="text-sm text-gray-600">Cyber attacks increase by 38% annually</p>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-dollar-sign text-green-500 text-3xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800">Financial Impact</h3>
+                        <p class="text-sm text-gray-600">Average breach cost: $4.45M</p>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-clock text-blue-500 text-3xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800">Detection Time</h3>
+                        <p class="text-sm text-gray-600">Average: 277 days to identify</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Cybersecurity Fundamentals -->
+        <section id="fundamentals" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-foundation text-blue-600 mr-3"></i>
+                1. Cybersecurity Fundamentals
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                        Core Security Principles (CIA Triad)
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i class="fas fa-lock text-green-600 text-2xl mb-3"></i>
+                            <h4 class="font-semibold text-green-800">Confidentiality</h4>
+                            <p class="text-sm text-gray-600">Protecting sensitive information from unauthorized access</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <i class="fas fa-check-circle text-blue-600 text-2xl mb-3"></i>
+                            <h4 class="font-semibold text-blue-800">Integrity</h4>
+                            <p class="text-sm text-gray-600">Ensuring data accuracy and preventing unauthorized modifications</p>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <i class="fas fa-clock text-purple-600 text-2xl mb-3"></i>
+                            <h4 class="font-semibold text-purple-800">Availability</h4>
+                            <p class="text-sm text-gray-600">Maintaining system accessibility when needed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-exclamation-triangle text-red-600 mr-2"></i>
+                        Common Threat Landscape 2025
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-red-50 rounded-lg">
+                            <span class="threat-indicator threat-high"></span>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Ransomware Attacks</h4>
+                                <p class="text-sm text-gray-600">Sophisticated encryption-based extortion targeting critical infrastructure</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-yellow-50 rounded-lg">
+                            <span class="threat-indicator threat-medium"></span>
+                            <div>
+                                <h4 class="font-semibold text-yellow-800">Supply Chain Attacks</h4>
+                                <p class="text-sm text-gray-600">Compromising third-party dependencies and software components</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-orange-50 rounded-lg">
+                            <span class="threat-indicator threat-medium"></span>
+                            <div>
+                                <h4 class="font-semibold text-orange-800">AI-Powered Attacks</h4>
+                                <p class="text-sm text-gray-600">Machine learning enhanced phishing and social engineering</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                            <span class="threat-indicator threat-low"></span>
+                            <div>
+                                <h4 class="font-semibold text-green-800">IoT Vulnerabilities</h4>
+                                <p class="text-sm text-gray-600">Insecure Internet of Things devices creating attack vectors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Secure Coding Practices -->
+        <section id="secure-coding" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-code text-green-600 mr-3"></i>
+                2. Secure Coding Practices
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-bug text-red-600 mr-2"></i>
+                        Input Validation and Sanitization
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Proper input validation is the first line of defense against injection attacks. Always validate, sanitize, and escape user inputs.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// JavaScript - Input Validation Example
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        throw new Error('Invalid email format');
+    }
+    return email.trim().toLowerCase();
+}
+
+function sanitizeInput(input) {
+    // Remove potentially dangerous characters
+    return input.replace(/[<>"'&]/g, function(match) {
+        const escapeMap = {
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#x27;',
+            '&': '&amp;'
+        };
+        return escapeMap[match];
+    });
+}
+
+// SQL Injection Prevention with Parameterized Queries
+const query = 'SELECT * FROM users WHERE email = ? AND status = ?';
+db.query(query, [email, status], (err, results) => {
+    // Safe database query
+});</code></pre>
+                    </div>
+                </div>
+
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-key text-blue-600 mr-2"></i>
+                        Authentication and Authorization
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Implement robust authentication mechanisms and proper authorization controls to protect sensitive resources.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Node.js - JWT Authentication with bcrypt
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+// Password hashing
+async function hashPassword(password) {
+    const saltRounds = 12;
+    return await bcrypt.hash(password, saltRounds);
+}
+
+// Password verification
+async function verifyPassword(password, hashedPassword) {
+    return await bcrypt.compare(password, hashedPassword);
+}
+
+// JWT token generation
+function generateToken(user) {
+    return jwt.sign(
+        { 
+            userId: user.id, 
+            email: user.email,
+            role: user.role 
+        },
+        process.env.JWT_SECRET,
+        { 
+            expiresIn: '1h',
+            issuer: 'your-app-name',
+            audience: 'your-app-users'
+        }
+    );
+}
+
+// Middleware for token verification
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    
+    if (!token) {
+        return res.status(401).json({ error: 'Access token required' });
+    }
+    
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) {
+            return res.status(403).json({ error: 'Invalid or expired token' });
+        }
+        req.user = user;
+        next();
+    });
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-shield-virus text-purple-600 mr-2"></i>
+                        Cross-Site Scripting (XSS) Prevention
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Protect against XSS attacks by implementing proper output encoding and Content Security Policy (CSP).
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// React - XSS Prevention
+import DOMPurify from 'dompurify';
+
+// Safe HTML rendering
+function SafeHtmlComponent({ htmlContent }) {
+    const sanitizedHtml = DOMPurify.sanitize(htmlContent, {
+        ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'ul', 'ol', 'li'],
+        ALLOWED_ATTR: ['class']
+    });
+    
+    return (
+        <div 
+            dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+        />
+    );
+}
+
+// CSP Header Configuration
+app.use((req, res, next) => {
+    res.setHeader(
+        'Content-Security-Policy',
+        "default-src 'self'; " +
+        "script-src 'self' 'unsafe-inline' https://trusted-cdn.com; " +
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+        "img-src 'self' data: https:; " +
+        "font-src 'self' https://fonts.gstatic.com; " +
+        "connect-src 'self' https://api.yourapp.com"
+    );
+    next();
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Application Security -->
+        <section id="application-security" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-mobile-alt text-purple-600 mr-3"></i>
+                3. Application Security
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-globe text-blue-600 mr-2"></i>
+                        Web Application Security
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Implement comprehensive security measures for web applications including HTTPS, secure headers, and session management.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Express.js - Security Headers and Session Management
+const express = require('express');
+const helmet = require('helmet');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
+const app = express();
+
+// Security headers
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+            scriptSrc: ["'self'"],
+            imgSrc: ["'self'", "data:", "https:"],
+            connectSrc: ["'self'"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com"],
+            objectSrc: ["'none'"],
+            mediaSrc: ["'self'"],
+            frameSrc: ["'none'"]
+        }
+    },
+    hsts: {
+        maxAge: 31536000,
+        includeSubDomains: true,
+        preload: true
+    }
+}));
+
+// Secure session configuration
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI
+    }),
+    cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 24, // 24 hours
+        sameSite: 'strict'
+    }
+}));
+
+// Rate limiting
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    message: 'Too many requests from this IP'
+});
+app.use('/api/', limiter);</code></pre>
+                    </div>
+                </div>
+
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-database text-green-600 mr-2"></i>
+                        Database Security
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Secure your database with proper access controls, encryption, and monitoring.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// MongoDB - Security Configuration
+// Connection with SSL/TLS
+const mongoose = require('mongoose');
+
+const dbOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    sslValidate: true,
+    sslCA: fs.readFileSync('path/to/ca-certificate.crt'),
+    authSource: 'admin',
+    retryWrites: true,
+    w: 'majority'
+};
+
+mongoose.connect(process.env.MONGODB_URI, dbOptions);
+
+// Schema with validation and encryption
+const userSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        validate: {
+            validator: function(v) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+            },
+            message: 'Invalid email format'
+        }
+    },
+    password: {
+        type: String,
+        required: true,
+        minlength: 8
+    },
+    personalData: {
+        type: String,
+        // Field-level encryption for sensitive data
+        encrypt: true
+    },
+    loginAttempts: {
+        type: Number,
+        default: 0
+    },
+    lockUntil: Date
+});
+
+// Account lockout mechanism
+userSchema.methods.incLoginAttempts = function() {
+    if (this.lockUntil && this.lockUntil < Date.now()) {
+        return this.updateOne({
+            $unset: { lockUntil: 1 },
+            $set: { loginAttempts: 1 }
+        });
+    }
+    
+    const updates = { $inc: { loginAttempts: 1 } };
+    
+    if (this.loginAttempts + 1 >= 5 && !this.lockUntil) {
+        updates.$set = {
+            lockUntil: Date.now() + 2 * 60 * 60 * 1000 // 2 hours
+        };
+    }
+    
+    return this.updateOne(updates);
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Infrastructure Security -->
+        <section id="infrastructure" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-server text-red-600 mr-3"></i>
+                4. Infrastructure Security
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-cloud text-blue-600 mr-2"></i>
+                        Cloud Security Best Practices
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Implement robust cloud security measures including IAM, network security, and data encryption.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code># AWS - Infrastructure as Code with Security
+# CloudFormation Template for Secure VPC
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Secure VPC with private subnets and security groups'
+
+Resources:
+  SecureVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: SecureVPC
+
+  PrivateSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref SecureVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs '']
+      MapPublicIpOnLaunch: false
+
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Secure application security group
+      VpcId: !Ref SecureVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+
+  # S3 Bucket with encryption and access logging
+  SecureS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      LoggingConfiguration:
+        DestinationBucketName: !Ref LoggingBucket
+        LogFilePrefix: access-logs/</code></pre>
+                    </div>
+                </div>
+
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-docker text-blue-600 mr-2"></i>
+                        Container Security
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Secure your containerized applications with proper image scanning, runtime security, and network policies.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code># Dockerfile - Security Best Practices
+FROM node:18-alpine AS builder
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy source code
+COPY . .
+
+# Build application
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine AS runner
+
+# Install security updates
+RUN apk update && apk upgrade && apk add --no-cache dumb-init
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
+WORKDIR /app
+
+# Copy built application
+COPY --from=builder --chown=nextjs:nodejs /app/dist ./dist
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+
+# Switch to non-root user
+USER nextjs
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:3000/health || exit 1
+
+# Use dumb-init to handle signals properly
+ENTRYPOINT ["dumb-init", "--"]
+CMD ["node", "dist/server.js"]
+
+# Kubernetes - Network Policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: secure-app-netpol
+spec:
+  podSelector:
+    matchLabels:
+      app: secure-app
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
+    ports:
+    - protocol: TCP
+      port: 3000
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: database
+    ports:
+    - protocol: TCP
+      port: 5432</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Identity & Access Management -->
+        <section id="identity-access" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-user-shield text-indigo-600 mr-3"></i>
+                5. Identity & Access Management (IAM)
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-key text-yellow-600 mr-2"></i>
+                        Multi-Factor Authentication (MFA)
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Implement robust MFA using TOTP, SMS, or hardware tokens to add an extra layer of security.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Node.js - TOTP Implementation
+const speakeasy = require('speakeasy');
+const QRCode = require('qrcode');
+
+class MFAService {
+    // Generate secret for new user
+    static generateSecret(userEmail) {
+        const secret = speakeasy.generateSecret({
+            name: `SecureApp (${userEmail})`,
+            issuer: 'SecureApp',
+            length: 32
+        });
+        
+        return {
+            secret: secret.base32,
+            qrCodeUrl: secret.otpauth_url
+        };
+    }
+    
+    // Generate QR code for mobile app setup
+    static async generateQRCode(otpauthUrl) {
+        try {
+            const qrCodeDataUrl = await QRCode.toDataURL(otpauthUrl);
+            return qrCodeDataUrl;
+        } catch (error) {
+            throw new Error('Failed to generate QR code');
+        }
+    }
+    
+    // Verify TOTP token
+    static verifyToken(token, secret) {
+        return speakeasy.totp.verify({
+            secret: secret,
+            encoding: 'base32',
+            token: token,
+            window: 2 // Allow 2 time steps (60 seconds) tolerance
+        });
+    }
+    
+    // Backup codes generation
+    static generateBackupCodes() {
+        const codes = [];
+        for (let i = 0; i < 10; i++) {
+            const code = Math.random().toString(36).substring(2, 10).toUpperCase();
+            codes.push(code);
+        }
+        return codes;
+    }
+}
+
+// MFA middleware
+function requireMFA(req, res, next) {
+    const { mfaToken } = req.body;
+    const user = req.user;
+    
+    if (!user.mfaEnabled) {
+        return next();
+    }
+    
+    if (!mfaToken) {
+        return res.status(401).json({ 
+            error: 'MFA token required',
+            mfaRequired: true 
+        });
+    }
+    
+    const isValid = MFAService.verifyToken(mfaToken, user.mfaSecret);
+    
+    if (!isValid) {
+        return res.status(401).json({ error: 'Invalid MFA token' });
+    }
+    
+    next();
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-users-cog text-purple-600 mr-2"></i>
+                        Role-Based Access Control (RBAC)
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Implement fine-grained access control with roles and permissions to ensure users only access what they need.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// RBAC Implementation
+class RBACService {
+    constructor() {
+        this.roles = new Map();
+        this.permissions = new Map();
+        this.setupDefaultRoles();
+    }
+    
+    setupDefaultRoles() {
+        // Define permissions
+        this.permissions.set('read:users', 'Read user information');
+        this.permissions.set('write:users', 'Create and update users');
+        this.permissions.set('delete:users', 'Delete users');
+        this.permissions.set('read:admin', 'Read admin panel');
+        this.permissions.set('write:admin', 'Admin panel modifications');
+        
+        // Define roles with permissions
+        this.roles.set('user', {
+            name: 'User',
+            permissions: ['read:users']
+        });
+        
+        this.roles.set('moderator', {
+            name: 'Moderator',
+            permissions: ['read:users', 'write:users']
+        });
+        
+        this.roles.set('admin', {
+            name: 'Administrator',
+            permissions: [
+                'read:users', 'write:users', 'delete:users',
+                'read:admin', 'write:admin'
+            ]
+        });
+    }
+    
+    hasPermission(userRole, requiredPermission) {
+        const role = this.roles.get(userRole);
+        if (!role) return false;
+        
+        return role.permissions.includes(requiredPermission);
+    }
+    
+    hasAnyPermission(userRole, requiredPermissions) {
+        return requiredPermissions.some(permission => 
+            this.hasPermission(userRole, permission)
+        );
+    }
+    
+    hasAllPermissions(userRole, requiredPermissions) {
+        return requiredPermissions.every(permission => 
+            this.hasPermission(userRole, permission)
+        );
+    }
+}
+
+const rbac = new RBACService();
+
+// Middleware for permission checking
+function requirePermission(permission) {
+    return (req, res, next) => {
+        const user = req.user;
+        
+        if (!user) {
+            return res.status(401).json({ error: 'Authentication required' });
+        }
+        
+        if (!rbac.hasPermission(user.role, permission)) {
+            return res.status(403).json({ 
+                error: 'Insufficient permissions',
+                required: permission,
+                userRole: user.role
+            });
+        }
+        
+        next();
+    };
+}
+
+// Usage in routes
+app.get('/api/users', 
+    authenticateToken, 
+    requirePermission('read:users'), 
+    getUsersController
+);
+
+app.delete('/api/users/:id', 
+    authenticateToken, 
+    requirePermission('delete:users'), 
+    deleteUserController
+);</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Threat Detection & Response -->
+        <section id="threat-detection" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-search text-yellow-600 mr-3"></i>
+                6. Threat Detection & Response
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-chart-line text-red-600 mr-2"></i>
+                        Security Monitoring and Logging
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Implement comprehensive logging and monitoring to detect suspicious activities and security incidents.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Security Event Logging System
+const winston = require('winston');
+const { ElasticsearchTransport } = require('winston-elasticsearch');
+
+class SecurityLogger {
+    constructor() {
+        this.logger = winston.createLogger({
+            level: 'info',
+            format: winston.format.combine(
+                winston.format.timestamp(),
+                winston.format.errors({ stack: true }),
+                winston.format.json()
+            ),
+            transports: [
+                new winston.transports.File({ 
+                    filename: 'logs/security.log',
+                    level: 'warn'
+                }),
+                new winston.transports.Console({
+                    format: winston.format.simple()
+                }),
+                new ElasticsearchTransport({
+                    level: 'info',
+                    clientOpts: { node: process.env.ELASTICSEARCH_URL },
+                    index: 'security-logs'
+                })
+            ]
+        });
+    }
+    
+    logSecurityEvent(event, details = {}) {
+        const securityEvent = {
+            type: 'SECURITY_EVENT',
+            event: event,
+            timestamp: new Date().toISOString(),
+            ip: details.ip,
+            userAgent: details.userAgent,
+            userId: details.userId,
+            sessionId: details.sessionId,
+            severity: details.severity || 'medium',
+            details: details.additionalInfo || {}
+        };
+        
+        this.logger.warn('Security Event', securityEvent);
+        
+        // Trigger alerts for high severity events
+        if (details.severity === 'high') {
+            this.triggerAlert(securityEvent);
+        }
+    }
+    
+    logFailedLogin(ip, userAgent, email, reason) {
+        this.logSecurityEvent('FAILED_LOGIN', {
+            ip,
+            userAgent,
+            email,
+            reason,
+            severity: 'medium',
+            additionalInfo: { loginAttempt: true }
+        });
+    }
+    
+    logSuspiciousActivity(ip, userAgent, activity, userId = null) {
+        this.logSecurityEvent('SUSPICIOUS_ACTIVITY', {
+            ip,
+            userAgent,
+            userId,
+            activity,
+            severity: 'high',
+            additionalInfo: { requiresInvestigation: true }
+        });
+    }
+    
+    async triggerAlert(event) {
+        // Send to security team via Slack/email
+        const alertMessage = {
+            text: `🚨 Security Alert: ${event.event}`,
+            attachments: [{
+                color: 'danger',
+                fields: [
+                    { title: 'Event', value: event.event, short: true },
+                    { title: 'Severity', value: event.severity, short: true },
+                    { title: 'IP Address', value: event.ip, short: true },
+                    { title: 'User ID', value: event.userId || 'N/A', short: true },
+                    { title: 'Timestamp', value: event.timestamp, short: false }
+                ]
+            }]
+        };
+        
+        // Send to Slack webhook
+        await fetch(process.env.SLACK_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(alertMessage)
+        });
+    }
+}
+
+const securityLogger = new SecurityLogger();
+
+// Middleware for security logging
+function securityLoggingMiddleware(req, res, next) {
+    const originalSend = res.send;
+    
+    res.send = function(data) {
+        // Log failed authentication attempts
+        if (res.statusCode === 401) {
+            securityLogger.logFailedLogin(
+                req.ip,
+                req.get('User-Agent'),
+                req.body.email,
+                'Invalid credentials'
+            );
+        }
+        
+        // Log suspicious 4xx errors
+        if (res.statusCode >= 400 && res.statusCode < 500) {
+            securityLogger.logSuspiciousActivity(
+                req.ip,
+                req.get('User-Agent'),
+                `${req.method} ${req.path} - ${res.statusCode}`,
+                req.user?.id
+            );
+        }
+        
+        originalSend.call(this, data);
+    };
+    
+    next();
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
+                        Incident Response Plan
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Develop and implement a structured incident response plan to handle security breaches effectively.
+                    </p>
+                    
+                    <div class="security-timeline">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">1. Preparation Phase</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Establish incident response team</li>
+                                <li>Create communication protocols</li>
+                                <li>Prepare forensic tools and procedures</li>
+                                <li>Conduct regular security drills</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">2. Detection & Analysis</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Monitor security alerts and logs</li>
+                                <li>Analyze potential security incidents</li>
+                                <li>Determine incident severity and scope</li>
+                                <li>Document initial findings</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">3. Containment & Eradication</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Isolate affected systems</li>
+                                <li>Prevent further damage</li>
+                                <li>Remove malicious components</li>
+                                <li>Patch vulnerabilities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">4. Recovery & Lessons Learned</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Restore systems from clean backups</li>
+                                <li>Monitor for recurring issues</li>
+                                <li>Conduct post-incident review</li>
+                                <li>Update security procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Compliance & Standards -->
+        <section id="compliance" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-certificate text-teal-600 mr-3"></i>
+                7. Compliance & Standards
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="security-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-balance-scale text-blue-600 mr-2"></i>
+                        Major Compliance Frameworks
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">
+                                <i class="fas fa-user-shield mr-2"></i>GDPR (General Data Protection Regulation)
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Data protection by design and default</li>
+                                <li>• User consent and right to be forgotten</li>
+                                <li>• Data breach notification (72 hours)</li>
+                                <li>• Privacy impact assessments</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-green-50 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">
+                                <i class="fas fa-credit-card mr-2"></i>PCI DSS (Payment Card Industry)
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Secure network architecture</li>
+                                <li>• Cardholder data protection</li>
+                                <li>• Vulnerability management</li>
+                                <li>• Regular security testing</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-purple-50 rounded-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">
+                                <i class="fas fa-hospital mr-2"></i>HIPAA (Healthcare)
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Protected health information (PHI)</li>
+                                <li>• Administrative safeguards</li>
+                                <li>• Physical and technical safeguards</li>
+                                <li>• Business associate agreements</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-orange-50 rounded-lg">
+                            <h4 class="font-semibold text-orange-800 mb-2">
+                                <i class="fas fa-building mr-2"></i>SOX (Sarbanes-Oxley)
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Financial reporting controls</li>
+                                <li>• IT general controls (ITGC)</li>
+                                <li>• Change management processes</li>
+                                <li>• Access controls and segregation</li>
+                            </ul>

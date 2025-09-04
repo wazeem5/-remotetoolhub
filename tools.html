@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tools - RemoteToolHub</title>
+    <meta name="description" content="Comprehensive collection of free online tools for developers, designers, and digital professionals. No signup required.">
+    <link rel="canonical" href="https://remotetoolhub.com/tools.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .tool-category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tool-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .tool-list {
+            list-style: none;
+        }
+        
+        .tool-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .tool-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tool-info {
+            flex: 1;
+        }
+        
+        .tool-name {
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .tool-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .tool-link {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .nav-buttons {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .nav-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .footer {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1><i class="fas fa-tools"></i> Developer Tools</h1>
+            <p>Comprehensive collection of free online tools for developers and designers</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="tools-grid">
+            <!-- Web Development Tools -->
+            <div class="tool-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2 class="category-title">Web Development</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">HTML/CSS Formatter</div>
+                            <div class="tool-desc">Format and beautify HTML/CSS code</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">JavaScript Minifier</div>
+                            <div class="tool-desc">Minify and compress JavaScript code</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">CSS Generator</div>
+                            <div class="tool-desc">Generate CSS for gradients, shadows, and more</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Responsive Tester</div>
+                            <div class="tool-desc">Test website responsiveness across devices</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- API & Backend Tools -->
+            <div class="tool-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h2 class="category-title">API & Backend</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">JSON Formatter</div>
+                            <div class="tool-desc">Format, validate and beautify JSON data</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">API Tester</div>
+                            <div class="tool-desc">Test REST APIs with custom headers</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Base64 Encoder/Decoder</div>
+                            <div class="tool-desc">Encode and decode Base64 strings</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Hash Generator</div>
+                            <div class="tool-desc">Generate MD5, SHA1, SHA256 hashes</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Text & Content Tools -->
+            <div class="tool-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h2 class="category-title">Text & Content</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Markdown Editor</div>
+                            <div class="tool-desc">Write and preview Markdown content</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Word Counter</div>
+                            <div class="tool-desc">Count words, characters, and paragraphs</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Text Diff Checker</div>
+                            <div class="tool-desc">Compare two texts and highlight differences</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Lorem Ipsum Generator</div>
+                            <div class="tool-desc">Generate placeholder text for designs</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Image & Media Tools -->
+            <div class="tool-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h2 class="category-title">Image & Media</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Image Compressor</div>
+                            <div class="tool-desc">Compress images without quality loss</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Image Converter</div>
+                            <div class="tool-desc">Convert between image formats</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Color Picker</div>
+                            <div class="tool-desc">Extract colors from images</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">QR Code Generator</div>
+                            <div class="tool-desc">Generate QR codes for any text or URL</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Security & Encryption -->
+            <div class="tool-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="category-title">Security & Encryption</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Password Generator</div>
+                            <div class="tool-desc">Generate secure random passwords</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">URL Encoder/Decoder</div>
+                            <div class="tool-desc">Encode and decode URLs safely</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">JWT Decoder</div>
+                            <div class="tool-desc">Decode and verify JWT tokens</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">SSL Checker</div>
+                            <div class="tool-desc">Check SSL certificate validity</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Productivity Tools -->
+            <div class="tool-category">
+                <div class="category-header">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2 class="category-title">Productivity</h2>
+                </div>
+                <ul class="tool-list">
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Unit Converter</div>
+                            <div class="tool-desc">Convert between different units</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Timestamp Converter</div>
+                            <div class="tool-desc">Convert Unix timestamps to dates</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">Regex Tester</div>
+                            <div class="tool-desc">Test and debug regular expressions</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                    <li class="tool-item">
+                        <div class="tool-info">
+                            <div class="tool-name">UUID Generator</div>
+                            <div class="tool-desc">Generate unique identifiers</div>
+                        </div>
+                        <a href="#" class="tool-link">Use Tool</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="blog/index.html" class="nav-btn">
+                <i class="fas fa-blog"></i> Read Blog
+            </a>
+            <a href="about.html" class="nav-btn">
+                <i class="fas fa-info-circle"></i> About Us
+            </a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2025 RemoteToolHub. All rights reserved. | 
+            <a href="privacy-policy.html" style="color: white;">Privacy Policy</a> | 
+            <a href="terms-of-service.html" style="color: white;">Terms of Service</a> | 
+            <a href="disclaimer.html" style="color: white;">Disclaimer</a></p>
+        </div>
+    </div>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>

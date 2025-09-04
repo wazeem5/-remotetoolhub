@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
 
+# Disallow admin or sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /package*.json
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /ads.txt
+
+# Sitemap location
 Sitemap: https://remotetoolhub.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

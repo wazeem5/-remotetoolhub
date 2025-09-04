@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Mobile App Development: React Native vs Flutter 2025 | Complete Developer Guide</title>
+    <meta name="description" content="Comprehensive guide to mobile app development in 2025. Master React Native and Flutter with practical examples, performance optimization, and best practices for cross-platform development.">
+    <meta name="keywords" content="mobile app development, React Native, Flutter, cross-platform, iOS, Android, mobile development, app performance, native development, hybrid apps">
+    <meta name="author" content="RemoteToolHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://remotetoolhub.com/blog/articles/mobile-app-development-react-native-flutter-2025.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Advanced Mobile App Development: React Native vs Flutter 2025">
+    <meta property="og:description" content="Master mobile app development with our comprehensive guide covering React Native, Flutter, performance optimization, and modern development practices.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    <meta property="og:url" content="https://remotetoolhub.com/blog/articles/mobile-app-development-react-native-flutter-2025.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="RemoteToolHub">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced Mobile App Development: React Native vs Flutter 2025">
+    <meta name="twitter:description" content="Master mobile app development with React Native and Flutter. Complete guide with practical examples and best practices.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Advanced Mobile App Development: React Native vs Flutter 2025",
+        "description": "Comprehensive guide to mobile app development in 2025. Master React Native and Flutter with practical examples, performance optimization, and best practices.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630",
+        "author": {
+            "@type": "Organization",
+            "name": "RemoteToolHub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RemoteToolHub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://remotetoolhub.com/logo.png"
+            }
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://remotetoolhub.com/blog/articles/mobile-app-development-react-native-flutter-2025.html"
+        }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .code-block {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            color: #e6e6e6;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #4a5568;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .copy-btn:hover {
+            background: #2d3748;
+        }
+        .framework-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .framework-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .comparison-table {
+            overflow-x: auto;
+        }
+        .performance-meter {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .performance-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        .react-native-color { background: #61dafb; }
+        .flutter-color { background: #02569b; }
+        .native-color { background: #10b981; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-blue-600">
+                        <i class="fas fa-mobile-alt mr-2"></i>RemoteToolHub
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/blog" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-arrow-left mr-1"></i>Back to Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <i class="fas fa-mobile-alt text-yellow-300 mr-4"></i>
+                Advanced Mobile App Development: React Native vs Flutter 2025
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                Master cross-platform mobile development with comprehensive guides, performance optimization, and modern best practices
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fab fa-react mr-1"></i>React Native
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-code mr-1"></i>Flutter
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-mobile mr-1"></i>Cross-Platform
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-rocket mr-1"></i>Performance
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                <i class="fas fa-list-ul text-blue-600 mr-3"></i>
+                Table of Contents
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <a href="#introduction" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-info-circle text-blue-600 mr-3"></i>
+                        1. Mobile Development Landscape 2025
+                    </a>
+                    <a href="#react-native" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fab fa-react text-cyan-600 mr-3"></i>
+                        2. React Native Deep Dive
+                    </a>
+                    <a href="#flutter" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-code text-blue-600 mr-3"></i>
+                        3. Flutter Comprehensive Guide
+                    </a>
+                    <a href="#comparison" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-balance-scale text-purple-600 mr-3"></i>
+                        4. Framework Comparison
+                    </a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#performance" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-tachometer-alt text-green-600 mr-3"></i>
+                        5. Performance Optimization
+                    </a>
+                    <a href="#architecture" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-sitemap text-orange-600 mr-3"></i>
+                        6. App Architecture Patterns
+                    </a>
+                    <a href="#testing" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-vial text-red-600 mr-3"></i>
+                        7. Testing Strategies
+                    </a>
+                    <a href="#deployment" class="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-rocket text-indigo-600 mr-3"></i>
+                        8. Deployment & Distribution
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-16">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl border border-blue-200">
+                <h2 class="text-3xl font-bold mb-6 text-blue-800">
+                    <i class="fas fa-mobile-alt mr-3"></i>
+                    Mobile Development Landscape 2025
+                </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    The mobile development ecosystem has evolved dramatically in 2025, with cross-platform frameworks becoming the dominant choice for businesses seeking efficient, cost-effective solutions. This comprehensive guide explores the latest trends, tools, and best practices in mobile app development.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-users text-blue-500 text-3xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800">6.8B Users</h3>
+                        <p class="text-sm text-gray-600">Global mobile users in 2025</p>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-download text-green-500 text-3xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800">230B Downloads</h3>
+                        <p class="text-sm text-gray-600">Annual app downloads</p>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-dollar-sign text-purple-500 text-3xl mb-3"></i>
+                        <h3 class="font-semibold text-gray-800">$935B Revenue</h3>
+                        <p class="text-sm text-gray-600">Mobile app market size</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: React Native Deep Dive -->
+        <section id="react-native" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fab fa-react text-cyan-600 mr-3"></i>
+                2. React Native Deep Dive
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-rocket text-cyan-600 mr-2"></i>
+                        Getting Started with React Native
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        React Native allows you to build mobile apps using React and JavaScript. It uses native components instead of web components, providing near-native performance.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Installation and Setup
+npx react-native@latest init MyAwesomeApp
+cd MyAwesomeApp
+
+// For iOS (macOS only)
+npx pod-install ios
+npx react-native run-ios
+
+// For Android
+npx react-native run-android
+
+// Basic Component Structure
+import React from 'react';
+import {
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+
+const App = () => {
+  const [count, setCount] = React.useState(0);
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" />
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <View style={styles.body}>
+          <Text style={styles.title}>Welcome to React Native!</Text>
+          <Text style={styles.counter}>Count: {count}</Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => setCount(count + 1)}
+          >
+            <Text style={styles.buttonText}>Increment</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f8f9fa',
+  },
+  body: {
+    padding: 20,
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#333',
+  },
+  counter: {
+    fontSize: 18,
+    marginBottom: 20,
+    color: '#666',
+  },
+  button: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+});
+
+export default App;</code></pre>
+                    </div>
+                </div>
+
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-cogs text-blue-600 mr-2"></i>
+                        Advanced React Native Features
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="p-4 bg-cyan-50 rounded-lg">
+                            <h4 class="font-semibold text-cyan-800 mb-2">
+                                <i class="fas fa-navigation mr-2"></i>Navigation
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• React Navigation 6.x</li>
+                                <li>• Stack, Tab, Drawer navigators</li>
+                                <li>• Deep linking support</li>
+                                <li>• Custom transitions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">
+                                <i class="fas fa-database mr-2"></i>State Management
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Redux Toolkit</li>
+                                <li>• Context API + useReducer</li>
+                                <li>• Zustand for simple state</li>
+                                <li>• React Query for server state</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// React Navigation Setup
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+// Tab Navigator
+function TabNavigator() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          if (route.name === 'Home') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'person' : 'person-outline';
+          }
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: '#007AFF',
+        tabBarInactiveTintColor: 'gray',
+      })}
+    >
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
+
+// Main App with Navigation
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Tabs">
+        <Stack.Screen 
+          name="Tabs" 
+          component={TabNavigator} 
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+// Redux Toolkit Store Setup
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { value: 0 },
+  reducers: {
+    increment: (state) => {
+      state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
+    },
+    incrementByAmount: (state, action) => {
+      state.value += action.payload;
+    },
+  },
+});
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+
+export const store = configureStore({
+  reducer: {
+    counter: counterSlice.reducer,
+  },
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Flutter Comprehensive Guide -->
+        <section id="flutter" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-code text-blue-600 mr-3"></i>
+                3. Flutter Comprehensive Guide
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-play text-blue-600 mr-2"></i>
+                        Flutter Fundamentals
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Flutter is Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase using the Dart programming language.
+                    </p>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Flutter Installation and Setup
+// Install Flutter SDK and add to PATH
+// Verify installation
+flutter doctor
+
+// Create new Flutter project
+flutter create my_awesome_app
+cd my_awesome_app
+
+// Run the app
+flutter run
+
+// Basic Flutter App Structure
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        elevation: 0,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4?.copyWith(
+                color: Colors.blue,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _incrementCounter,
+              child: Text('Increment'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-layer-group text-indigo-600 mr-2"></i>
+                        Advanced Flutter Concepts
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">
+                                <i class="fas fa-cubes mr-2"></i>State Management
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Provider pattern</li>
+                                <li>• BLoC (Business Logic Component)</li>
+                                <li>• Riverpod for dependency injection</li>
+                                <li>• GetX for reactive programming</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-indigo-50 rounded-lg">
+                            <h4 class="font-semibold text-indigo-800 mb-2">
+                                <i class="fas fa-paint-brush mr-2"></i>UI/UX Features
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Custom animations</li>
+                                <li>• Material Design 3</li>
+                                <li>• Cupertino widgets for iOS</li>
+                                <li>• Responsive layouts</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// BLoC Pattern Implementation
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+// Events
+abstract class CounterEvent {}
+class CounterIncremented extends CounterEvent {}
+class CounterDecremented extends CounterEvent {}
+
+// States
+class CounterState {
+  final int count;
+  CounterState(this.count);
+}
+
+// BLoC
+class CounterBloc extends Bloc<CounterEvent, CounterState> {
+  CounterBloc() : super(CounterState(0)) {
+    on<CounterIncremented>((event, emit) {
+      emit(CounterState(state.count + 1));
+    });
+    
+    on<CounterDecremented>((event, emit) {
+      emit(CounterState(state.count - 1));
+    });
+  }
+}
+
+// Using BLoC in Widget
+class CounterPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => CounterBloc(),
+      child: CounterView(),
+    );
+  }
+}
+
+class CounterView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Counter with BLoC')),
+      body: BlocBuilder<CounterBloc, CounterState>(
+        builder: (context, state) {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Count: ${state.count}',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: () => context.read<CounterBloc>()
+                          .add(CounterDecremented()),
+                      child: Icon(Icons.remove),
+                      heroTag: "decrement",
+                    ),
+                    FloatingActionButton(
+                      onPressed: () => context.read<CounterBloc>()
+                          .add(CounterIncremented()),
+                      child: Icon(Icons.add),
+                      heroTag: "increment",
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// Custom Animation Example
+class AnimatedContainer extends StatefulWidget {
+  @override
+  _AnimatedContainerState createState() => _AnimatedContainerState();
+}
+
+class _AnimatedContainerState extends State<AnimatedContainer>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: Duration(seconds: 2),
+      vsync: this,
+    );
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+    _controller.forward();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return Transform.scale(
+          scale: _animation.value,
+          child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Center(
+              child: Text(
+                'Animated!',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Framework Comparison -->
+        <section id="comparison" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-balance-scale text-purple-600 mr-3"></i>
+                4. Framework Comparison: React Native vs Flutter
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">
+                        <i class="fas fa-chart-bar text-green-600 mr-2"></i>
+                        Performance Comparison
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Startup Time</span>
+                                <span class="text-sm text-gray-600">Lower is better</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <span class="w-20 text-sm">Flutter</span>
+                                    <div class="flex-1 mx-3 performance-meter">
+                                        <div class="performance-fill flutter-color" style="width: 85%"></div>
+                                    </div>
+                                    <span class="text-sm">1.2s</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-20 text-sm">React Native</span>
+                                    <div class="flex-1 mx-3 performance-meter">
+                                        <div class="performance-fill react-native-color" style="width: 70%"></div>
+                                    </div>
+                                    <span class="text-sm">1.8s</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-20 text-sm">Native</span>
+                                    <div class="flex-1 mx-3 performance-meter">
+                                        <div class="performance-fill native-color" style="width: 95%"></div>
+                                    </div>
+                                    <span class="text-sm">0.8s</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">CPU Usage</span>
+                                <span class="text-sm text-gray-600">Lower is better</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <span class="w-20 text-sm">Flutter</span>
+                                    <div class="flex-1 mx-3 performance-meter">
+                                        <div class="performance-fill flutter-color" style="width: 80%"></div>
+                                    </div>
+                                    <span class="text-sm">12%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-20 text-sm">React Native</span>
+                                    <div class="flex-1 mx-3 performance-meter">
+                                        <div class="performance-fill react-native-color" style="width: 65%"></div>
+                                    </div>
+                                    <span class="text-sm">18%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-20 text-sm">Native</span>
+                                    <div class="flex-1 mx-3 performance-meter">
+                                        <div class="performance-fill native-color" style="width: 90%"></div>
+                                    </div>
+                                    <span class="text-sm">8%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">
+                        <i class="fas fa-table text-blue-600 mr-2"></i>
+                        Detailed Comparison Table
+                    </h3>
+                    
+                    <div class="comparison-table">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="border border-gray-200 px-4 py-3 text-left">Aspect</th>
+                                    <th class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fab fa-react text-cyan-600 mr-1"></i>React Native
+                                    </th>
+                                    <th class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-code text-blue-600 mr-1"></i>Flutter
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">Programming Language</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">JavaScript/TypeScript</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">Dart</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">Learning Curve</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-green-600">Easy</span> (if you know React)
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-yellow-600">Moderate</span> (new language)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">Performance</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-yellow-600">Good</span> (bridge overhead)
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-green-600">Excellent</span> (compiled to native)
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">UI Components</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">Native platform components</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">Custom rendered widgets</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">Hot Reload</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-green-600">✓</span> Fast Refresh
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-green-600">✓</span> Stateful Hot Reload
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">Community & Ecosystem</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-green-600">Large</span> (JavaScript ecosystem)
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <span class="text-yellow-600">Growing</span> (Google backing)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">Code Sharing</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">Mobile + Web (limited)</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">Mobile + Web + Desktop</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-200 px-4 py-3 font-medium">Testing</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">Jest, Detox, Flipper</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">Built-in testing framework</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Performance Optimization -->
+        <section id="performance" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-tachometer-alt text-green-600 mr-3"></i>
+                5. Performance Optimization Strategies
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fab fa-react text-cyan-600 mr-2"></i>
+                        React Native Performance Tips
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="p-4 bg-cyan-50 rounded-lg">
+                            <h4 class="font-semibold text-cyan-800 mb-2">
+                                <i class="fas fa-memory mr-2"></i>Memory Management
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Use FlatList for large datasets</li>
+                                <li>• Implement proper image caching</li>
+                                <li>• Remove event listeners on unmount</li>
+                                <li>• Use React.memo for expensive components</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">
+                                <i class="fas fa-bolt mr-2"></i>Rendering Optimization
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Avoid inline functions in render</li>
+                                <li>• Use getItemLayout for FlatList</li>
+                                <li>• Implement shouldComponentUpdate</li>
+                                <li>• Optimize image sizes and formats</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// React Native Performance Optimization Examples
+
+// 1. Optimized FlatList Implementation
+import React, { useMemo, useCallback } from 'react';
+import { FlatList, View, Text, Image } from 'react-native';
+
+const OptimizedList = ({ data }) => {
+  // Memoize the renderItem function
+  const renderItem = useCallback(({ item, index }) => (
+    <MemoizedListItem item={item} index={index} />
+  ), []);
+
+  // Memoize keyExtractor
+  const keyExtractor = useCallback((item) => item.id.toString(), []);
+
+  // Define getItemLayout for better performance
+  const getItemLayout = useCallback(
+    (data, index) => ({
+      length: 80, // Fixed item height
+      offset: 80 * index,
+      index,
+    }),
+    []
+  );
+
+  return (
+    <FlatList
+      data={data}
+      renderItem={renderItem}
+      keyExtractor={keyExtractor}
+      getItemLayout={getItemLayout}
+      removeClippedSubviews={true}
+      maxToRenderPerBatch={10}
+      windowSize={10}
+      initialNumToRender={10}
+    />
+  );
+};
+
+// 2. Memoized List Item Component
+const ListItem = React.memo(({ item, index }) => {
+  return (
+    <View style={styles.itemContainer}>
+      <Image 
+        source={{ uri: item.imageUrl }}
+        style={styles.itemImage}
+        resizeMode="cover"
+      />
+      <View style={styles.itemContent}>
+        <Text style={styles.itemTitle}>{item.title}</Text>
+        <Text style={styles.itemDescription}>{item.description}</Text>
+      </View>
+    </View>
+  );
+});
+
+const MemoizedListItem = React.memo(ListItem);
+
+// 3. Image Optimization with Caching
+import FastImage from 'react-native-fast-image';
+
+const OptimizedImage = ({ source, style }) => {
+  return (
+    <FastImage
+      style={style}
+      source={{
+        uri: source,
+        priority: FastImage.priority.normal,
+        cache: FastImage.cacheControl.immutable,
+      }}
+      resizeMode={FastImage.resizeMode.cover}
+    />
+  );
+};
+
+// 4. Debounced Search Implementation
+import { useState, useEffect, useMemo } from 'react';
+import { useDebounce } from 'use-debounce';
+
+const SearchComponent = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [debouncedSearchTerm] = useDebounce(searchTerm, 300);
+
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      onSearch(debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm, onSearch]);
+
+  return (
+    <TextInput
+      value={searchTerm}
+      onChangeText={setSearchTerm}
+      placeholder="Search..."
+      style={styles.searchInput}
+    />
+  );
+};</code></pre>
+                    </div>
+                </div>
+
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-code text-blue-600 mr-2"></i>
+                        Flutter Performance Optimization
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">
+                                <i class="fas fa-layer-group mr-2"></i>Widget Optimization
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Use const constructors</li>
+                                <li>• Implement RepaintBoundary</li>
+                                <li>• Avoid rebuilding expensive widgets</li>
+                                <li>• Use ListView.builder for large lists</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 bg-indigo-50 rounded-lg">
+                            <h4 class="font-semibold text-indigo-800 mb-2">
+                                <i class="fas fa-paint-brush mr-2"></i>Rendering Performance
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Minimize widget tree depth</li>
+                                <li>• Use AutomaticKeepAliveClientMixin</li>
+                                <li>• Implement custom render objects</li>
+                                <li>• Optimize image loading and caching</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Flutter Performance Optimization Examples
+
+// 1. Optimized ListView with const constructors
+class OptimizedListView extends StatelessWidget {
+  const OptimizedListView({Key? key, required this.items}) : super(key: key);
+  
+  final List<Item> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return OptimizedListItem(
+          key: ValueKey(items[index].id),
+          item: items[index],
+        );
+      },
+    );
+  }
+}
+
+// 2. Const constructor for list items
+class OptimizedListItem extends StatelessWidget {
+  const OptimizedListItem({
+    Key? key,
+    required this.item,
+  }) : super(key: key);
+
+  final Item item;
+
+  @override
+  Widget build(BuildContext context) {
+    return RepaintBoundary(
+      child: Card(
+        child: ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(item.imageUrl),
+          ),
+          title: Text(item.title),
+          subtitle: Text(item.description),
+          onTap: () => _handleTap(context),
+        ),
+      ),
+    );
+  }
+
+  void _handleTap(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailPage(item: item),
+      ),
+    );
+  }
+}
+
+// 3. Custom ScrollView with performance optimizations
+class PerformantScrollView extends StatefulWidget {
+  const PerformantScrollView({Key? key}) : super(key: key);
+
+  @override
+  _PerformantScrollViewState createState() => _PerformantScrollViewState();
+}
+
+class _PerformantScrollViewState extends State<PerformantScrollView>
+    with AutomaticKeepAliveClientMixin {
+  
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context); // Required for AutomaticKeepAliveClientMixin
+    
+    return CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          expandedHeight: 200.0,
+          floating: false,
+          pinned: true,
+          flexibleSpace: FlexibleSpaceBar(
+            title: const Text('Performance Demo'),
+            background: Image.network(
+              'https://example.com/image.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return RepaintBoundary(
+                child: ListTile(
+                  title: Text('Item $index'),
+                  subtitle: Text('Description for item $index'),
+                ),
+              );
+            },
+            childCount: 1000,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// 4. Optimized Image Widget with caching
+class OptimizedImage extends StatelessWidget {
+  const OptimizedImage({
+    Key? key,
+    required this.imageUrl,
+    this.width,
+    this.height,
+  }) : super(key: key);
+
+  final String imageUrl;
+  final double? width;
+  final double? height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+      imageUrl,
+      width: width,
+      height: height,
+      fit: BoxFit.cover,
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+        return SizedBox(
+          width: width,
+          height: height,
+          child: Center(
+            child: CircularProgressIndicator(
+              value: loadingProgress.expectedTotalBytes != null
+                  ? loadingProgress.cumulativeBytesLoaded /
+                      loadingProgress.expectedTotalBytes!
+                  : null,
+            ),
+          ),
+        );
+      },
+      errorBuilder: (context, error, stackTrace) {
+        return Container(
+          width: width,
+          height: height,
+          color: Colors.grey[300],
+          child: const Icon(Icons.error),
+        );
+      },
+    );
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: App Architecture Patterns -->
+        <section id="architecture" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                <i class="fas fa-sitemap text-orange-600 mr-3"></i>
+                6. App Architecture Patterns
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="framework-card bg-white p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+                        <i class="fas fa-layer-group text-purple-600 mr-2"></i>
+                        Clean Architecture Implementation
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Clean Architecture promotes separation of concerns and makes your app more testable, maintainable, and scalable.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <i class="fas fa-eye text-purple-600 text-2xl mb-3"></i>
+                            <h4 class="font-semibold text-purple-800">Presentation Layer</h4>
+                            <p class="text-sm text-gray-600">UI components, screens, and user interactions</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <i class="fas fa-cogs text-blue-600 text-2xl mb-3"></i>
+                            <h4 class="font-semibold text-blue-800">Domain Layer</h4>
+                            <p class="text-sm text-gray-600">Business logic, entities, and use cases</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i class="fas fa-database text-green-600 text-2xl mb-3"></i>
+                            <h4 class="font-semibold text-green-800">Data Layer</h4>
+                            <p class="text-sm text-gray-600">Repositories, data sources, and external APIs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre><code>// Clean Architecture Example - User Management
+
+// Domain Layer - Entities
+class User {
+  final String id;
+  final String name;
+  final String email;
+  final DateTime createdAt;
+
+  const User({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.createdAt,
+  });
+}
+
+// Domain Layer - Repository Interface
+abstract class UserRepository {
+  Future<List<User>> getUsers();
+  Future<User> getUserById(String id);
+  Future<User> createUser(User user);
+  Future<User> updateUser(User user);
+  Future<void> deleteUser(String id);
+}
+
+// Domain Layer - Use Cases
+class GetUsersUseCase {
+  final UserRepository repository;
+
+  GetUsersUseCase(this.repository);
+
+  Future<List<User>> execute() async {
+    try {
+      return await repository.getUsers();
+    } catch (e) {
+      throw Exception('Failed to fetch users: $e');
+    }
+  }
+}
+
+class CreateUserUseCase {
+  final UserRepository repository;
+
+  CreateUserUseCase(this.repository);
+
+  Future<User> execute(String name, String email) async {
+    if (name.isEmpty || email.isEmpty) {
+      throw Exception('Name and email are required');
+    }
+
+    final user = User(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      name: name,
+      email: email,
+      createdAt: DateTime.now(),
+    );
+
+    return await repository.createUser(user);
+  }
+}
+
+// Data Layer - Repository Implementation
+class UserRepositoryImpl implements UserRepository {
+  final UserRemoteDataSource remoteDataSource;
+  final UserLocalDataSource localDataSource;
+
+  UserRepositoryImpl({
+    required this.remoteDataSource,
+    required this.localDataSource,
+  });
+
+  @override
+  Future<List<User>> getUsers() async {
+    try {
+      final users = await remoteDataSource.getUsers();
